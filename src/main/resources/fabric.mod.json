@@ -1,15 +1,15 @@
 {
 	"schemaVersion": 1,
 	"id": "solaris",
-	"version": "${version}",
+	"version": "1.1.1a",
 	"name": "Telum Solaris",
 	"description": "My first ever mod aiming to improve weaponry in Minecraft",
 	"authors": [
 		"SolarElixir"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/SolarElixir",
+		"sources": "https://github.com/SolarElixir/Solars-Weapon-Expansion-1.21.X-Fabric"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/solaris/icon.png",

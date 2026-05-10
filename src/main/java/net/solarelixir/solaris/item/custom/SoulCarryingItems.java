@@ -20,11 +20,11 @@ public class SoulCarryingItems extends SwordItem {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         boolean result = super.postHit(stack, target, attacker);
         if ((target.getHealth() <= 0.0F || !target.isAlive())
-                && stack.isIn(ModTags.Items.SOUL_CARRYING_WEAPONS)) {
+                && stack.isIn(ModTags.Items.KILL_COUNTING_ITEMS)) {
             SoulStoringCodec data = stack.get(ModDataComponentTypes.SOUL_INVENTORY_INFO);
             SoulStoringCodec updated = (data == null)
                     ? new SoulStoringCodec(true, 1, 10000)
-                    : data.addSoul();
+                    : data.addKill();
             stack.set(ModDataComponentTypes.SOUL_INVENTORY_INFO, updated);
         }
         return result;

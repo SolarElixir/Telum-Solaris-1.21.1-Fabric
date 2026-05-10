@@ -12,21 +12,31 @@ import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
     
-    JADE(ModTags.Blocks.INCORRECT_FOR_GEMSTONE_TOOLS,
+    JADE(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             2560, 10.0F, 6.0F, 19, () ->
             Ingredient.ofItems(ModItems.JADE_TOKEN)),
 
-    ONYX(ModTags.Blocks.INCORRECT_FOR_GEMSTONE_TOOLS,
+    ONYX(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             2560, 10.0F, 6.0F, 19, () ->
             Ingredient.ofItems(ModItems.ONYX_TOKEN)),
 
-    ENERGIZED_JADE(ModTags.Blocks.INCORRECT_FOR_GEMSTONE_TOOLS,
+    RUBY(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+            2560, 10.0f, 7.0f, 19, () ->
+            Ingredient.ofItems(ModItems.RUBY_TOKEN)),
+
+    ENERGIZED_JADE(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             2880, 10.0f, 8.0f, 21, () ->
             Ingredient.ofItems(ModItems.JADE_TOKEN)),
 
+    TOPAZ(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+            3200, 10.0f, 5.0f, 24, () ->
+            Ingredient.ofItems(ModItems.TOPAZ_TOKEN)),
+
     STEEL(ModTags.Blocks.INCORRECT_FOR_STEEL_TOOL,
             1024, 7.0f, 2.0F, 14, () ->
-            Ingredient.ofItems(ModItems.STEEL));
+            Ingredient.ofItems(ModItems.STEEL))
+
+    ;
 
 
     private final TagKey<Block> inverseTag;

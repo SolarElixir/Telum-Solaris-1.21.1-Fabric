@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "solaris:item/jade_chisel"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "solaris:used": 1
+      },
+      "model": "solaris:item/jade_chisel_used"
+    }
+  ]
+}

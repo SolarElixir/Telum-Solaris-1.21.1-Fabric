@@ -17,6 +17,8 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                 .displayName(Text.translatable("itemgroup.solaris.telum_solaris"))
                 .entries((displayContext, entries) -> {
 
+                    entries.add(ModItems.LONGBOW);
+
                     //Important blocks
                     //entries.add(ModBlocks.GEMSTONE_INFUSER);
 
@@ -24,21 +26,19 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModBlocks.JADE_ORE);
                     entries.add(ModBlocks.DEEPSLATE_JADE_ORE);
                     entries.add(ModBlocks.JADE_BLOCK);
-
                     entries.add(ModItems.IMPURE_JADE_CHUNK);
                     entries.add(ModItems.REFINED_JADE);
-                    entries.add(ModItems.PERFECT_JADE);
+                    entries.add(ModItems.FLAWLESS_JADE);
                     entries.add(ModItems.JADE_TOKEN);
-
-                    //Jade tools
-                    entries.add(ModItems.JADE_CHISEL);
-
-                    //Jade weapons
                     entries.add(ModItems.JADE_HELMET);
                     entries.add(ModItems.JADE_CHESTPLATE);
                     entries.add(ModItems.JADE_LEGGINGS);
                     entries.add(ModItems.JADE_BOOTS);
-
+                    entries.add(ModItems.ENERGIZED_JADE_HELMET);
+                    entries.add(ModItems.ENERGIZED_JADE_CHESTPLATE);
+                    entries.add(ModItems.ENERGIZED_JADE_LEGGINGS);
+                    entries.add(ModItems.ENERGIZED_JADE_BOOTS);
+                    entries.add(ModItems.JADE_CHISEL);
                     entries.add(ModItems.JADE_DAGGER);
                     entries.add(ModItems.JADE_SWORD);
                     entries.add(ModItems.JADE_KATANA);
@@ -46,12 +46,29 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModItems.JADE_HALBERD);
                     entries.add(ModItems.JADE_SCYTHE);
                     entries.add(ModItems.JADE_SHIELD);
+                    entries.add(ModItems.ENERGIZED_JADE_SHIELD);
 
                     entries.add(ModItems.ENERGIZED_JADE_SWORD);
 
                     //Ruby items/blocks
-                    entries.add(ModBlocks.RUBY_ORE);
-                    entries.add(ModBlocks.DEEPSLATE_RUBY_ORE);
+                    entries.add(ModBlocks.NETHER_RUBY_ORE);
+                    entries.add(ModBlocks.RUBY_BLOCK);
+                    entries.add(ModItems.IMPURE_RUBY_CHUNK);
+                    entries.add(ModItems.REFINED_RUBY);
+                    entries.add(ModItems.FLAWLESS_RUBY);
+                    entries.add(ModItems.RUBY_TOKEN);
+                    entries.add(ModItems.RUBY_HELMET);
+                    entries.add(ModItems.RUBY_CHESTPLATE);
+                    entries.add(ModItems.RUBY_LEGGINGS);
+                    entries.add(ModItems.RUBY_BOOTS);
+                    entries.add(ModItems.RUBY_DAGGER);
+                    entries.add(ModItems.RUBY_SWORD);
+                    entries.add(ModItems.RUBY_KATANA);
+                    entries.add(ModItems.RUBY_LONGSWORD);
+                    entries.add(ModItems.RUBY_HALBERD);
+                    entries.add(ModItems.RUBY_SCYTHE);
+                    entries.add(ModItems.RUBY_SHIELD);
+
 
                     //Aquamarine items/blocks
                     entries.add(ModBlocks.AQUAMARINE_ORE);
@@ -60,27 +77,38 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModItems.REFINED_AQUAMARINE);
                     entries.add(ModItems.FLAWLESS_AQUAMARINE);
 
-                    //Citrine items/blocks
+                    //Topaz items/blocks
                     entries.add(ModBlocks.TOPAZ_ORE);
                     entries.add(ModBlocks.DEEPSLATE_TOPAZ_ORE);
-                    entries.add(ModItems.FLAWLESS_CITRINE);
-
+                    entries.add(ModBlocks.TOPAZ_BLOCK);
+                    entries.add(ModItems.IMPURE_TOPAZ_CHUNK);
+                    entries.add(ModItems.REFINED_TOPAZ);
+                    entries.add(ModItems.FLAWLESS_TOPAZ);
+                    entries.add(ModItems.TOPAZ_TOKEN);
+                    entries.add(ModItems.TOPAZ_DAGGER);
+                    entries.add(ModItems.TOPAZ_SWORD);
+                    entries.add(ModItems.TOPAZ_KATANA);
+                    entries.add(ModItems.TOPAZ_GREATSWORD);
+                    entries.add(ModItems.TOPAZ_HALBERD);
+                    entries.add(ModItems.TOPAZ_SCYTHE);
 
                     //Onyx items/blocks
                     entries.add(ModBlocks.ONYX_ORE);
                     entries.add(ModBlocks.DEEPSLATE_ONYX_ORE);
                     entries.add(ModBlocks.ONYX_BLOCK);
-
                     entries.add(ModItems.IMPURE_ONYX_CHUNK);
                     entries.add(ModItems.REFINED_ONYX);
                     entries.add(ModItems.FLAWLESS_ONYX);
                     entries.add(ModItems.ONYX_TOKEN);
-
+                    entries.add(ModItems.ONYX_HOOD);
+                    entries.add(ModItems.ONYX_ROBES);
+                    entries.add(ModItems.ONYX_LEGGINGS);
+                    entries.add(ModItems.ONYX_BOOTS);
                     entries.add(ModItems.ONYX_DAGGER);
-                    //entries.add(ModItems.ONYX_SWORD);
-                    entries.add(ModItems.ONYX_LONGSWORD);
-                    //entries.add(ModItems.ONYX_CLAYMORE);
+                    entries.add(ModItems.ONYX_SWORD);
                     entries.add(ModItems.ONYX_KATANA);
+                    entries.add(ModItems.ONYX_GREATSWORD);
+                    entries.add(ModItems.ONYX_HALBERD);
                     entries.add(ModItems.ONYX_SCYTHE);
 
 
@@ -121,6 +149,7 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
 
                     entries.add(ModItems.SCARLETT);
                     entries.add(ModItems.SCARLETT_HAZE);
+                    entries.add(ModItems.BROKEN_SPEAR);
 
                 })
                 .build());

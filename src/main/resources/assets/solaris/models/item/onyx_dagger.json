@@ -1,124 +1,28 @@
 {
-	"format_version": "1.9.0",
-	"credit": "Made with Blockbench by SolarElixir!",
-	"texture_size": [4, 4],
-	"textures": {
-		"0": "solaris:item/onyx_dagger/onyx_dagger_blade",
-		"1": "solaris:item/onyx_dagger/onyx_dagger_handle",
-		"2": "solaris:item/onyx_dagger/onyx_dagger_bottom",
-		"particle": "solaris:item/onyx_dagger/onyx_dagger_blade"
-	},
-	"elements": [
-		{
-			"from": [7, -1, 7],
-			"to": [9, 0, 9],
-			"rotation": {"angle": 0, "axis": "z", "origin": [8, 1.25, 8]},
-			"faces": {
-				"north": {"uv": [8, 0, 16, 4], "texture": "#2"},
-				"east": {"uv": [8, 4, 16, 8], "texture": "#2"},
-				"south": {"uv": [8, 8, 16, 12], "texture": "#2"},
-				"west": {"uv": [8, 12, 16, 16], "texture": "#2"},
-				"up": {"uv": [8, 8, 0, 0], "texture": "#2"},
-				"down": {"uv": [8, 8, 0, 16], "texture": "#2"}
-			}
-		},
-		{
-			"from": [7.5, 0, 7.5],
-			"to": [8.5, 6, 8.5],
-			"rotation": {"angle": 0, "axis": "z", "origin": [8, 1.25, 8]},
-			"faces": {
-				"north": {"uv": [0, 4, 1, 10], "texture": "#1"},
-				"east": {"uv": [1, 4, 2, 10], "texture": "#1"},
-				"south": {"uv": [2, 4, 3, 10], "texture": "#1"},
-				"west": {"uv": [3, 4, 4, 10], "texture": "#1"},
-				"up": {"uv": [7, 6, 6, 5], "texture": "#1"},
-				"down": {"uv": [7, 6, 6, 7], "texture": "#1"}
-			}
-		},
-		{
-			"from": [5, 5.5, 7.25],
-			"to": [10, 6.5, 8.75],
-			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 5, 8]},
-			"faces": {
-				"north": {"uv": [4, 4, 9, 5], "texture": "#1"},
-				"east": {"uv": [5, 1, 6.5, 2], "texture": "#1"},
-				"south": {"uv": [5, 0, 10, 1], "texture": "#1"},
-				"west": {"uv": [5, 2, 6.5, 3], "texture": "#1"},
-				"up": {"uv": [5, 1.5, 0, 0], "texture": "#1"},
-				"down": {"uv": [5, 2, 0, 3.5], "texture": "#1"}
-			}
-		},
-		{
-			"from": [4.4625, 5.19, 7.25],
-			"to": [5.4625, 6.19, 8.75],
-			"rotation": {"angle": -22.5, "axis": "z", "origin": [6, 4, 8]},
-			"faces": {
-				"north": {"uv": [7, 1, 8, 2], "texture": "#1"},
-				"east": {"uv": [5, 3, 6.5, 4], "texture": "#1"},
-				"south": {"uv": [7, 2, 8, 3], "texture": "#1"},
-				"west": {"uv": [4, 5, 5.5, 6], "texture": "#1"},
-				"up": {"uv": [5, 7.5, 4, 6], "texture": "#1"},
-				"down": {"uv": [6, 6, 5, 7.5], "texture": "#1"}
-			}
-		},
-		{
-			"name": "blade",
-			"from": [6.5, 6, 8],
-			"to": [9.5, 18, 8],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 12, 8]},
-			"faces": {
-				"north": {"uv": [3, 0, 6, 12], "texture": "#0"},
-				"east": {"uv": [0, 0, 0, 12], "texture": "#0"},
-				"south": {"uv": [0, 0, 3, 12], "texture": "#0"},
-				"west": {"uv": [0, 0, 0, 12], "texture": "#0"},
-				"up": {"uv": [3, 0, 0, 0], "rotation": 180, "texture": "#0"},
-				"down": {"uv": [3, 0, 0, 0], "rotation": 180, "texture": "#0"}
-			}
-		}
-	],
-	"gui_light": "front",
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [90, -90, -90],
-			"translation": [0, -8.25, 1.25],
-			"scale": [1, 1.25, 1]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [90, -90, -90],
-			"translation": [0, -8.25, 1.25],
-			"scale": [1, 1.25, 1]
-		},
-		"firstperson_righthand": {
-			"rotation": [0, 90, 0],
-			"translation": [0, 2, 0],
-			"scale": [1, 1.25, 1]
-		},
-		"firstperson_lefthand": {
-			"rotation": [0, -90, 0],
-			"translation": [0, 2, 0],
-			"scale": [1, 1.25, 1]
-		},
-		"ground": {
-			"rotation": [0, 0, 45],
-			"translation": [0, 2.5, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"gui": {
-			"rotation": [0, 0, -45],
-			"scale": [0.8, 1, 0.8]
-		},
-		"fixed": {
-			"rotation": [0, 0, 45],
-			"scale": [1, 1.25, 1]
-		}
-	},
-	"groups": [
-		{
-			"name": "handle",
-			"origin": [7, -2, 7],
-			"color": 0,
-			"children": [0, 1, 2, 3]
-		},
-		4
-	]
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "solaris:item/onyx_dagger"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [45, 90, 0],
+      "translation": [0, -9, 0],
+      "scale": [0.85, 0.85, 0.85]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [45, -90, 0],
+      "translation": [0, -9, 0],
+      "scale": [0.85, 0.85, 0.85]
+    },
+    "firstperson_righthand": {
+      "rotation": [180, -90, 45],
+      "translation": [0, 2, 0],
+      "scale": [0.75, 0.75, 0.75]
+    },
+    "firstperson_lefthand": {
+      "rotation": [180, 90, -45],
+      "translation": [0, 2, 0],
+      "scale": [0.75, 0.75, 0.75]
+    }
+  }
 }

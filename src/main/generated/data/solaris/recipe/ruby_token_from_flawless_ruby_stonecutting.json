@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "solaris:flawless_ruby"
+  },
+  "result": {
+    "count": 4,
+    "id": "solaris:ruby_token"
+  }
+}

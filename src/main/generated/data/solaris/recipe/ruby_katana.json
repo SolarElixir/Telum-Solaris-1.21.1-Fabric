@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "-": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "item": "solaris:flawless_ruby"
+    }
+  },
+  "pattern": [
+    "-RR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "solaris:ruby_katana"
+  }
+}

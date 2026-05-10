@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_perfect_jade": {
+    "has_flawless_jade": {
       "conditions": {
         "items": [
           {
-            "items": "solaris:perfect_jade"
+            "items": "solaris:flawless_jade"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_perfect_jade"
+      "has_flawless_jade"
     ]
   ],
   "rewards": {

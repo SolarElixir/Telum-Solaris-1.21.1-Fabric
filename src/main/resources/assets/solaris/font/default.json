@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "assets:solaris/textures/font/fire_sprite.png",
+      "height": 8,
+      "ascent": 0,
+      "chars": ["\uE100"]
+    }
+  ]
+}

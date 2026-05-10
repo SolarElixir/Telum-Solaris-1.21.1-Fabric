@@ -10,8 +10,9 @@ import net.solarelixir.solaris.TelumSolaris;
 
 public class ModTags {
     public static class Blocks{
-        public static final TagKey<Block> NEEDS_GEMSTONE_TOOL = createTag("needs_gemstone_tool");
-        public static final TagKey<Block> INCORRECT_FOR_GEMSTONE_TOOLS = createTag("incorrect_for_gemstone_tools");
+
+        public static final TagKey<Block> NEEDS_NETHERITE_TOOL = createTag("needs_netherite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NETHERITE_TOOLS = createTag("incorrect_for_netherite_tools");
 
         public static final TagKey<Block> NEEDS_STEEL_TOOL = BlockTags.NEEDS_IRON_TOOL;
         public static final TagKey<Block> INCORRECT_FOR_STEEL_TOOL = BlockTags.INCORRECT_FOR_IRON_TOOL;
@@ -23,8 +24,10 @@ public class ModTags {
     }
     public static class Items{
 
-        public static final TagKey<Item> SOUL_CARRYING_WEAPONS = createTag("soul_carrying_weapons");
+        public static final TagKey<Item> KILL_COUNTING_ITEMS = createTag("kill_counting_items");
         public static final TagKey<Item> IS_JADE_ITEM = createTag("is_jade_item");
+        public static final TagKey<Item> IS_BOW_ITEM = createTag("is_bow_item");
+        public static final TagKey<Item> TWO_HANDED = createTag("two_handed");
 
         private static TagKey<Item> createTag(String name){
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(TelumSolaris.MOD_ID, name));

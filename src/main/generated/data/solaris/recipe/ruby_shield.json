@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:blackstone"
+    },
+    "R": {
+      "item": "solaris:flawless_ruby"
+    }
+  },
+  "pattern": [
+    "BRB",
+    "BRB",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "solaris:ruby_shield"
+  }
+}

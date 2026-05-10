@@ -25,7 +25,7 @@ public class CustomTooltips {
                 tooltip.add(line);
             }
         }
-        if (stack.isIn(ModTags.Items.SOUL_CARRYING_WEAPONS)) {
+        if (stack.isIn(ModTags.Items.KILL_COUNTING_ITEMS)) {
             SoulStoringCodec data = stack.get(ModDataComponentTypes.SOUL_INVENTORY_INFO);
             if (data != null && data.canStoreSouls()) {
                 tooltip.add(Text.translatable("tooltip.solaris.souls_stored",

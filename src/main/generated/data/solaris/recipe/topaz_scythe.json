@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "-": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "solaris:flawless_topaz"
+    }
+  },
+  "pattern": [
+    "TTT",
+    " - ",
+    "-  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "solaris:topaz_scythe"
+  }
+}

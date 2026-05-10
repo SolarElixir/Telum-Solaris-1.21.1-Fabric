@@ -84,6 +84,3 @@ publishing {
 		// retrieving dependencies.
 	}
 }
-tasks.withType(Copy).configureEach {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-}

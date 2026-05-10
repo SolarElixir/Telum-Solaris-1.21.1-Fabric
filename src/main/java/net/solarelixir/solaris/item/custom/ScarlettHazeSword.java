@@ -1,8 +1,6 @@
 package net.solarelixir.solaris.item.custom;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
@@ -20,12 +18,6 @@ public class ScarlettHazeSword extends SwordItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (!world.isClient && entity instanceof PlayerEntity player){
-            boolean isHeld = player.getMainHandStack() == stack;
-
-            if (isHeld) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
-                        1, 1, true, false));
-            }
         }
         super.inventoryTick(stack, world, entity, slot, selected);
     }

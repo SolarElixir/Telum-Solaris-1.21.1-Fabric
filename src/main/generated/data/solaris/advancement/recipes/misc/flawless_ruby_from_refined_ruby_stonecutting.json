@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_refined_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": "solaris:refined_ruby"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:flawless_ruby_from_refined_ruby_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_refined_ruby"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:flawless_ruby_from_refined_ruby_stonecutting"
+    ]
+  }
+}

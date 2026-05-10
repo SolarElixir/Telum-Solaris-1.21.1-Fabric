@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "solaris:refined_jade"
+  },
+  "result": {
+    "count": 1,
+    "id": "solaris:flawless_jade"
+  }
+}

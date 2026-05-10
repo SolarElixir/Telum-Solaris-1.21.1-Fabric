@@ -16,9 +16,12 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
-                    .put(ModArmorMaterials.JADE_ARMOR_MATERIAL,
-                            List.of(new StatusEffectInstance(StatusEffects.HASTE, 10, 1, false, false),
-                                    new StatusEffectInstance(StatusEffects.STRENGTH, 10, 0, false, false))).build();
+                    .put(ModArmorMaterials.JADE_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
+                            StatusEffects.RESISTANCE, 10, 1, false, false)))
+                    .put(ModArmorMaterials.RUBY_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
+                            StatusEffects.STRENGTH, 10, 1, false, false)))
+                    .build();
+
 
 
     public ModArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
@@ -29,7 +32,7 @@ public class ModArmorItem extends ArmorItem {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if(!world.isClient()) {
             if(entity instanceof PlayerEntity player) {
-                if(hasFullSuitOfArmorOn(player) && player.getMainHandStack().isIn(ModTags.Items.IS_JADE_ITEM)) {
+                if(hasFullSuitOfArmorOn(player) /*&& player.getMainHandStack().isIn(ModTags.Items.IS_JADE_ITEM)*/) {
                     evaluateArmorEffects(player);
                 }
             }

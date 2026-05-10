@@ -7,6 +7,18 @@
     "solaris:jade_helmet",
     "solaris:jade_chestplate",
     "solaris:jade_leggings",
-    "solaris:jade_boots"
+    "solaris:jade_boots",
+    "solaris:energized_jade_helmet",
+    "solaris:energized_jade_chestplate",
+    "solaris:energized_jade_leggings",
+    "solaris:energized_jade_boots",
+    "solaris:ruby_helmet",
+    "solaris:ruby_chestplate",
+    "solaris:ruby_leggings",
+    "solaris:ruby_boots",
+    "solaris:onyx_hood",
+    "solaris:onyx_robes",
+    "solaris:onyx_leggings",
+    "solaris:onyx_boots"
   ]
 }

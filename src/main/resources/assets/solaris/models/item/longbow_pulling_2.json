@@ -1,0 +1,6 @@
+{
+  "parent": "solaris:item/longbow",
+  "textures": {
+    "layer0": "solaris:item/longbow/longbow_pulling_2"
+  }
+}

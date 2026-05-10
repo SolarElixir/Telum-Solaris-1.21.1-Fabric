@@ -1,76 +1,28 @@
 {
-	"format_version": "1.9.0",
-	"credit": "Made with Blockbench by SolarElixir!",
-	"texture_size": [32, 32],
-	"textures": {
-		"0": "solaris:item/onyx_scythe/onyx_scythe_blade",
-		"1": "solaris:item/onyx_scythe/onyx_scythe_handle",
-		"2": "solaris:item/onyx_scythe/onyx_scythe_bottom",
-		"particle": "onyx_scythe_blade"
-	},
-	"elements": [
-		{
-			"from": [8, 23, -16],
-			"to": [8, 32, 18],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 4.625]},
-			"faces": {
-				"north": {"uv": [0, 0, 0, 3], "texture": "#0"},
-				"east": {"uv": [0, 0, 12, 3], "texture": "#0"},
-				"south": {"uv": [0, 0, 0, 3], "texture": "#0"},
-				"west": {"uv": [0, 3, 12, 6], "texture": "#0"},
-				"up": {"uv": [12, 0, 0, 0], "rotation": 90, "texture": "#0"},
-				"down": {"uv": [12, 0, 0, 0], "rotation": 270, "texture": "#0"}
-			}
-		},
-		{
-			"from": [7.5, -13, 7.5],
-			"to": [8.5, 26.75, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 4.625]},
-			"faces": {
-				"north": {"uv": [1, 0, 1.25, 9.9375], "texture": "#1"},
-				"east": {"uv": [0, 0, 0.375, 9.9375], "texture": "#1"},
-				"south": {"uv": [1.25, 0, 1.5, 9.9375], "texture": "#1"},
-				"west": {"uv": [0.5, 0, 0.875, 9.9375], "texture": "#1"},
-				"up": {"uv": [1.75, 2.625, 1.5, 2.25], "texture": "#1"},
-				"down": {"uv": [2, 2.25, 1.75, 2.625], "texture": "#1"}
-			}
-		},
-		{
-			"from": [8, -16, 3.5],
-			"to": [8, -7, 13],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 4.625]},
-			"faces": {
-				"north": {"uv": [0, 0, 0, 4.5], "texture": "#2"},
-				"east": {"uv": [0, 0, 4.75, 4.5], "texture": "#2"},
-				"south": {"uv": [0, 0, 0, 4.5], "texture": "#2"},
-				"west": {"uv": [0, 4.5, 4.75, 9], "texture": "#2"},
-				"up": {"uv": [0, 4.75, 0, 0], "texture": "#2"},
-				"down": {"uv": [0, 0, 0, 4.75], "texture": "#2"}
-			}
-		}
-	],
-	"gui_light": "front",
-	"display": {
-		"thirdperson_righthand": {
-			"translation": [0, 1.25, 1]
-		},
-		"thirdperson_lefthand": {
-			"translation": [0, 1.25, 1]
-		},
-		"ground": {
-			"rotation": [-45, 0, 0],
-			"translation": [0, 3, 0],
-			"scale": [0.25, 0.25, 0.25]
-		},
-		"gui": {
-			"rotation": [90, 45, -90],
-			"translation": [-1, -1.75, 0],
-			"scale": [0.35, 0.35, 0.35]
-		},
-		"fixed": {
-			"rotation": [-90, 45, 90],
-			"translation": [1, -1.25, 0],
-			"scale": [0.35, 0.35, 0.35]
-		}
-	}
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "solaris:item/onyx_scythe"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [-45, -90, 0],
+      "translation": [0, 0, 1.5],
+      "scale": [2, 2, 1]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [-45, 90, 0],
+      "translation": [0, 0, 1.5],
+      "scale": [2, 2, 1]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, -90, 45],
+      "translation": [0,4,0],
+      "scale": [1.75, 1.75, 1]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, 90, -45],
+      "translation": [0,4,0],
+      "scale": [1.75, 1.75, 1]
+    }
+  }
 }

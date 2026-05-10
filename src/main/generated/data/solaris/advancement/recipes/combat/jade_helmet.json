@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_perfect_jade": {
+    "has_flawless_jade": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_perfect_jade"
+      "has_flawless_jade"
     ]
   ],
   "rewards": {
