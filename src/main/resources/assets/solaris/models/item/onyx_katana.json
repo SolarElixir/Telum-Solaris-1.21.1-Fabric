@@ -1,80 +1,18 @@
 {
-	"format_version": "1.9.0",
-	"credit": "Made with Blockbench by SolarElixir",
-	"textures": {
-		"0": "solaris:item/onyx_katana/onyx_katana_blade",
-		"1": "solaris:item/onyx_katana/onyx_katana_handle",
-		"particle": "onyx_katana_blade"
-	},
-	"elements": [
-		{
-			"from": [7.25, -10, 7.75],
-			"to": [8.75, 0, 9.25],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, -5, 8.5]},
-			"faces": {
-				"north": {"uv": [0, 0, 1.5, 10], "texture": "#1"},
-				"east": {"uv": [2, 0, 3.5, 10], "texture": "#1"},
-				"south": {"uv": [4, 0, 5.5, 10], "texture": "#1"},
-				"west": {"uv": [6, 0, 7.5, 10], "texture": "#1"},
-				"up": {"uv": [1.5, 11.5, 0, 10], "texture": "#1"},
-				"down": {"uv": [3.5, 10, 2, 11.5], "texture": "#1"}
-			}
-		},
-		{
-			"from": [6.5, 0, 7],
-			"to": [9.5, 1, 10],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8.5]},
-			"faces": {
-				"north": {"uv": [8, 6, 11, 7], "texture": "#1"},
-				"east": {"uv": [8, 7, 11, 8], "texture": "#1"},
-				"south": {"uv": [8, 8, 11, 9], "texture": "#1"},
-				"west": {"uv": [8, 9, 11, 10], "texture": "#1"},
-				"up": {"uv": [11, 3, 8, 0], "texture": "#1"},
-				"down": {"uv": [11, 3, 8, 6], "texture": "#1"}
-			}
-		},
-		{
-			"from": [8, 1, 6],
-			"to": [8, 25, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 16.5, 8]},
-			"faces": {
-				"north": {"uv": [0, 0, 0, 12], "texture": "#0"},
-				"east": {"uv": [0, 0, 2.5, 12], "texture": "#0"},
-				"south": {"uv": [0, 0, 0, 12], "texture": "#0"},
-				"west": {"uv": [2.5, 0, 5, 12], "texture": "#0"},
-				"up": {"uv": [0, 2.5, 0, 0], "texture": "#0"},
-				"down": {"uv": [0, 0, 0, 2.5], "texture": "#0"}
-			}
-		}
-	],
-	"gui_light": "front",
-	"display": {
-		"thirdperson_righthand": {
-			"translation": [0, 8.75, 1],
-			"scale": [0.75, 1, 0.75]
-		},
-		"thirdperson_lefthand": {
-			"translation": [0, 8.75, 1],
-			"scale": [0.75, 1, 0.75]
-		},
-		"firstperson_righthand": {
-			"translation": [0, 9.25, 0]
-		},
-		"firstperson_lefthand": {
-			"translation": [0, 9.25, 0]
-		},
-		"ground": {
-			"rotation": [-45, 0, 0],
-			"translation": [0, 5, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"gui": {
-			"rotation": [-90, -45, -90],
-			"scale": [0.45, 0.7, 0.45]
-		},
-		"fixed": {
-			"rotation": [-90, 45, 90],
-			"scale": [0.5, 0.75, 0.5]
-		}
-	}
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "solaris:item/onyx_katana"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [-45, -90, 0],
+      "translation": [0, 8, 1.5],
+      "scale": [1.25, 1.25, 1.25]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [-45, 90, 0],
+      "translation": [0, 8, 1.5],
+      "scale": [1.25, 1.25, 1.25]
+    }
+  }
 }
