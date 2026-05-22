@@ -13,23 +13,24 @@ public class ModModelPredicates{
         ModelPredicateProviderRegistry.register(ModItems.JADE_CHISEL, Identifier.of(TelumSolaris.MOD_ID, "used"),
                 ((stack, world, entity, seed) ->
                         stack.get(ModDataComponentTypes.COORDINATES) != null ? 0f : 1f));
-        registerCustomLongbow(ModItems.LONGBOW);
-        registerCustomLongbow(ModItems.DUSTWORM_LONGBOW);
+        registerCustomBow(ModItems.LONGBOW);
+        registerCustomBow(ModItems.DUSTWORM_LONGBOW);
+        registerCustomBow(ModItems.WOODLAND_BOW);
     }
 
-    private static void registerCustomLongbow(Item item) {
+    private static void registerCustomBow(Item item) {
         ModelPredicateProviderRegistry.register(item, Identifier.ofVanilla("pull"),
                 (stack, world, entity, seed) -> {
             if (entity == null) {
-                return 0.0F;
+                return 0.0f;
             } else {
-                return entity.getActiveItem() != stack ? 0.0F : (stack.getMaxUseTime(entity) -
-                        entity.getItemUseTimeLeft()) / 20.0F;
+                return entity.getActiveItem() != stack ? 0.0f : (stack.getMaxUseTime(entity) -
+                        entity.getItemUseTimeLeft()) / 20.0f;
             }
         });
         ModelPredicateProviderRegistry.register(item, Identifier.ofVanilla("pulling"),
                 (stack, world, entity, seed) ->
-                        entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F
+                        entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0f : 0.0f
         );
     }
 }

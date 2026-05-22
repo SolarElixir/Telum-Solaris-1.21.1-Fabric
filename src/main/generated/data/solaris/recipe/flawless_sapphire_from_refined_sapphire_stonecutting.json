@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "solaris:refined_sapphire"
+  },
+  "result": {
+    "count": 1,
+    "id": "solaris:flawless_sapphire"
+  }
+}

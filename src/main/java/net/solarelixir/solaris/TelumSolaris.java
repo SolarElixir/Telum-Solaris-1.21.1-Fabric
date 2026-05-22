@@ -1,8 +1,10 @@
 package net.solarelixir.solaris;
 
-import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,15 +14,21 @@ import net.solarelixir.solaris.block.ModBlocks;
 import net.solarelixir.solaris.component.ModDataComponentTypes;
 import net.solarelixir.solaris.component.SoulStoringCodec;
 import net.solarelixir.solaris.effects.ModEffects;
+import net.solarelixir.solaris.entity.ModEntities;
+import net.solarelixir.solaris.entity.custom.TreelingEntity;
 import net.solarelixir.solaris.item.ModItemGroups;
 import net.solarelixir.solaris.item.ModItems;
 import net.solarelixir.solaris.util.ModTags;
+import net.solarelixir.solaris.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Locale;
+
 public class TelumSolaris implements ModInitializer {
     public static final String MOD_ID = "solaris";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Logger LOGGER = LoggerFactory.
+            getLogger(MOD_ID.toUpperCase().substring(0, 1).toUpperCase() + MOD_ID.substring(1));
 
     @Override
     public void onInitialize() {
@@ -29,6 +37,10 @@ public class TelumSolaris implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModDataComponentTypes.registerDataComponentTypes();
         ModEffects.registerEffects();
+        ModEntities.registerModEntities();
+
+        ModWorldGeneration.generateModWorldGen();
+
 
         ServerLivingEntityEvents.AFTER_DEATH.register((livingEntity, damageSource) -> {
             if (damageSource.getAttacker() instanceof PlayerEntity player) {
@@ -57,11 +69,26 @@ public class TelumSolaris implements ModInitializer {
                     } else {
                         livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE, 140, 0));
                     }
-                    //TelumSolaris.LOGGER.info(livingEntity.getName() + " has Scarlett haze at level " +
-                    //        (livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE).getAmplifier()+1));
                 }
             }
             return ActionResult.PASS;
         });
+
+        UseEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+            if (entity instanceof LivingEntity livingEntity && !world.isClient) {
+                if (player.getMainHandStack().getItem() == ModItems.SCARLETT_HAZE) {
+                    if (!livingEntity.hasStatusEffect(ModEffects.SCARLETT_HAZE)) {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE,
+                                140, 5));
+                    } else {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE,
+                                140, livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE).getAmplifier() + 5));
+                    }
+                }
+            }
+            return ActionResult.PASS;
+        });
+
+        FabricDefaultAttributeRegistry.register(ModEntities.TREELING, TreelingEntity.createAttributes());
     }
 }

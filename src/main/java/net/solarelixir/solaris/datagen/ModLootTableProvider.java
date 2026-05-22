@@ -29,21 +29,26 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         System.out.println("Generating Mod Block tag provider");
+
         //Blocks
         addDrop(ModBlocks.JADE_BLOCK);
         addDrop(ModBlocks.ONYX_BLOCK);
         addDrop(ModBlocks.STEEL_BLOCK);
         addDrop(ModBlocks.RUBY_BLOCK);
         addDrop(ModBlocks.TOPAZ_BLOCK);
+        addDrop(ModBlocks.SAPPHIRE_BLOCK);
 
         addDrop(ModBlocks.JADE_ORE, multipleOreDrops(ModBlocks.JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
         addDrop(ModBlocks.DEEPSLATE_JADE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
 
-        addDrop(ModBlocks.ONYX_ORE, multipleOreDrops(ModBlocks.JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
-        addDrop(ModBlocks.DEEPSLATE_ONYX_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
+        addDrop(ModBlocks.ONYX_ORE, multipleOreDrops(ModBlocks.ONYX_ORE, ModItems.IMPURE_ONYX_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_ONYX_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_ONYX_ORE, ModItems.IMPURE_ONYX_CHUNK, 1, 2));
 
-        addDrop(ModBlocks.TOPAZ_ORE, multipleOreDrops(ModBlocks.JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
-        addDrop(ModBlocks.DEEPSLATE_TOPAZ_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
+        addDrop(ModBlocks.TOPAZ_ORE, multipleOreDrops(ModBlocks.TOPAZ_ORE, ModItems.IMPURE_TOPAZ_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_TOPAZ_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_TOPAZ_ORE, ModItems.IMPURE_TOPAZ_CHUNK, 1, 2));
+
+        addDrop(ModBlocks.SAPPHIRE_ORE, multipleOreDrops(ModBlocks.SAPPHIRE_ORE, ModItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, ModItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
 
         addDrop(ModBlocks.NETHER_RUBY_ORE, multipleOreDrops(ModBlocks.NETHER_RUBY_ORE, ModItems.IMPURE_RUBY_CHUNK, 1, 2));
 

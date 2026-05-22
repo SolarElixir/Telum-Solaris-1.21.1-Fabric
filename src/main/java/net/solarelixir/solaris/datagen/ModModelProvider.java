@@ -4,10 +4,14 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.util.Identifier;
 import net.solarelixir.solaris.block.ModBlocks;
 import net.solarelixir.solaris.item.ModItems;
+
+import java.util.Optional;
 
 
 public class ModModelProvider extends FabricModelProvider {
@@ -30,9 +34,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NETHER_RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_BLOCK);
 
-        //Aquamarine
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.AQUAMARINE_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_AQUAMARINE_ORE);
+        //Sapphire
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_BLOCK);
 
         //Topaz
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TOPAZ_ORE);
@@ -82,10 +87,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.RUBY_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.RUBY_BOOTS);
 
-        //Aquamarine
-        itemModelGenerator.register(ModItems.IMPURE_AQUAMARINE_CHUNK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.REFINED_AQUAMARINE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FLAWLESS_AQUAMARINE, Models.GENERATED);
+        //Sapphire
+        itemModelGenerator.register(ModItems.IMPURE_SAPPHIRE_CHUNK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REFINED_SAPPHIRE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLAWLESS_SAPPHIRE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SAPPHIRE_TOKEN, Models.GENERATED);
+
 
         //Topaz
         itemModelGenerator.register(ModItems.IMPURE_TOPAZ_CHUNK, Models.GENERATED);
@@ -120,6 +127,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SPIRITUS_CONDUIT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.SCARLETT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TREELING_SPAWN_EGG,
+                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
     }
 }

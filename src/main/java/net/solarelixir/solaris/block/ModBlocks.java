@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -36,15 +38,18 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(2f, 2.0f)
                     .requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
-    //Aquamarine Blocks
-    public static final Block AQUAMARINE_ORE = registerBlock("aquamarine_ore",
+    //Sapphire Blocks
+    public static final Block SAPPHIRE_ORE = registerBlock("sapphire_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
                     AbstractBlock.Settings.create().strength(4.5f, 3.0f)
                         .requiresTool().sounds(BlockSoundGroup.STONE)));
-    public static final Block DEEPSLATE_AQUAMARINE_ORE = registerBlock("deepslate_aquamarine_ore",
+    public static final Block DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
                     AbstractBlock.Settings.create().strength(4.5f, 3.0f)
                         .requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
+    public static final Block SAPPHIRE_BLOCK = registerBlock("sapphire_block",
+            new Block(AbstractBlock.Settings.create().strength(2f, 2f)
+                    .requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     //Topaz Blocks
     public static final Block TOPAZ_ORE = registerBlock("topaz_ore",
@@ -102,8 +107,8 @@ public static void registerBlockItems(String name, Block block) {
 
             entries.add(NETHER_RUBY_ORE);
 
-            entries.add(AQUAMARINE_ORE);
-            entries.add(DEEPSLATE_AQUAMARINE_ORE);
+            entries.add(SAPPHIRE_ORE);
+            entries.add(DEEPSLATE_SAPPHIRE_ORE);
 
             entries.add(TOPAZ_ORE);
             entries.add(DEEPSLATE_TOPAZ_ORE);

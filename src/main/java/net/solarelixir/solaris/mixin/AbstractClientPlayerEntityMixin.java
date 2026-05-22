@@ -1,7 +1,6 @@
 package net.solarelixir.solaris.mixin;
 
 import com.mojang.authlib.GameProfile;
-import net.solarelixir.solaris.item.ModItems;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.solarelixir.solaris.util.ModModelPredicates;
 import net.solarelixir.solaris.util.ModTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

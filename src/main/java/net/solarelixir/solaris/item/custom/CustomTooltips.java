@@ -1,4 +1,5 @@
 package net.solarelixir.solaris.item.custom;
+
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -6,6 +7,7 @@ import net.minecraft.util.Formatting;
 import net.solarelixir.solaris.component.ModDataComponentTypes;
 import net.solarelixir.solaris.component.SoulStoringCodec;
 import net.solarelixir.solaris.util.ModTags;
+
 import java.util.List;
 
 public class CustomTooltips {

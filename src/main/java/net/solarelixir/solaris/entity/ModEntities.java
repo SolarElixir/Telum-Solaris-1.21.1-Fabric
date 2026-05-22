@@ -1,0 +1,20 @@
+package net.solarelixir.solaris.entity;
+
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
+import net.solarelixir.solaris.TelumSolaris;
+import net.solarelixir.solaris.entity.custom.TreelingEntity;
+
+public class ModEntities {
+    public static final EntityType<TreelingEntity> TREELING = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(TelumSolaris.MOD_ID, "treeling"),
+            EntityType.Builder.create(TreelingEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.5f, 0.75f).build());
+
+    public static void registerModEntities() {
+        TelumSolaris.LOGGER.info("Registering mod entities for " + TelumSolaris.MOD_ID);
+    }
+}

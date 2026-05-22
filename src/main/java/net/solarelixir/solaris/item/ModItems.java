@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.solarelixir.solaris.TelumSolaris;
+import net.solarelixir.solaris.entity.ModEntities;
 import net.solarelixir.solaris.item.custom.*;
 
 import java.util.List;
@@ -27,6 +28,8 @@ public class ModItems {
     private static final int scytheDamage = 7;
 
     public static final Item LONGBOW = registerItem("longbow", new BowItem(new Item.Settings()
+            .maxDamage(500)));
+    public static final Item WOODLAND_BOW = registerItem("woodland_bow", new BowItem(new Item.Settings()
             .maxDamage(500)));
 
     //Jade items
@@ -86,10 +89,25 @@ public class ModItems {
                 tooltip.add(Text.translatable("tooltip.solaris.ruby_armor1"));
                 super.appendTooltip(stack, context, tooltip, type);}});
 
-    //Aquamarine Items
-        public static final Item IMPURE_AQUAMARINE_CHUNK = registerItem("impure_aquamarine_chunk", new Item(new Item.Settings()));
-        public static final Item REFINED_AQUAMARINE = registerItem("refined_aquamarine", new Item(new Item.Settings()));
-        public static final Item FLAWLESS_AQUAMARINE = registerItem("flawless_aquamarine", new Item(new Item.Settings()));
+    //Sapphire Items
+        public static final Item IMPURE_SAPPHIRE_CHUNK = registerItem("impure_sapphire_chunk", new Item(new Item.Settings()));
+        public static final Item REFINED_SAPPHIRE = registerItem("refined_sapphire", new Item(new Item.Settings()));
+        public static final Item FLAWLESS_SAPPHIRE = registerItem("flawless_sapphire", new Item(new Item.Settings()));
+        public static final Item SAPPHIRE_TOKEN = registerItem("sapphire_token", new Item(new Item.Settings()));
+        public static final Item SAPPHIRE_DAGGER = registerItem("sapphire_dagger", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, daggerDamage, fastAttackSpeed))));
+        public static final Item SAPPHIRE_SWORD = registerItem("sapphire_sword", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, swordDamage, mediumAttackSpeed))));
+        public static final Item SAPPHIRE_LONGSWORD = registerItem("sapphire_longsword", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, bigSwordDamage, slowAttackSpeed))));
+        public static final Item SAPPHIRE_KATANA = registerItem("sapphire_katana", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, katanaDamage, mediumAttackSpeed))));
+        public static final Item SAPPHIRE_HALBERD = registerItem("sapphire_halberd", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, halberdDamage, verySlowAttackSpeed))));
+        public static final Item SAPPHIRE_SCYTHE = registerItem("sapphire_scythe", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, scytheDamage, verySlowAttackSpeed))));
+        public static final Item SAPPHIRE_SHIELD = registerItem("sapphire_shield", new ShieldItem(new Item.Settings().maxDamage(2512)));
+
     //Topaz Items
         public static final Item IMPURE_TOPAZ_CHUNK = registerItem("impure_topaz_chunk", new Item(new Item.Settings()));
         public static final Item REFINED_TOPAZ = registerItem("refined_topaz", new Item(new Item.Settings()));
@@ -276,6 +294,13 @@ public class ModItems {
         public static final Item SCARLETT_HAZE = registerItem("scarlett_haze", new ScarlettHazeSword(ModToolMaterials.ONYX, new Item.Settings()
                 .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, swordDamage, mediumAttackSpeed))));
 
+        public static final Item ASTRAL_FORCE = registerItem("astral_force", new SwordItem(ModToolMaterials.RELIC, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RELIC, swordDamage, mediumAttackSpeed))));
+
+        public static final Item TREELING_SPAWN_EGG = registerItem("treeling_spawn_egg",
+                new SpawnEggItem(ModEntities.TREELING, 0x663C1E, 0xE0C172, new Item.Settings()));
+
+
     //register
 private static Item registerItem(String name, Item item) {
     return Registry.register(Registries.ITEM, Identifier.of(TelumSolaris.MOD_ID, name), item);
@@ -299,10 +324,11 @@ private static Item registerItem(String name, Item item) {
 
             //MOISSANITE
 
-            //AQUAMARINE
-            entries.add(IMPURE_AQUAMARINE_CHUNK);
-            entries.add(REFINED_AQUAMARINE);
-            entries.add(FLAWLESS_AQUAMARINE);
+            //SAPPHIRE
+            entries.add(IMPURE_SAPPHIRE_CHUNK);
+            entries.add(REFINED_SAPPHIRE);
+            entries.add(FLAWLESS_SAPPHIRE);
+            entries.add(SAPPHIRE_TOKEN);
 
             //TOPAZ
             entries.add(IMPURE_TOPAZ_CHUNK);
@@ -329,8 +355,8 @@ private static Item registerItem(String name, Item item) {
 
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
-            //JADE
 
+            //JADE
             entries.add(JADE_HELMET);
             entries.add(JADE_CHESTPLATE);
             entries.add(JADE_LEGGINGS);
@@ -368,6 +394,13 @@ private static Item registerItem(String name, Item item) {
             entries.add(TOPAZ_HALBERD);
             entries.add(TOPAZ_SCYTHE);
 
+            //SAPPHIRE
+            entries.add(SAPPHIRE_DAGGER);
+            entries.add(SAPPHIRE_SWORD);
+            entries.add(SAPPHIRE_KATANA);
+            entries.add(SAPPHIRE_LONGSWORD);
+            entries.add(SAPPHIRE_HALBERD);
+            entries.add(SAPPHIRE_SCYTHE);
 
             //ONYX
             entries.add(ONYX_HOOD);
@@ -397,6 +430,8 @@ private static Item registerItem(String name, Item item) {
             entries.add(STEEL_SHIELD);
 
             entries.add(DUSTWORM_LONGBOW);
+            entries.add(WOODLAND_BOW);
+            entries.add(LONGBOW);
 
             entries.add(BLACKWIND_SPEAR);
             entries.add(SILVER_ONI_MASK);
@@ -406,10 +441,16 @@ private static Item registerItem(String name, Item item) {
 
             entries.add(SCARLETT_HAZE);
             entries.add(AMETHYST_HALBERD);
+            entries.add(ASTRAL_FORCE);
+
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
             entries.add(JADE_CHISEL);
 
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
+            entries.add(TREELING_SPAWN_EGG);
         });
 
     }

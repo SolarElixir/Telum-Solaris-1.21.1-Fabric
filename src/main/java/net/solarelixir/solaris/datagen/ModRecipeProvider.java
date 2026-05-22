@@ -25,6 +25,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
+
         //Jade items, blocks and weapons
         List<ItemConvertible> REFINED_JADE_BLASTING = List.of(ModItems.IMPURE_JADE_CHUNK);
         offerBlasting(exporter, REFINED_JADE_BLASTING, RecipeCategory.MISC, ModItems.REFINED_JADE, 0.25f, 200, "jade_refining");
@@ -134,7 +135,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //Topaz items, blocks and weapons
         List<ItemConvertible> REFINED_TOPAZ_BLASTING = List.of(ModItems.IMPURE_TOPAZ_CHUNK);
-        offerBlasting(exporter, REFINED_TOPAZ_BLASTING, RecipeCategory.MISC, ModItems.REFINED_TOPAZ, 0.25f, 200, "topaze_refining");
+        offerBlasting(exporter, REFINED_TOPAZ_BLASTING, RecipeCategory.MISC, ModItems.REFINED_TOPAZ, 0.25f, 200, "topaz_refining");
         offerStonecuttingRecipe(exporter, RecipeCategory.MISC, ModItems.FLAWLESS_TOPAZ, ModItems.REFINED_TOPAZ);
         offerStonecuttingRecipe(exporter, RecipeCategory.MISC, ModItems.TOPAZ_TOKEN, ModItems.FLAWLESS_TOPAZ, 4);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.FLAWLESS_TOPAZ, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TOPAZ_BLOCK);
@@ -290,7 +291,64 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
 
-        //Aquamarine items, blocks and weapons
+        //Sapphire items, blocks and weapons
+        List<ItemConvertible> REFINED_SAPPHIRE_BLASTING = List.of(ModItems.IMPURE_SAPPHIRE_CHUNK);
+        offerBlasting(exporter, REFINED_SAPPHIRE_BLASTING, RecipeCategory.MISC, ModItems.REFINED_SAPPHIRE, 0.25f, 200, "topaz_refining");
+        offerStonecuttingRecipe(exporter, RecipeCategory.MISC, ModItems.FLAWLESS_SAPPHIRE, ModItems.REFINED_SAPPHIRE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.MISC, ModItems.SAPPHIRE_TOKEN, ModItems.FLAWLESS_SAPPHIRE, 4);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.FLAWLESS_SAPPHIRE, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SAPPHIRE_BLOCK);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAPPHIRE_DAGGER)
+                .pattern("-")
+                .pattern("S")
+                .input('-', Items.STICK)
+                .input('S', ModItems.FLAWLESS_SAPPHIRE)
+                .criterion(hasItem(ModItems.FLAWLESS_SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE_DAGGER))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAPPHIRE_SWORD)
+                .pattern("S")
+                .pattern("S")
+                .pattern("-")
+                .input('-', Items.STICK)
+                .input('S', ModItems.FLAWLESS_SAPPHIRE)
+                .criterion(hasItem(ModItems.FLAWLESS_SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE_SWORD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAPPHIRE_KATANA)
+                .pattern("-SS")
+                .input('-', Items.STICK)
+                .input('S', ModItems.FLAWLESS_SAPPHIRE)
+                .criterion(hasItem(ModItems.FLAWLESS_SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE_KATANA))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAPPHIRE_LONGSWORD)
+                .pattern("  S")
+                .pattern(" S ")
+                .pattern("-S ")
+                .input('-', Items.STICK)
+                .input('S', ModItems.FLAWLESS_SAPPHIRE)
+                .criterion(hasItem(ModItems.FLAWLESS_SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE_LONGSWORD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAPPHIRE_HALBERD)
+                .pattern(" SS")
+                .pattern("S- ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('S', ModItems.FLAWLESS_SAPPHIRE)
+                .criterion(hasItem(ModItems.FLAWLESS_SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE_HALBERD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAPPHIRE_SCYTHE)
+                .pattern("SSS")
+                .pattern(" - ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('S', ModItems.FLAWLESS_SAPPHIRE)
+                .criterion(hasItem(ModItems.FLAWLESS_SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE_SCYTHE))
+                .offerTo(exporter);
+
 
         //Onyx items, blocks and weapons
         List<ItemConvertible> REFINED_ONYX_BLASTING = List.of(ModItems.IMPURE_ONYX_CHUNK);

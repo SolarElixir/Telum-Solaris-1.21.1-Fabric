@@ -1,0 +1,6 @@
+{
+  "parent": "solaris:item/woodland_bow",
+  "textures": {
+    "layer0": "solaris:item/woodland_bow/woodland_bow_pulling_3"
+  }
+}

@@ -69,6 +69,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ModTags.Items.IS_BOW_ITEM)
                 .add(ModItems.LONGBOW)
                 .add(ModItems.DUSTWORM_LONGBOW)
+                .add(ModItems.WOODLAND_BOW)
         ;
 
         getOrCreateTagBuilder(ModTags.Items.TWO_HANDED)
@@ -80,6 +81,5 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.JADE_SCYTHE)
                 .add(ModItems.RUBY_SCYTHE)
         ;
-
     }
 }

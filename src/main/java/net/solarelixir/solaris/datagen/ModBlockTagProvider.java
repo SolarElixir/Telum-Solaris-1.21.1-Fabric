@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.solarelixir.solaris.block.ModBlocks;
-import net.solarelixir.solaris.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -35,9 +34,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.NETHER_RUBY_ORE)
                 .add(ModBlocks.RUBY_BLOCK)
 
-                //Aquamarine blocks
-                .add(ModBlocks.AQUAMARINE_ORE)
-                .add(ModBlocks.DEEPSLATE_AQUAMARINE_ORE)
+                //Sapphire blocks
+                .add(ModBlocks.SAPPHIRE_ORE)
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE)
+                .add(ModBlocks.SAPPHIRE_BLOCK)
 
                 //Topaz blocks
                 .add(ModBlocks.TOPAZ_ORE)
@@ -62,10 +62,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 //Ruby blocks
                 .add(ModBlocks.NETHER_RUBY_ORE)
+                .add(ModBlocks.RUBY_BLOCK)
 
-                //Aquamarine blocks
-                .add(ModBlocks.AQUAMARINE_ORE)
-                .add(ModBlocks.DEEPSLATE_AQUAMARINE_ORE)
+                //Sapphire blocks
+                .add(ModBlocks.SAPPHIRE_ORE)
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE)
+                .add(ModBlocks.SAPPHIRE_BLOCK)
 
                 //Topaz blocks
                 .add(ModBlocks.TOPAZ_ORE)
@@ -80,6 +82,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
             .add(ModBlocks.STEEL_BLOCK)
 
+        ;
+
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+                .add(ModBlocks.DEEPSLATE_JADE_ORE)
+                .add(ModBlocks.JADE_ORE)
+                .add(ModBlocks.JADE_BLOCK)
+                .add(ModBlocks.DEEPSLATE_ONYX_ORE)
+                .add(ModBlocks.ONYX_ORE)
+                .add(ModBlocks.ONYX_BLOCK)
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE)
+                .add(ModBlocks.SAPPHIRE_ORE)
+                .add(ModBlocks.SAPPHIRE_BLOCK)
+                .add(ModBlocks.NETHER_RUBY_ORE)
+                .add(ModBlocks.RUBY_BLOCK)
+                .add(ModBlocks.DEEPSLATE_TOPAZ_ORE)
+                .add(ModBlocks.TOPAZ_ORE)
+                .add(ModBlocks.TOPAZ_BLOCK)
         ;
 
     }

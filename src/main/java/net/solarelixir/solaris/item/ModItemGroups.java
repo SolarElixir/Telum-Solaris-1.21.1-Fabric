@@ -18,6 +18,7 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                 .entries((displayContext, entries) -> {
 
                     entries.add(ModItems.LONGBOW);
+                    entries.add(ModItems.WOODLAND_BOW);
 
                     //Important blocks
                     //entries.add(ModBlocks.GEMSTONE_INFUSER);
@@ -70,12 +71,21 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModItems.RUBY_SHIELD);
 
 
-                    //Aquamarine items/blocks
-                    entries.add(ModBlocks.AQUAMARINE_ORE);
-                    entries.add(ModBlocks.DEEPSLATE_AQUAMARINE_ORE);
-                    entries.add(ModItems.IMPURE_AQUAMARINE_CHUNK);
-                    entries.add(ModItems.REFINED_AQUAMARINE);
-                    entries.add(ModItems.FLAWLESS_AQUAMARINE);
+                    //Sapphire items/blocks
+                    entries.add(ModBlocks.SAPPHIRE_ORE);
+                    entries.add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
+                    entries.add(ModBlocks.SAPPHIRE_BLOCK);
+                    entries.add(ModItems.IMPURE_SAPPHIRE_CHUNK);
+                    entries.add(ModItems.REFINED_SAPPHIRE);
+                    entries.add(ModItems.FLAWLESS_SAPPHIRE);
+                    entries.add(ModItems.SAPPHIRE_TOKEN);
+                    entries.add(ModItems.SAPPHIRE_DAGGER);
+                    entries.add(ModItems.SAPPHIRE_SWORD);
+                    entries.add(ModItems.SAPPHIRE_LONGSWORD);
+                    entries.add(ModItems.SAPPHIRE_KATANA);
+                    entries.add(ModItems.SAPPHIRE_HALBERD);
+                    entries.add(ModItems.SAPPHIRE_SCYTHE);
+                    entries.add(ModItems.SAPPHIRE_SHIELD);
 
                     //Topaz items/blocks
                     entries.add(ModBlocks.TOPAZ_ORE);
@@ -150,6 +160,10 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModItems.SCARLETT);
                     entries.add(ModItems.SCARLETT_HAZE);
                     entries.add(ModItems.BROKEN_SPEAR);
+
+                    entries.add(ModItems.ASTRAL_FORCE);
+
+                    entries.add(ModItems.TREELING_SPAWN_EGG);
 
                 })
                 .build());

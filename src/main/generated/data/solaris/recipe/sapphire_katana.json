@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "-": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "solaris:flawless_sapphire"
+    }
+  },
+  "pattern": [
+    "-SS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "solaris:sapphire_katana"
+  }
+}

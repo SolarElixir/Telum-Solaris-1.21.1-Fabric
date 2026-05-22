@@ -56,11 +56,21 @@
   "item.solaris.ruby_scythe": "Ruby Scythe",
   "item.solaris.ruby_shield": "Ruby Shield",
 
-  "block.solaris.aquamarine_ore": "Aquamarine Ore",
-  "block.solaris.deepslate_aquamarine_ore": "Deepslate Aquamarine Ore",
-  "item.solaris.impure_aquamarine_chunk": "Impure Aquamarine Chunk",
-  "item.solaris.refined_aquamarine": "Refined Aquamarine",
-  "item.solaris.flawless_aquamarine": "Flawless Aquamarine",
+  "block.solaris.sapphire_ore": "Sapphire Ore",
+  "block.solaris.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.solaris.sapphire_block": "Sapphire Block",
+  "item.solaris.impure_sapphire_chunk": "Impure Sapphire Chunk",
+  "item.solaris.refined_sapphire": "Refined Sapphire",
+  "item.solaris.flawless_sapphire": "Flawless Sapphire",
+  "item.solaris.sapphire_token": "Sapphire Token",
+  "item.solaris.sapphire_dagger": "Sapphire Dagger",
+  "item.solaris.sapphire_sword": "Sapphire Sword",
+  "item.solaris.sapphire_longsword": "Sapphire Longsword",
+  "item.solaris.sapphire_katana": "Sapphire Katana",
+  "item.solaris.sapphire_halberd": "Sapphire Halberd",
+  "item.solaris.sapphire_scythe": "Sapphire Scythe",
+  "item.solaris.sapphire_shield": "Sapphire Shield",
+
 
   "block.solaris.topaz_ore": "Topaz Ore",
   "block.solaris.deepslate_topaz_ore": "Deepslate Topaz Ore",
@@ -104,6 +114,7 @@
   "tooltip.solaris.onyx_katana6": "",
 
   "item.solaris.dustworm_longbow": "Dustworm Longbow",
+  "item.solaris.woodland_bow": "Woodland Bow",
 
   "item.solaris.reinforced_bottle": "Reinforced Bottle",
   "item.solaris.thunder_bottle": "Thunder in a Bottle",
@@ -150,6 +161,11 @@
 
   "item.solaris.energized_jade_sword": "Energized Jade Sword",
   "item.solaris.broken_spear": "Broken Spear",
+
+  "item.solaris.astral_force": "Astral Force",
+
+  "item.solaris.treeling_spawn_egg": "Treeling Spawn Egg",
+  "entity.solaris.treeling": "Treeling",
 
   "itemgroup.solaris.telum_solaris": "Telum Solaris"
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "solaris:item/katana_display",
+  "textures": {
+    "layer0": "solaris:item/sapphire_katana"
+  }
+}
