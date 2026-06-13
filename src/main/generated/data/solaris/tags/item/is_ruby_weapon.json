@@ -1,0 +1,10 @@
+{
+  "values": [
+    "solaris:ruby_dagger",
+    "solaris:ruby_sword",
+    "solaris:ruby_katana",
+    "solaris:ruby_longsword",
+    "solaris:ruby_halberd",
+    "solaris:ruby_scythe"
+  ]
+}

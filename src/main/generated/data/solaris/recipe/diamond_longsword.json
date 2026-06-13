@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "-": {
+      "item": "minecraft:stick"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "  D",
+    " D ",
+    "-D "
+  ],
+  "result": {
+    "count": 1,
+    "id": "solaris:diamond_longsword"
+  }
+}

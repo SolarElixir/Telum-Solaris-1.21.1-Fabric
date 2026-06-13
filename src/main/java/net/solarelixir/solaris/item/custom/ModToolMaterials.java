@@ -36,8 +36,12 @@ public enum ModToolMaterials implements ToolMaterial {
             3200, 10.0f, 5.0f, 19, () ->
             Ingredient.ofItems(ModItems.SAPPHIRE_TOKEN)),
 
+    OPAL(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+            1280, 10.0f, 8.0f, 14, () ->
+            Ingredient.ofItems(ModItems.OPAL_TOKEN)),
+
     STEEL(ModTags.Blocks.INCORRECT_FOR_STEEL_TOOL,
-            1024, 7.0f, 2.0F, 14, () ->
+            1024, 7.0f, 2.5F, 14, () ->
             Ingredient.ofItems(ModItems.STEEL)),
     
     RELIC(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,

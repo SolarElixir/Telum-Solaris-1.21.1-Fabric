@@ -49,6 +49,11 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_ONYX_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ONYX_BLOCK);
 
+        //Opal
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.OPAL_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_OPAL_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.OPAL_BLOCK);
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STEEL_BLOCK);
 
     }
@@ -73,10 +78,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGIZED_JADE_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGIZED_JADE_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGIZED_JADE_BOOTS);
-
+        itemModelGenerator.register(ModItems.JADE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.JADE_KATANA, Models.HANDHELD);
 
         //Ruby
-
         itemModelGenerator.register(ModItems.IMPURE_RUBY_CHUNK, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFINED_RUBY, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLAWLESS_RUBY, Models.GENERATED);
@@ -86,25 +91,32 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.RUBY_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.RUBY_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.RUBY_BOOTS);
+        itemModelGenerator.register(ModItems.RUBY_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.RUBY_KATANA, Models.HANDHELD);
 
         //Sapphire
         itemModelGenerator.register(ModItems.IMPURE_SAPPHIRE_CHUNK, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFINED_SAPPHIRE, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLAWLESS_SAPPHIRE, Models.GENERATED);
         itemModelGenerator.register(ModItems.SAPPHIRE_TOKEN, Models.GENERATED);
-
+        itemModelGenerator.register(ModItems.SAPPHIRE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SAPPHIRE_KATANA, Models.HANDHELD);
 
         //Topaz
         itemModelGenerator.register(ModItems.IMPURE_TOPAZ_CHUNK, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFINED_TOPAZ, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLAWLESS_TOPAZ, Models.GENERATED);
         itemModelGenerator.register(ModItems.TOPAZ_TOKEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TOPAZ_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TOPAZ_KATANA, Models.HANDHELD);
 
         //Onyx
         itemModelGenerator.register(ModItems.IMPURE_ONYX_CHUNK, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFINED_ONYX, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLAWLESS_ONYX, Models.GENERATED);
         itemModelGenerator.register(ModItems.ONYX_TOKEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ONYX_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ONYX_KATANA, Models.HANDHELD);
 
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ONYX_HOOD);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ONYX_ROBES);
@@ -113,6 +125,14 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.REINFORCED_BOTTLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.THUNDER_BOTTLE, Models.GENERATED);
+
+        //Opal
+        itemModelGenerator.register(ModItems.IMPURE_OPAL_CHUNK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REFINED_OPAL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLAWLESS_OPAL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OPAL_TOKEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OPAL_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.OPAL_KATANA, Models.HANDHELD);
 
         //Steel
         itemModelGenerator.register(ModItems.STEEL, Models.GENERATED);
@@ -123,12 +143,21 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.STEEL_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.STEEL_BOOTS);
 
+        //Iron + Diamond
+        itemModelGenerator.register(ModItems.IRON_KATANA, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DIAMOND_KATANA, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.SPIRITUS_CONDUIT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.SCARLETT, Models.GENERATED);
         itemModelGenerator.register(ModItems.TREELING_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.MUSHLING_SPAWN_EGG,
+                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
+
+        itemModelGenerator.register(ModItems.WOODLAND_BARK, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.JOE_JOE_FRUIT, Models.GENERATED);
 
     }
 }

@@ -19,6 +19,8 @@ public class ModArmorItem extends ArmorItem {
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
                     .put(ModArmorMaterials.JADE_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
                             StatusEffects.RESISTANCE, 10, 1, false, false)))
+                    .put(ModArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
+                            StatusEffects.RESISTANCE, 10, 2, false, false)))
                     .put(ModArmorMaterials.RUBY_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
                             StatusEffects.STRENGTH, 10, 1, false, false)))
                     .build();
@@ -33,7 +35,7 @@ public class ModArmorItem extends ArmorItem {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if(!world.isClient()) {
             if(entity instanceof PlayerEntity player) {
-                if(hasFullSuitOfArmorOn(player) /*&& player.getMainHandStack().isIn(ModTags.Items.IS_JADE_ITEM)*/) {
+                if(hasFullSuitOfArmorOn(player) /*&& player.getMainHandStack().isIn(ModTags.Items.IS_JADE_WEAPON)*/) {
                     evaluateArmorEffects(player);
                 }
             }

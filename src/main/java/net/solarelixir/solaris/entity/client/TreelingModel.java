@@ -51,7 +51,7 @@ public class TreelingModel<T extends TreelingEntity> extends SinglePartEntityMod
         this.setHeadAngles(netHeadYaw, headPitch);
 
         this.animateMovement(TreelingAnimations.walking, limbSwing, limbSwingAmount, 8f, 2.5f);
-        this.updateAnimation(entity.idleAnimationState, TreelingAnimations.idle, ageInTicks, 1.5f);
+        this.updateAnimation(entity.idleAnimationState, TreelingAnimations.idle, ageInTicks, 1f);
 
     }
 

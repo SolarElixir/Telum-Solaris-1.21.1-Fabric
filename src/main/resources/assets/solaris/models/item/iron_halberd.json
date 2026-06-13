@@ -1,0 +1,6 @@
+{
+  "parent": "solaris:item/display_halberd",
+  "textures": {
+    "layer0": "solaris:item/iron_halberd"
+  }
+}

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:flawless_jade_from_refined_jade_stonecutting"
+        "recipe": "solaris:flawless_jade_from_refined_jade_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:flawless_jade_from_refined_jade_stonecutting"
+      "solaris:flawless_jade_from_refined_jade_stonecutting"
     ]
   }
 }

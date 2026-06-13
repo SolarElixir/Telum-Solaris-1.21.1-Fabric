@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:onyx_token_from_flawless_onyx_stonecutting"
+        "recipe": "solaris:onyx_token_from_flawless_onyx_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:onyx_token_from_flawless_onyx_stonecutting"
+      "solaris:onyx_token_from_flawless_onyx_stonecutting"
     ]
   }
 }

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "solaris:opal_dagger",
+    "solaris:opal_sword",
+    "solaris:opal_katana",
+    "solaris:opal_longsword",
+    "solaris:opal_halberd",
+    "solaris:opal_scythe"
+  ]
+}

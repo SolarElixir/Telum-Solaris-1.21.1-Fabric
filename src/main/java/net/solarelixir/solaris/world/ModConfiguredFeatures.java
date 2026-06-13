@@ -22,6 +22,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> TOPAZ_ORE_KEY = registerKey("topaz_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ONYX_ORE_KEY = registerKey("onyx_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> OPAL_ORE_KEY = registerKey("opal_ore");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest netherReplaceables = new TagMatchRuleTest(BlockTags.BASE_STONE_NETHER);
@@ -37,6 +38,8 @@ public class ModConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.DEEPSLATE_ONYX_ORE.getDefaultState()));
         List<OreFeatureConfig.Target> sapphireOre =
                 List.of(OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.getDefaultState()));
+        List<OreFeatureConfig.Target> opalOre =
+                List.of(OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.DEEPSLATE_OPAL_ORE.getDefaultState()));
 
 
         register(context, RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(rubyOre, 3));
@@ -44,6 +47,7 @@ public class ModConfiguredFeatures {
         register(context, TOPAZ_ORE_KEY, Feature.ORE, new OreFeatureConfig(topazOre, 3));
         register(context, ONYX_ORE_KEY, Feature.ORE, new OreFeatureConfig(onyxOre, 3));
         register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(sapphireOre, 3));
+        register(context, OPAL_ORE_KEY, Feature.ORE, new OreFeatureConfig(opalOre, 3));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:refined_sapphire_from_blasting_impure_sapphire_chunk"
+        "recipe": "solaris:refined_sapphire_from_blasting_impure_sapphire_chunk"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:refined_sapphire_from_blasting_impure_sapphire_chunk"
+      "solaris:refined_sapphire_from_blasting_impure_sapphire_chunk"
     ]
   }
 }

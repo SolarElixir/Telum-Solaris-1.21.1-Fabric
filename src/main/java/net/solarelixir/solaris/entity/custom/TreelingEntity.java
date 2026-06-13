@@ -12,10 +12,10 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -23,6 +23,7 @@ import net.minecraft.util.Util;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import net.solarelixir.solaris.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class TreelingEntity extends AnimalEntity {
@@ -60,7 +61,7 @@ public class TreelingEntity extends AnimalEntity {
 
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 60;
+            this.idleAnimationTimeout = 40;
             this.idleAnimationState.start(this.age);
         } else {
             --this.idleAnimationTimeout;
@@ -70,7 +71,6 @@ public class TreelingEntity extends AnimalEntity {
     @Override
     public void tick() {
         super.tick();
-
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
@@ -114,10 +114,24 @@ public class TreelingEntity extends AnimalEntity {
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getMainHandStack();
-        if(itemStack.isIn(ItemTags.AXES) & !this.getWorld().isClient) {
-            if(getTypeVariant() == 0) {
+        if (itemStack.isIn(ItemTags.AXES) & !this.getWorld().isClient) {
+            if (getTypeVariant() == 0) {
                 setVariant(TreelingVariant.byId(1));
+                if (!player.isCreative()) {
+                    itemStack.damage(1, player, getSlotForHand(hand));
+                }
                 this.playSound(SoundEvents.ITEM_AXE_STRIP, 1.0f, 1.0f);
+                this.dropItem(ModItems.WOODLAND_BARK);
+            }
+            return ActionResult.PASS;
+        }
+        if (itemStack.isOf(Items.BONE_MEAL) || itemStack.isOf(ModItems.WOODLAND_BARK) & !this.getWorld().isClient) {
+            if (getTypeVariant() == 1) {
+                setVariant(TreelingVariant.byId(0));
+                if (!player.isCreative()) {
+                    itemStack.decrement(1);
+                }
+                this.playSound(SoundEvents.ITEM_BONE_MEAL_USE);
             }
             return ActionResult.PASS;
         }
@@ -127,7 +141,8 @@ public class TreelingEntity extends AnimalEntity {
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason,
                                  @Nullable EntityData entityData) {
-        setVariant(TreelingVariant.byId(0));
-        return super.initialize(world, difficulty, spawnReason, entityData);
+        EntityData data = super.initialize(world, difficulty, spawnReason, entityData);
+        this.setVariant(TreelingVariant.byId(0));
+        return data;
     }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:flawless_sapphire"
+        "recipe": "solaris:flawless_sapphire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:flawless_sapphire"
+      "solaris:flawless_sapphire"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:refined_topaz_from_blasting_impure_topaz_chunk"
+        "recipe": "solaris:refined_topaz_from_blasting_impure_topaz_chunk"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:refined_topaz_from_blasting_impure_topaz_chunk"
+      "solaris:refined_topaz_from_blasting_impure_topaz_chunk"
     ]
   }
 }

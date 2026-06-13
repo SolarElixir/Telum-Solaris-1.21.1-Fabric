@@ -19,8 +19,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         System.out.println("Generating Mod Block Tag Provider");
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.GEMSTONE_INFUSER)
+        getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
+                .add(ModBlocks.STEEL_BLOCK)
+                .add(ModBlocks.JADE_BLOCK)
+                .add(ModBlocks.ONYX_BLOCK)
+                .add(ModBlocks.TOPAZ_BLOCK)
+                .add(ModBlocks.SAPPHIRE_BLOCK)
+                .add(ModBlocks.RUBY_BLOCK)
+                .add(ModBlocks.OPAL_BLOCK)
         ;
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
@@ -49,12 +55,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DEEPSLATE_ONYX_ORE)
                 .add(ModBlocks.ONYX_BLOCK)
 
+                //Opal blocks
+                .add(ModBlocks.OPAL_ORE)
+                .add(ModBlocks.DEEPSLATE_OPAL_ORE)
+                .add(ModBlocks.OPAL_BLOCK)
+
                 //Steel
                 .add(ModBlocks.STEEL_BLOCK)
 
         ;
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 //jade blocks
                 .add(ModBlocks.JADE_ORE)
                 .add(ModBlocks.DEEPSLATE_JADE_ORE)
@@ -77,29 +88,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ONYX_ORE)
                 .add(ModBlocks.DEEPSLATE_ONYX_ORE)
                 .add(ModBlocks.ONYX_BLOCK)
+
+                //Opal Blocks
+                .add(ModBlocks.OPAL_BLOCK)
+                .add(ModBlocks.OPAL_ORE)
+                .add(ModBlocks.DEEPSLATE_OPAL_ORE)
         ;
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
             .add(ModBlocks.STEEL_BLOCK)
 
         ;
-
-        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
-                .add(ModBlocks.DEEPSLATE_JADE_ORE)
-                .add(ModBlocks.JADE_ORE)
-                .add(ModBlocks.JADE_BLOCK)
-                .add(ModBlocks.DEEPSLATE_ONYX_ORE)
-                .add(ModBlocks.ONYX_ORE)
-                .add(ModBlocks.ONYX_BLOCK)
-                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE)
-                .add(ModBlocks.SAPPHIRE_ORE)
-                .add(ModBlocks.SAPPHIRE_BLOCK)
-                .add(ModBlocks.NETHER_RUBY_ORE)
-                .add(ModBlocks.RUBY_BLOCK)
-                .add(ModBlocks.DEEPSLATE_TOPAZ_ORE)
-                .add(ModBlocks.TOPAZ_ORE)
-                .add(ModBlocks.TOPAZ_BLOCK)
-        ;
-
     }
 }

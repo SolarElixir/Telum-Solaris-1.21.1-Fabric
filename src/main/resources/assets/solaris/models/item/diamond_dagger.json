@@ -1,0 +1,6 @@
+{
+  "parent": "solaris:item/display_dagger",
+  "textures": {
+    "layer0": "solaris:item/diamond_dagger"
+  }
+}

@@ -1,0 +1,19 @@
+// 1.21.1	2026-06-13T13:04:18.9756561	Telum Solaris/Tags for minecraft:item
+5fcf3a4071dd69d92abcdf00ba3a3f4ff1134b96 data\minecraft\tags\item\foot_armor.json
+99641cf75be1853eb37d3d5e79096e21dcde2e93 data\solaris\tags\item\is_opal_weapon.json
+4f3f5402f5e6230a78c0ab313f1b0de66e03aea9 data\minecraft\tags\item\chest_armor.json
+23a2ad3e3cb27d6a3dab53bb49f5c09015b2adc8 data\solaris\tags\item\two_handed.json
+f7172d3357282fe2d68dd7d255c1d1c018d870e0 data\minecraft\tags\item\enchantable\durability.json
+501e8183c963e43b9f9744544712cde9bf2ed2da data\solaris\tags\item\is_jade_weapon.json
+4c0fe06a169218f7ee655086c0e6313782519839 data\solaris\tags\item\is_iron_weapon.json
+da693d25084d9230707df1b983885eeace105548 data\minecraft\tags\item\head_armor.json
+daec1c61a069f634eafda6e14cc5ce68ff34c3d8 data\minecraft\tags\item\leg_armor.json
+cde1d8ef72ce1a976cf20ef7c6b7cacc5511b2db data\solaris\tags\item\is_ruby_weapon.json
+95b205971492e147871b7aed2c2e5cf10a2c2e6f data\solaris\tags\item\is_steel_weapon.json
+6ced7e307a239c0d6848fc7c526855681e59927d data\solaris\tags\item\is_diamond_weapon.json
+6a5d79c33e83b857006e5ce9e047545692389635 data\minecraft\tags\item\swords.json
+4511c7f095a3afd71fcbb97c23bd2ca22b107441 data\solaris\tags\item\is_bow_item.json
+0b10bbfeaed7b4a63a01c87c2d9827882d6810e2 data\solaris\tags\item\is_topaz_weapon.json
+78d29a879778cd643de2978d116c54e0cd4d13e5 data\solaris\tags\item\is_onyx_weapon.json
+453235b4f7986cff4c32a5711a52e0ecfd7b2f72 data\solaris\tags\item\is_sapphire_weapon.json
+5cfeb8d28b0abb4648c8e971dbb06474dbebf1e0 data\solaris\tags\item\is_shield.json

@@ -86,6 +86,20 @@
   "item.solaris.topaz_halberd": "Topaz Halberd",
   "item.solaris.topaz_scythe": "Topaz Scythe",
 
+  "block.solaris.opal_ore": "Opal Ore",
+  "block.solaris.deepslate_opal_ore": "Deepslate Opal Ore",
+  "block.solaris.opal_block": "Opal Block",
+  "item.solaris.impure_opal_chunk": "Impure Opal Chunk",
+  "item.solaris.refined_opal": "Refined Opal",
+  "item.solaris.flawless_opal": "Flawless Opal",
+  "item.solaris.opal_token": "Opal Token",
+  "item.solaris.opal_dagger": "Opal Dagger",
+  "item.solaris.opal_sword": "Opal Sword",
+  "item.solaris.opal_katana": "Opal Katana",
+  "item.solaris.opal_longsword": "Opal Longsword",
+  "item.solaris.opal_halberd": "Opal Halberd",
+  "item.solaris.opal_scythe": "Opal Scythe",
+
   "block.solaris.onyx_ore": "Onyx Ore",
   "block.solaris.deepslate_onyx_ore": "Deepslate Onyx Ore",
   "block.solaris.onyx_block": "Onyx Block",
@@ -121,20 +135,11 @@
   "item.solaris.storm_dagger": "Storm Dagger",
 
   "item.solaris.spiritus_conduit": "Spiritus Conduit",
-  "item.solaris.blackwind": "§8§lBlack§fwind",
+  "item.solaris.blackwind": "\uE203§8§lBlack§fwind",
   "tooltip.solaris.blackwind0": "",
   "tooltip.solaris.blackwind1": "§lWindborne:",
   "tooltip.solaris.blackwind2": "§7Grants jump boost",
   "tooltip.solaris.blackwind3": "",
-  "tooltip.solaris.blackwind4": "§2§lDark Domain:",
-  "tooltip.solaris.blackwind5": "§n§8Weapons Alter Skill:",
-  "tooltip.solaris.blackwind6": "",
-  "tooltip.solaris.blackwind7": "§7While active, when attacking while mid-air",
-  "tooltip.solaris.blackwind8": "§7allows you to slam into the ground,",
-  "tooltip.solaris.blackwind9": "§7hurting enemies in a range of 4 blocks",
-  "tooltip.solaris.blackwind10": "§7from the centre of your attack",
-  "tooltip.solaris.blackwind11": "§8Active ability: Shift+Right click",
-  "tooltip.solaris.blackwind12": "",
 
   "item.solaris.silver_oni_mask": "Silver Oni Mask",
   "tooltip.solaris.silver_oni_mask": "",
@@ -145,18 +150,31 @@
   "item.solaris.steel_boots": "Steel Boots",
   "item.solaris.steel": "Steel",
   "block.solaris.steel_block": "Steel Block",
-  "item.solaris.steel_sword": "Steel Sword",
   "item.solaris.steel_dagger": "Steel Dagger",
+  "item.solaris.steel_sword": "Steel Sword",
   "item.solaris.steel_katana": "Steel Katana",
   "item.solaris.steel_longsword": "Steel Longsword",
   "item.solaris.steel_halberd": "Steel Halberd",
   "item.solaris.steel_scythe": "Steel Scythe",
   "item.solaris.steel_shield": "Steel Shield",
 
+  "item.solaris.iron_dagger": "Iron Dagger",
+  "item.solaris.iron_katana": "Iron Katana",
+  "item.solaris.iron_longsword": "Iron Longsword",
+  "item.solaris.iron_halberd": "Iron Halberd",
+  "item.solaris.iron_scythe": "Iron Scythe",
+
+  "item.solaris.diamond_dagger": "Diamond Dagger",
+  "item.solaris.diamond_katana": "Diamond Katana",
+  "item.solaris.diamond_longsword": "Diamond Longsword",
+  "item.solaris.diamond_halberd": "Diamond Halberd",
+  "item.solaris.diamond_scythe": "Diamond Scythe",
+
+
   "item.solaris.amethyst_halberd": "Amethyst Halberd",
 
   "item.solaris.scarlett": "Scarlett",
-  "item.solaris.scarlett_haze": "\uE100 Scarlett Haze",
+  "item.solaris.scarlett_haze": "Scarlett Haze",
   "effect.solaris.scarlett_haze": "Scarlett Haze",
 
   "item.solaris.energized_jade_sword": "Energized Jade Sword",
@@ -166,6 +184,23 @@
 
   "item.solaris.treeling_spawn_egg": "Treeling Spawn Egg",
   "entity.solaris.treeling": "Treeling",
+  "item.solaris.woodland_bark": "Woodland Bark",
+
+  "item.solaris.mushling_spawn_egg": "Mushling Spawn Egg",
+  "entity.solaris.mushling": "Mushling",
+
+  "tag.item.solaris.is_steel_weapon": "Is steel weapon",
+  "tag.item.solaris.is_jade_weapon": "Is jade weapon",
+  "tag.item.solaris.is_onyx_weapon": "Is onyx weapon",
+  "tag.item.solaris.is_ruby_weapon": "Is ruby weapon",
+  "tag.item.solaris.is_sapphire_weapon": "Is sapphire weapon",
+  "tag.item.solaris.is_opal_weapon": "Is opal weapon",
+  "tag.item.solaris.is_topaz_weapon": "Is topaz weapon",
+  "tag.item.solaris.is_iron_weapon": "Is iron weapon",
+  "tag.item.solaris.is_diamond_weapon": "Is diamond weapon",
+  "tag.item.solaris.is_shield": "Is shield",
+  "tag.item.solaris.is_bow_item": "Is bow item",
+  "tag.item.solaris.two_handed": "two handed",
 
   "itemgroup.solaris.telum_solaris": "Telum Solaris"
 }

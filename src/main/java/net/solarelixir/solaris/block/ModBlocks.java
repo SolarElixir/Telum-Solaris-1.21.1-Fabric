@@ -78,9 +78,19 @@ public class ModBlocks {
                     .requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     //Opal Blocks
-    public static final Block GEMSTONE_INFUSER = registerBlock("gemstone_infuser",
-            new Block(AbstractBlock.Settings.create().strength(1.0f, 1.0f)
-                    .requiresTool().sounds(BlockSoundGroup.WOOD)));
+    public static final Block DEEPSLATE_OPAL_ORE = registerBlock("deepslate_opal_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
+                    AbstractBlock.Settings.create().strength(4.5F, 3.0F)
+                            .requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
+    public static final Block OPAL_ORE = registerBlock("opal_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
+                    AbstractBlock.Settings.create().strength(3F, 3.0F)
+                            .requiresTool().sounds(BlockSoundGroup.STONE)));
+    public static final Block OPAL_BLOCK = registerBlock("opal_block",
+            new Block(AbstractBlock.Settings.create().strength(2F, 2.0F)
+                    .requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+
+
     //Steel Blocks
     public static final  Block STEEL_BLOCK = registerBlock("steel_block",
             new Block(AbstractBlock.Settings.create().strength(2, 2).requiresTool().sounds(BlockSoundGroup.METAL)));
@@ -116,8 +126,9 @@ public static void registerBlockItems(String name, Block block) {
             entries.add(ONYX_ORE);
             entries.add(DEEPSLATE_ONYX_ORE);
 
-
-            entries.add(GEMSTONE_INFUSER);
+            entries.add(OPAL_ORE);
+            entries.add(DEEPSLATE_OPAL_ORE);
+            entries.add(OPAL_BLOCK);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
@@ -126,6 +137,8 @@ public static void registerBlockItems(String name, Block block) {
             entries.add(RUBY_BLOCK);
             entries.add(TOPAZ_BLOCK);
             entries.add(ONYX_BLOCK);
+            entries.add(SAPPHIRE_BLOCK);
+            entries.add(OPAL_BLOCK);
         });
     }
 }

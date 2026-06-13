@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "opal_refining",
+  "ingredient": {
+    "item": "solaris:impure_opal_chunk"
+  },
+  "result": {
+    "id": "solaris:refined_opal"
+  }
+}

@@ -19,12 +19,97 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
-        System.out.println("Starting Mod Recipe Provider");
-
     }
 
     @Override
     public void generate(RecipeExporter exporter) {
+
+        //Iron
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_DAGGER)
+                .pattern("-")
+                .pattern("I")
+                .input('-', Items.STICK)
+                .input('I', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(ModItems.IRON_DAGGER))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_KATANA)
+                .pattern("-II")
+                .input('-', Items.STICK)
+                .input('I', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(ModItems.IRON_KATANA))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_LONGSWORD)
+                .pattern("  I")
+                .pattern(" I ")
+                .pattern("-I ")
+                .input('-', Items.STICK)
+                .input('I', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(ModItems.IRON_LONGSWORD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_HALBERD)
+                .pattern(" II")
+                .pattern("I- ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('I', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(ModItems.IRON_HALBERD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_SCYTHE)
+                .pattern("III")
+                .pattern(" - ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('I', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(ModItems.IRON_SCYTHE))
+                .offerTo(exporter);
+
+        //Diamond
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_DAGGER)
+                .pattern("-")
+                .pattern("D")
+                .input('-', Items.STICK)
+                .input('D', Items.DIAMOND)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(ModItems.DIAMOND_DAGGER))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_KATANA)
+                .pattern("-DD")
+                .input('-', Items.STICK)
+                .input('D', Items.DIAMOND)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(ModItems.DIAMOND_KATANA))
+                .offerTo(exporter);
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_LONGSWORD)
+                .pattern("  D")
+                .pattern(" D ")
+                .pattern("-D ")
+                .input('-', Items.STICK)
+                .input('D', Items.DIAMOND)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(ModItems.DIAMOND_LONGSWORD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_HALBERD)
+                .pattern(" DD")
+                .pattern("D- ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('D', Items.DIAMOND)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(ModItems.DIAMOND_HALBERD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_SCYTHE)
+                .pattern("DDD")
+                .pattern(" - ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('D', Items.DIAMOND)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(ModItems.DIAMOND_SCYTHE))
+                .offerTo(exporter);
 
         //Jade items, blocks and weapons
         List<ItemConvertible> REFINED_JADE_BLASTING = List.of(ModItems.IMPURE_JADE_CHUNK);
@@ -189,6 +274,64 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('-', Items.STICK)
                 .input('T', ModItems.FLAWLESS_TOPAZ)
                 .criterion(hasItem(ModItems.FLAWLESS_TOPAZ), conditionsFromItem(ModItems.TOPAZ_SCYTHE))
+                .offerTo(exporter);
+
+        //Opal items, blocks and weapons
+        List<ItemConvertible> REFINED_OPAL_BLASTING = List.of(ModItems.IMPURE_OPAL_CHUNK);
+        offerBlasting(exporter, REFINED_OPAL_BLASTING, RecipeCategory.MISC, ModItems.REFINED_OPAL, 0.25f, 200, "opal_refining");
+        offerStonecuttingRecipe(exporter, RecipeCategory.MISC, ModItems.FLAWLESS_OPAL, ModItems.REFINED_OPAL);
+        offerStonecuttingRecipe(exporter, RecipeCategory.MISC, ModItems.OPAL_TOKEN, ModItems.FLAWLESS_OPAL, 4);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.FLAWLESS_OPAL, RecipeCategory.BUILDING_BLOCKS, ModBlocks.OPAL_BLOCK);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.OPAL_DAGGER)
+                .pattern("-")
+                .pattern("O")
+                .input('-', Items.STICK)
+                .input('O', ModItems.FLAWLESS_OPAL)
+                .criterion(hasItem(ModItems.FLAWLESS_OPAL), conditionsFromItem(ModItems.OPAL_DAGGER))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.OPAL_SWORD)
+                .pattern("O")
+                .pattern("O")
+                .pattern("-")
+                .input('-', Items.STICK)
+                .input('O', ModItems.FLAWLESS_OPAL)
+                .criterion(hasItem(ModItems.FLAWLESS_OPAL), conditionsFromItem(ModItems.OPAL_SWORD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.OPAL_KATANA)
+                .pattern("-OO")
+                .input('-', Items.STICK)
+                .input('O', ModItems.FLAWLESS_OPAL)
+                .criterion(hasItem(ModItems.FLAWLESS_OPAL),conditionsFromItem(ModItems.OPAL_KATANA))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.OPAL_LONGSWORD)
+                .pattern("  O")
+                .pattern(" O ")
+                .pattern("-O ")
+                .input('-', Items.STICK)
+                .input('O', ModItems.FLAWLESS_OPAL)
+                .criterion(hasItem(ModItems.FLAWLESS_OPAL), conditionsFromItem(ModItems.OPAL_LONGSWORD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.OPAL_HALBERD)
+                .pattern(" OO")
+                .pattern("O- ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('O', ModItems.FLAWLESS_OPAL)
+                .criterion(hasItem(ModItems.FLAWLESS_OPAL), conditionsFromItem(ModItems.OPAL_HALBERD))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.OPAL_SCYTHE)
+                .pattern("OOO")
+                .pattern(" - ")
+                .pattern("-  ")
+                .input('-', Items.STICK)
+                .input('O', ModItems.FLAWLESS_OPAL)
+                .criterion(hasItem(ModItems.FLAWLESS_OPAL), conditionsFromItem(ModItems.OPAL_SCYTHE))
                 .offerTo(exporter);
 
 
@@ -534,6 +677,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("S S")
                 .input('S', ModItems.STEEL)
                 .criterion(hasItem(ModItems.STEEL), conditionsFromItem(ModItems.STEEL_BOOTS))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.WOODLAND_BOW)
+                .pattern(" BS")
+                .pattern("W S")
+                .pattern(" RS")
+                .input('S', Items.STRING)
+                .input('W', ModItems.WOODLAND_BARK)
+                .input('R', Items.RED_MUSHROOM)
+                .input('B', Items.BROWN_MUSHROOM)
+                .criterion(hasItem(ModItems.WOODLAND_BARK), conditionsFromItem(ModItems.WOODLAND_BOW))
                 .offerTo(exporter);
     }
 }

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "solaris:ruby_shield",
+    "solaris:steel_shield",
+    "solaris:jade_shield",
+    "solaris:energized_jade_shield",
+    "solaris:sapphire_shield",
+    "minecraft:shield"
+  ]
+}

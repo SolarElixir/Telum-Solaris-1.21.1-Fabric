@@ -1,18 +1,21 @@
 {
   "values": [
-    "solaris:deepslate_jade_ore",
     "solaris:jade_ore",
+    "solaris:deepslate_jade_ore",
     "solaris:jade_block",
-    "solaris:deepslate_onyx_ore",
-    "solaris:onyx_ore",
-    "solaris:onyx_block",
-    "solaris:deepslate_sapphire_ore",
-    "solaris:sapphire_ore",
-    "solaris:sapphire_block",
     "solaris:nether_ruby_ore",
     "solaris:ruby_block",
-    "solaris:deepslate_topaz_ore",
+    "solaris:sapphire_ore",
+    "solaris:deepslate_sapphire_ore",
+    "solaris:sapphire_block",
     "solaris:topaz_ore",
-    "solaris:topaz_block"
+    "solaris:deepslate_topaz_ore",
+    "solaris:topaz_block",
+    "solaris:onyx_ore",
+    "solaris:deepslate_onyx_ore",
+    "solaris:onyx_block",
+    "solaris:opal_block",
+    "solaris:opal_ore",
+    "solaris:deepslate_opal_ore"
   ]
 }

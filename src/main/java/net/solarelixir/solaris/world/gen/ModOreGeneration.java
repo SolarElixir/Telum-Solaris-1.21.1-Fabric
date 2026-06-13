@@ -18,10 +18,13 @@ public class ModOreGeneration {
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN), GenerationStep.Feature.UNDERGROUND_ORES,
                 ModPlacedFeatures.TOPAZ_ORE_PLACED_KEY);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK), GenerationStep.Feature.UNDERGROUND_ORES,
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DARK_FOREST), GenerationStep.Feature.UNDERGROUND_ORES,
                 ModPlacedFeatures.ONYX_ORE_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OCEAN), GenerationStep.Feature.UNDERGROUND_ORES,
                 ModPlacedFeatures.SAPPHIRE_ORE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+                ModPlacedFeatures.OPAL_ORE_PLACED_KEY);
     }
 }

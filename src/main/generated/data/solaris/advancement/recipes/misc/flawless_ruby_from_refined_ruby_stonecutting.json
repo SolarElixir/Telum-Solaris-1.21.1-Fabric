@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:flawless_ruby_from_refined_ruby_stonecutting"
+        "recipe": "solaris:flawless_ruby_from_refined_ruby_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:flawless_ruby_from_refined_ruby_stonecutting"
+      "solaris:flawless_ruby_from_refined_ruby_stonecutting"
     ]
   }
 }

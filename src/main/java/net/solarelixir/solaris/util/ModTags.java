@@ -24,8 +24,16 @@ public class ModTags {
     }
     public static class Items{
 
-        public static final TagKey<Item> KILL_COUNTING_ITEMS = createTag("kill_counting_items");
-        public static final TagKey<Item> IS_JADE_ITEM = createTag("is_jade_item");
+        public static final TagKey<Item> IS_STEEL_WEAPON = createTag("is_steel_weapon");
+        public static final TagKey<Item> IS_JADE_WEAPON = createTag("is_jade_weapon");
+        public static final TagKey<Item> IS_ONYX_WEAPON = createTag("is_onyx_weapon");
+        public static final TagKey<Item> IS_RUBY_WEAPON = createTag("is_ruby_weapon");
+        public static final TagKey<Item> IS_SAPPHIRE_WEAPON = createTag("is_sapphire_weapon");
+        public static final TagKey<Item> IS_OPAL_WEAPON = createTag("is_opal_weapon");
+        public static final TagKey<Item> IS_TOPAZ_WEAPON = createTag("is_topaz_weapon");
+        public static final TagKey<Item> IS_IRON_WEAPON = createTag("is_iron_weapon");
+        public static final TagKey<Item> IS_DIAMOND_WEAPON = createTag("is_diamond_weapon");
+        public static final TagKey<Item> IS_SHIELD = createTag("is_shield");
         public static final TagKey<Item> IS_BOW_ITEM = createTag("is_bow_item");
         public static final TagKey<Item> TWO_HANDED = createTag("two_handed");
 

@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "minecraft:font/basic.png",
+      "height": 8,
+      "ascent": 8,
+      "chars": ["\uE200\uE201\uE202\uE203\uE204\uE205\uE206\uE207\uE208"]
+    }
+  ]
+}

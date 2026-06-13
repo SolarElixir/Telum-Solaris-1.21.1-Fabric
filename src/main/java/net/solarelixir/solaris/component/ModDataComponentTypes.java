@@ -10,11 +10,7 @@ import net.solarelixir.solaris.TelumSolaris;
 import java.util.function.UnaryOperator;
 
 public class ModDataComponentTypes {
-
-    public static final ComponentType<SoulStoringCodec> SOUL_INVENTORY_INFO =
-            register("soul_inventory_info", builder ->
-                    builder.codec(SoulStoringCodec.SOUL_STORING_CODEC));
-
+    
     public static final ComponentType<BlockPos> COORDINATES = register("coordinates",
             builder -> builder.codec(BlockPos.CODEC));
 

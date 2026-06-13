@@ -37,6 +37,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.RUBY_BLOCK);
         addDrop(ModBlocks.TOPAZ_BLOCK);
         addDrop(ModBlocks.SAPPHIRE_BLOCK);
+        addDrop(ModBlocks.OPAL_BLOCK);
 
         addDrop(ModBlocks.JADE_ORE, multipleOreDrops(ModBlocks.JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
         addDrop(ModBlocks.DEEPSLATE_JADE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
@@ -49,6 +50,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.SAPPHIRE_ORE, multipleOreDrops(ModBlocks.SAPPHIRE_ORE, ModItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
         addDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, ModItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
+
+        addDrop(ModBlocks.OPAL_ORE, multipleOreDrops(ModBlocks.OPAL_ORE, ModItems.IMPURE_OPAL_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_OPAL_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_OPAL_ORE, ModItems.IMPURE_OPAL_CHUNK, 1, 2));
 
         addDrop(ModBlocks.NETHER_RUBY_ORE, multipleOreDrops(ModBlocks.NETHER_RUBY_ORE, ModItems.IMPURE_RUBY_CHUNK, 1, 2));
 

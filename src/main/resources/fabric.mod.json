@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "solaris",
-	"version": "1.1.1a",
+	"version": "1.0.0pre-3",
 	"name": "Telum Solaris",
 	"description": "My first ever mod aiming to improve weaponry in Minecraft",
 	"authors": [
@@ -30,7 +30,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21",
+		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

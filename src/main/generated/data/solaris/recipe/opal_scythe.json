@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "-": {
+      "item": "minecraft:stick"
+    },
+    "O": {
+      "item": "solaris:flawless_opal"
+    }
+  },
+  "pattern": [
+    "OOO",
+    " - ",
+    "-  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "solaris:opal_scythe"
+  }
+}

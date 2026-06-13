@@ -1,0 +1,17 @@
+{
+  "values": [
+    "#solaris:is_jade_weapon",
+    "#solaris:is_onyx_weapon",
+    "#solaris:is_ruby_weapon",
+    "#solaris:is_sapphire_weapon",
+    "#solaris:is_opal_weapon",
+    "#solaris:is_topaz_weapon",
+    "#solaris:is_steel_weapon",
+    "#solaris:is_iron_weapon",
+    "#solaris:is_diamond_weapon",
+    "solaris:scarlett_haze",
+    "solaris:astral_force",
+    "solaris:blackwind",
+    "solaris:amethyst_halberd"
+  ]
+}

@@ -1,29 +1,23 @@
 package net.solarelixir.solaris;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.solarelixir.solaris.block.ModBlocks;
 import net.solarelixir.solaris.component.ModDataComponentTypes;
-import net.solarelixir.solaris.component.SoulStoringCodec;
 import net.solarelixir.solaris.effects.ModEffects;
 import net.solarelixir.solaris.entity.ModEntities;
+import net.solarelixir.solaris.entity.custom.MushlingEntity;
 import net.solarelixir.solaris.entity.custom.TreelingEntity;
 import net.solarelixir.solaris.item.ModItemGroups;
 import net.solarelixir.solaris.item.ModItems;
-import net.solarelixir.solaris.util.ModTags;
 import net.solarelixir.solaris.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Locale;
 
 public class TelumSolaris implements ModInitializer {
     public static final String MOD_ID = "solaris";
@@ -42,53 +36,28 @@ public class TelumSolaris implements ModInitializer {
         ModWorldGeneration.generateModWorldGen();
 
 
-        ServerLivingEntityEvents.AFTER_DEATH.register((livingEntity, damageSource) -> {
-            if (damageSource.getAttacker() instanceof PlayerEntity player) {
-                ItemStack stack = player.getMainHandStack();
-                if (stack.isIn(ModTags.Items.KILL_COUNTING_ITEMS)) {
-                    SoulStoringCodec data = stack.get(ModDataComponentTypes.SOUL_INVENTORY_INFO);
-                    SoulStoringCodec updated = (data == null)
-                            ? new SoulStoringCodec(true, 1, 10000)
-                            : data.addKill();
-
-                    stack.set(ModDataComponentTypes.SOUL_INVENTORY_INFO, updated);
-                }
-            }
-        });
-
         AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
             if (entity instanceof LivingEntity livingEntity && !world.isClient) {
                 if (player.getMainHandStack().getItem() == ModItems.SCARLETT_HAZE) {
-                    if (livingEntity.hasStatusEffect(ModEffects.SCARLETT_HAZE)) {
-                        if (livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE).getAmplifier() < 9) {
+                    if (!(livingEntity.isBlocking()) && !livingEntity.isInCreativeMode()) {
+                        StatusEffectInstance effectInstance = livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE);
+                        if (!livingEntity.hasStatusEffect(ModEffects.SCARLETT_HAZE)){
+                            livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE, 140, 0));
+                        } else if (effectInstance.getAmplifier() < 9) {
                             livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE,
-                                    140, livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE).getAmplifier() + 1));
+                                    effectInstance.getDuration() + 70,
+                                    effectInstance.getAmplifier() + 1));
                         } else {
                             livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE, 140, 9));
                         }
-                    } else {
-                        livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE, 140, 0));
-                    }
-                }
-            }
-            return ActionResult.PASS;
-        });
-
-        UseEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
-            if (entity instanceof LivingEntity livingEntity && !world.isClient) {
-                if (player.getMainHandStack().getItem() == ModItems.SCARLETT_HAZE) {
-                    if (!livingEntity.hasStatusEffect(ModEffects.SCARLETT_HAZE)) {
-                        livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE,
-                                140, 5));
-                    } else {
-                        livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE,
-                                140, livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE).getAmplifier() + 5));
-                    }
-                }
-            }
+                        StatusEffectInstance updated = livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE);
+                        /*TelumSolaris.LOGGER.info("Scarlett haze level: " + (updated.getAmplifier()+1) + " for "
+                                + (updated.getDuration()/20) + " seconds");*/
+                    }}} //<-- To annoy Joe
             return ActionResult.PASS;
         });
 
         FabricDefaultAttributeRegistry.register(ModEntities.TREELING, TreelingEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.MUSHLING, MushlingEntity.createAttributes());
     }
 }

@@ -14,6 +14,9 @@
     "solaris:onyx_ore",
     "solaris:deepslate_onyx_ore",
     "solaris:onyx_block",
+    "solaris:opal_ore",
+    "solaris:deepslate_opal_ore",
+    "solaris:opal_block",
     "solaris:steel_block"
   ]
 }

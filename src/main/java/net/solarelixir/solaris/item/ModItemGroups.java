@@ -18,9 +18,9 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                 .entries((displayContext, entries) -> {
 
                     entries.add(ModItems.LONGBOW);
+                    entries.add(ModItems.WOODLAND_BARK);
                     entries.add(ModItems.WOODLAND_BOW);
 
-                    //Important blocks
                     //entries.add(ModBlocks.GEMSTONE_INFUSER);
 
                     //Jade items and blocks
@@ -121,6 +121,21 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModItems.ONYX_HALBERD);
                     entries.add(ModItems.ONYX_SCYTHE);
 
+                    //Opal
+                    entries.add(ModBlocks.OPAL_ORE);
+                    entries.add(ModBlocks.DEEPSLATE_OPAL_ORE);
+                    entries.add(ModBlocks.OPAL_BLOCK);
+                    entries.add(ModItems.IMPURE_OPAL_CHUNK);
+                    entries.add(ModItems.REFINED_OPAL);
+                    entries.add(ModItems.FLAWLESS_OPAL);
+                    entries.add(ModItems.OPAL_TOKEN);
+                    entries.add(ModItems.OPAL_DAGGER);
+                    entries.add(ModItems.OPAL_SWORD);
+                    entries.add(ModItems.OPAL_KATANA);
+                    entries.add(ModItems.OPAL_LONGSWORD);
+                    entries.add(ModItems.OPAL_HALBERD);
+                    entries.add(ModItems.OPAL_SCYTHE);
+
 
                     //Boss weapons
                     entries.add(ModItems.DUSTWORM_LONGBOW);
@@ -164,6 +179,7 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModItems.ASTRAL_FORCE);
 
                     entries.add(ModItems.TREELING_SPAWN_EGG);
+                    entries.add(ModItems.MUSHLING_SPAWN_EGG);
 
                 })
                 .build());

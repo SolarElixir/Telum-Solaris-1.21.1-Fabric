@@ -20,29 +20,35 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> TOPAZ_ORE_PLACED_KEY = registerKey("topaz_ore_placed");
     public static final RegistryKey<PlacedFeature> ONYX_ORE_PLACED_KEY = registerKey("onyx_ore_placed");
     public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY = registerKey("sapphire_ore_placed");
+    public static final RegistryKey<PlacedFeature> OPAL_ORE_PLACED_KEY = registerKey("opal_ore_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(8,
+                ModOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
 
         register(context, JADE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.JADE_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(16,
+                ModOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
         register(context, TOPAZ_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TOPAZ_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(16,
+                ModOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
         register(context, ONYX_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ONYX_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(16,
+                ModOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
         register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SAPPHIRE_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(16,
+                ModOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
+
+       register(context, OPAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OPAL_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(12,
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
+
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

@@ -2,6 +2,7 @@ package net.solarelixir.solaris.item.custom;
 
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -39,11 +40,11 @@ public class ModArmorMaterials extends CustomTooltips {
 
  public static final RegistryEntry<ArmorMaterial> ENERGIZED_JADE_ARMOR_MATERIAL = registerArmorMaterial("energized_jade",
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 6);
-                map.put(ArmorItem.Type.LEGGINGS, 8);
-                map.put(ArmorItem.Type.CHESTPLATE, 10);
-                map.put(ArmorItem.Type.HELMET, 7);
-                map.put(ArmorItem.Type.BODY, 12);
+                map.put(ArmorItem.Type.BOOTS, 8);
+                map.put(ArmorItem.Type.LEGGINGS, 10);
+                map.put(ArmorItem.Type.CHESTPLATE, 12);
+                map.put(ArmorItem.Type.HELMET, 9);
+                map.put(ArmorItem.Type.BODY, 14);
             }), 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, () -> Ingredient.ofItems(ModItems.JADE_TOKEN),
                     List.of(new ArmorMaterial.Layer(Identifier.of(TelumSolaris.MOD_ID, "energized_jade"))), 4,1.25f));
 
@@ -76,6 +77,15 @@ public class ModArmorMaterials extends CustomTooltips {
                 map.put(ArmorItem.Type.BODY, 10);
             }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, () -> Ingredient.ofItems(ModItems.TOPAZ_TOKEN),
                     List.of(new ArmorMaterial.Layer(Identifier.of(TelumSolaris.MOD_ID, "topaz"))), 4, 1f));
+
+    public static final RegistryEntry<ArmorMaterial> MUSH_ARMOR_MATERIAL = registerArmorMaterial("mush",
+            () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.HELMET, 2);
+            }), 12, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, () -> Ingredient.ofItems(Items.BROWN_MUSHROOM, Items.BROWN_MUSHROOM),
+                    List.of(new ArmorMaterial.Layer(Identifier.of(TelumSolaris.MOD_ID, "mush"))), 0, 0f));
+
+
+
 
     public ModArmorMaterials(String itemName) {
         super(itemName);

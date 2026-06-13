@@ -21,6 +21,7 @@ public enum TreelingVariant {
     }
 
     public static TreelingVariant byId(int id) {
-        return BY_ID[id % BY_ID.length];
+        if (id < 0 || id >= BY_ID.length) return DEFAULT;
+        return BY_ID[id];
     }
 }

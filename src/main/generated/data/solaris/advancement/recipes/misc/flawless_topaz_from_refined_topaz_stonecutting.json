@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:flawless_topaz_from_refined_topaz_stonecutting"
+        "recipe": "solaris:flawless_topaz_from_refined_topaz_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:flawless_topaz_from_refined_topaz_stonecutting"
+      "solaris:flawless_topaz_from_refined_topaz_stonecutting"
     ]
   }
 }

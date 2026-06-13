@@ -29,8 +29,11 @@ public class TreelingRenderer extends MobEntityRenderer<TreelingEntity, Treeling
 
     @Override
     public Identifier getTexture(TreelingEntity entity) {
-        return LOCATION_BY_VARIANT.get(entity.getVariant());
+        TreelingVariant variant = entity.getVariant();
+        return LOCATION_BY_VARIANT.getOrDefault(variant,
+                LOCATION_BY_VARIANT.get(TreelingVariant.DEFAULT));
     }
+
 
     @Override
     public void render(TreelingEntity livingEntity, float f, float g, MatrixStack matrixStack,

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:brown_mushroom"
+    },
+    "R": {
+      "item": "minecraft:red_mushroom"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "W": {
+      "item": "solaris:woodland_bark"
+    }
+  },
+  "pattern": [
+    " BS",
+    "W S",
+    " RS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "solaris:woodland_bow"
+  }
+}

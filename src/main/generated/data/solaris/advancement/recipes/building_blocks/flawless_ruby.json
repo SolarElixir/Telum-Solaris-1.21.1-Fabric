@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:flawless_ruby"
+        "recipe": "solaris:flawless_ruby"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:flawless_ruby"
+      "solaris:flawless_ruby"
     ]
   }
 }

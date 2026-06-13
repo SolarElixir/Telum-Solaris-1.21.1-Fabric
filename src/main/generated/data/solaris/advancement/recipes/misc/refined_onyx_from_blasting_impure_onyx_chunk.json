@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:refined_onyx_from_blasting_impure_onyx_chunk"
+        "recipe": "solaris:refined_onyx_from_blasting_impure_onyx_chunk"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:refined_onyx_from_blasting_impure_onyx_chunk"
+      "solaris:refined_onyx_from_blasting_impure_onyx_chunk"
     ]
   }
 }
