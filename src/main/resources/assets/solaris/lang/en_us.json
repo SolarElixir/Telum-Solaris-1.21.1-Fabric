@@ -189,6 +189,9 @@
   "item.solaris.mushling_spawn_egg": "Mushling Spawn Egg",
   "entity.solaris.mushling": "Mushling",
 
+  "item.solaris.monstrositree_spawn_egg": "Monstrositree Spawn Egg",
+  "entity.solaris.monstrositree": "Monstrositree",
+
   "tag.item.solaris.is_steel_weapon": "Is steel weapon",
   "tag.item.solaris.is_jade_weapon": "Is jade weapon",
   "tag.item.solaris.is_onyx_weapon": "Is onyx weapon",
@@ -201,6 +204,7 @@
   "tag.item.solaris.is_shield": "Is shield",
   "tag.item.solaris.is_bow_item": "Is bow item",
   "tag.item.solaris.two_handed": "two handed",
+  "tag.item.solaris.has_icon": "Has icon",
 
   "itemgroup.solaris.telum_solaris": "Telum Solaris"
 }

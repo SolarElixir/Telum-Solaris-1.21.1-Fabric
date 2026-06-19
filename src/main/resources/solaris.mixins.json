@@ -1,14 +1,16 @@
 {
-	"required": true,
-	"package": "net.solarelixir.solaris.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-  "client": [
-    "AbstractClientPlayerEntityMixin"
+  "required": true,
+  "package": "net.solarelixir.solaris.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ExampleMixin"
   ],
-	"injectors": {
-		"defaultRequire": 1
+  "client": [
+    "AbstractClientPlayerEntityMixin",
+    "ItemRendererMixin",
+    "ModelLoaderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
