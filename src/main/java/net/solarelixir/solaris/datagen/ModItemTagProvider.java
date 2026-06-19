@@ -181,5 +181,27 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.RUBY_SCYTHE)
         ;
 
+        getOrCreateTagBuilder(ModTags.Items.HAS_ICON)
+                .add(ModItems.JADE_HALBERD)
+                .add(ModItems.ONYX_HALBERD)
+                .add(ModItems.RUBY_HALBERD)
+                .add(ModItems.SAPPHIRE_HALBERD)
+                .add(ModItems.TOPAZ_HALBERD)
+                .add(ModItems.OPAL_HALBERD)
+                .add(ModItems.STEEL_HALBERD)
+                .add(ModItems.DIAMOND_HALBERD)
+                .add(ModItems.IRON_HALBERD)
+
+                .add(ModItems.JADE_GREATSWORD)
+                .add(ModItems.ONYX_GREATSWORD)
+                .add(ModItems.RUBY_LONGSWORD)
+                .add(ModItems.SAPPHIRE_LONGSWORD)
+                .add(ModItems.TOPAZ_GREATSWORD)
+                .add(ModItems.OPAL_LONGSWORD)
+                .add(ModItems.STEEL_LONGSWORD)
+                .add(ModItems.DIAMOND_LONGSWORD)
+                .add(ModItems.IRON_LONGSWORD)
+        ;
+
     }
 }
