@@ -1,6 +1,6 @@
 <img width="1280" height="640" alt="telum_solaris_banner_upscaled" src="https://github.com/user-attachments/assets/6e6814ec-2e89-41cc-9570-0c3f717006b7" />
 
-# Welcome to the Telum Solaris Github!
+# Welcome to the official Telum Solaris GitHub!
 
 Telum Solaris is a minecraft 1.21.1 mod aiming to add new weapons, armor and enemies in ways common to MMORPGs.  
 This is my first ever mod, and I'm likely to continue working on it.  
