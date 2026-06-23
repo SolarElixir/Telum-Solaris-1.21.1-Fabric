@@ -144,15 +144,8 @@ public static final ItemGroup TELUM_SOLARIS = Registry.register(Registries.ITEM_
                     entries.add(ModItems.REINFORCED_BOTTLE);
                     entries.add(ModItems.THUNDER_BOTTLE);
 
-                    //Storm weapons
-                    entries.add(ModItems.STORM_DAGGER);
-
-                    //Spiritus items
-                    entries.add(ModItems.SPIRITUS_CONDUIT);
-
                     //Hybrid weapons
                     entries.add(ModItems.BLACKWIND_SPEAR);
-                    entries.add(ModItems.SILVER_ONI_MASK);
 
                     //Steel items
                     entries.add(ModItems.STEEL_HELMET);

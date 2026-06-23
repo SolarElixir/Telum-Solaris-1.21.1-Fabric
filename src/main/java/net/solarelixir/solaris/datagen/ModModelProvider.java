@@ -147,12 +147,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.IRON_KATANA, Models.HANDHELD);
         itemModelGenerator.register(ModItems.DIAMOND_KATANA, Models.HANDHELD);
 
-        itemModelGenerator.register(ModItems.SPIRITUS_CONDUIT, Models.GENERATED);
-
         itemModelGenerator.register(ModItems.SCARLETT, Models.GENERATED);
         itemModelGenerator.register(ModItems.TREELING_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
         itemModelGenerator.register(ModItems.MUSHLING_SPAWN_EGG,
+                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.MONSTROSITREE_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
         itemModelGenerator.register(ModItems.WOODLAND_BARK, Models.GENERATED);

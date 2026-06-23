@@ -61,10 +61,15 @@ These tokens are the repair material for your new-found tools!
 - __Blackwind spear doesn't have a recipe__  
   Thought it was a fun item, so I kept it in
 - __Dagger item models need a slight retexture.__  
+- __No Netherite/wooden/stone variants of items.__
+  Would you want wood/stone items?
 
 # In the future...
 I'm unlikely to update to newer versions, due to most mods, in the genre I'm aiming for, being locked to 1.21.1.  
 I might in the future make a NeoForge port, but I want to be better at coding before I do that.  
+
+I'm also going to pause working on this project for a little due to both life being life and other mod ideas!
+I will return to this project tho!
 
 This is my first mod, so my coding will be a little lacklustre.  
 If you have any ideas or coding tips, they would be greatly appreciated, as I would like to keep learning!  

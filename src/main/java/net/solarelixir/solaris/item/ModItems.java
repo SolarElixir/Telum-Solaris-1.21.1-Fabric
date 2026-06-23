@@ -5,11 +5,13 @@ import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.solarelixir.solaris.TelumSolaris;
 import net.solarelixir.solaris.entity.ModEntities;
 import net.solarelixir.solaris.item.custom.*;
+import net.solarelixir.solaris.util.ModTags;
 
 import java.util.List;
 
@@ -303,10 +305,7 @@ public class ModItems {
         public static final Item DUSTWORM_LONGBOW = registerItem("dustworm_longbow", new BowItem(new Item.Settings().maxDamage(500)));
         public static final Item REINFORCED_BOTTLE = registerItem("reinforced_bottle", new Item(new Item.Settings().maxCount(64)));
         public static final Item THUNDER_BOTTLE = registerItem("thunder_bottle", new Item(new Item.Settings().maxCount(16)));
-        public static final Item STORM_DAGGER = registerItem("storm_dagger", new TridentItem(new Item.Settings().maxDamage(500).maxCount(1)));
-        public static final Item SPIRITUS_CONDUIT = registerItem("spiritus_conduit", new Item(new Item.Settings()));
         public static final Item BLACKWIND_SPEAR = registerItem("blackwind", new Blackwind(new Item.Settings().maxCount(1).maxDamage(1024)));
-        public static final Item SILVER_ONI_MASK = registerItem("silver_oni_mask", new Item(new Item.Settings()));
 
     //Steel
         public static final Item STEEL = registerItem("steel", new Item(new Item.Settings()));
@@ -352,6 +351,9 @@ public class ModItems {
         public static final Item MUSHLING_SPAWN_EGG = registerItem("mushling_spawn_egg",
                 new SpawnEggItem(ModEntities.MUSHLING, 0xB82B12, 0xE8CBA9, new Item.Settings()));
 
+        public static final Item MONSTROSITREE_SPAWN_EGG = registerItem("monstrositree_spawn_egg",
+                new SpawnEggItem(ModEntities.MONSTROSITREE, 0x784318, 0x5CC736, new Item.Settings()));
+
         /*public static final Item MUSH_HELM = registerItem("mush_helm", new ArmorItem(ModArmorMaterials.MUSH_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                 new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(3))));*/
 
@@ -359,57 +361,57 @@ public class ModItems {
 
 
     //register
-private static Item registerItem(String name, Item item) {
-    return Registry.register(Registries.ITEM, Identifier.of(TelumSolaris.MOD_ID, name), item);
-}
+    private static Item registerItem(String name, Item item) {
+        return Registry.register(Registries.ITEM, Identifier.of(TelumSolaris.MOD_ID, name), item);
+    }
+
 
     public static void registerModItems () {
     TelumSolaris.LOGGER.info("Registering Mod Items for " + TelumSolaris.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
 
+            //STEEL
+            entries.addAfter(Items.IRON_INGOT, STEEL);
+
             //JADE
-            entries.add(IMPURE_JADE_CHUNK);
-            entries.add(REFINED_JADE);
-            entries.add(FLAWLESS_JADE);
-            entries.add(JADE_TOKEN);
-
-            //RUBY
-            entries.add(IMPURE_RUBY_CHUNK);
-            entries.add(REFINED_RUBY);
-            entries.add(FLAWLESS_RUBY);
-            entries.add(RUBY_TOKEN);
-
-            //SAPPHIRE
-            entries.add(IMPURE_SAPPHIRE_CHUNK);
-            entries.add(REFINED_SAPPHIRE);
-            entries.add(FLAWLESS_SAPPHIRE);
-            entries.add(SAPPHIRE_TOKEN);
-
-            //TOPAZ
-            entries.add(IMPURE_TOPAZ_CHUNK);
-            entries.add(REFINED_TOPAZ);
-            entries.add(FLAWLESS_TOPAZ);
+            entries.addAfter(Items.NETHERITE_INGOT, IMPURE_JADE_CHUNK);
+            entries.addAfter(IMPURE_JADE_CHUNK, REFINED_JADE);
+            entries.addAfter(REFINED_JADE, FLAWLESS_JADE);
+            entries.addAfter(FLAWLESS_JADE, JADE_TOKEN);
 
             //ONYX
-            entries.add(IMPURE_ONYX_CHUNK);
-            entries.add(REFINED_ONYX);
-            entries.add(FLAWLESS_ONYX);
-            entries.add(ONYX_TOKEN);
+            entries.addAfter(JADE_TOKEN, IMPURE_ONYX_CHUNK);
+            entries.addAfter(IMPURE_ONYX_CHUNK, REFINED_ONYX);
+            entries.addAfter(REFINED_ONYX, FLAWLESS_ONYX);
+            entries.addAfter(FLAWLESS_ONYX, ONYX_TOKEN);
 
             //OPAL
-            entries.add(IMPURE_OPAL_CHUNK);
-            entries.add(REFINED_OPAL);
-            entries.add(FLAWLESS_OPAL);
-            entries.add(OPAL_TOKEN);
+            entries.addAfter(ONYX_TOKEN, IMPURE_OPAL_CHUNK);
+            entries.addAfter(IMPURE_OPAL_CHUNK, REFINED_OPAL);
+            entries.addAfter(REFINED_OPAL, FLAWLESS_OPAL);
+            entries.addAfter(FLAWLESS_OPAL, OPAL_TOKEN);
+
+            //SAPPHIRE
+            entries.addAfter(OPAL_TOKEN, IMPURE_SAPPHIRE_CHUNK);
+            entries.addAfter(IMPURE_SAPPHIRE_CHUNK, REFINED_SAPPHIRE);
+            entries.addAfter(REFINED_SAPPHIRE, FLAWLESS_SAPPHIRE);
+            entries.addAfter(FLAWLESS_SAPPHIRE, SAPPHIRE_TOKEN);
+
+            //TOPAZ
+            entries.addAfter(SAPPHIRE_TOKEN, IMPURE_TOPAZ_CHUNK);
+            entries.addAfter(IMPURE_TOPAZ_CHUNK, REFINED_TOPAZ);
+            entries.addAfter(REFINED_TOPAZ, FLAWLESS_TOPAZ);
+            entries.addAfter(FLAWLESS_TOPAZ, TOPAZ_TOKEN);
+
+            //RUBY
+            entries.addAfter(TOPAZ_TOKEN, IMPURE_RUBY_CHUNK);
+            entries.addAfter(IMPURE_RUBY_CHUNK, REFINED_RUBY);
+            entries.addAfter(REFINED_RUBY, FLAWLESS_RUBY);
+            entries.addAfter(FLAWLESS_RUBY, RUBY_TOKEN);
 
             entries.add(REINFORCED_BOTTLE);
             entries.add(THUNDER_BOTTLE);
-
-            entries.add(SPIRITUS_CONDUIT);
-
-            //STEEL
-            entries.add(STEEL);
 
             entries.add(SCARLETT);
             entries.add(WOODLAND_BARK);
@@ -418,109 +420,111 @@ private static Item registerItem(String name, Item item) {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
 
             //IRON
-            entries.add(IRON_DAGGER);
-            entries.add(IRON_KATANA);
-            entries.add(IRON_LONGSWORD);
-            entries.add(IRON_HALBERD);
-            entries.add(IRON_SCYTHE);
-
-            //DIAMOND
-            entries.add(DIAMOND_DAGGER);
-            entries.add(DIAMOND_KATANA);
-            entries.add(DIAMOND_LONGSWORD);
-            entries.add(DIAMOND_HALBERD);
-            entries.add(DIAMOND_SCYTHE);
-
-            //JADE
-            entries.add(JADE_HELMET);
-            entries.add(JADE_CHESTPLATE);
-            entries.add(JADE_LEGGINGS);
-            entries.add(JADE_BOOTS);
-
-            entries.add(ENERGIZED_JADE_HELMET);
-            entries.add(ENERGIZED_JADE_CHESTPLATE);
-            entries.add(ENERGIZED_JADE_LEGGINGS);
-            entries.add(ENERGIZED_JADE_BOOTS);
-
-            entries.add(JADE_DAGGER);
-            entries.add(JADE_SWORD);
-            entries.add(JADE_KATANA);
-            entries.add(JADE_GREATSWORD);
-            entries.add(JADE_HALBERD);
-            entries.add(JADE_SCYTHE);
-            entries.add(JADE_SHIELD);
-
-            entries.add(ENERGIZED_JADE_SWORD);
-
-            //RUBY
-            entries.add(RUBY_DAGGER);
-            entries.add(RUBY_SWORD);
-            entries.add(RUBY_KATANA);
-            entries.add(RUBY_LONGSWORD);
-            entries.add(RUBY_HALBERD);
-            entries.add(RUBY_SCYTHE);
-            entries.add(RUBY_SHIELD);
-
-            //TOPAZ
-            entries.add(TOPAZ_DAGGER);
-            entries.add(TOPAZ_SWORD);
-            entries.add(TOPAZ_KATANA);
-            entries.add(TOPAZ_GREATSWORD);
-            entries.add(TOPAZ_HALBERD);
-            entries.add(TOPAZ_SCYTHE);
-
-            //SAPPHIRE
-            entries.add(SAPPHIRE_DAGGER);
-            entries.add(SAPPHIRE_SWORD);
-            entries.add(SAPPHIRE_KATANA);
-            entries.add(SAPPHIRE_LONGSWORD);
-            entries.add(SAPPHIRE_HALBERD);
-            entries.add(SAPPHIRE_SCYTHE);
-
-            //ONYX
-            entries.add(ONYX_HOOD);
-            entries.add(ONYX_ROBES);
-            entries.add(ONYX_LEGGINGS);
-            entries.add(ONYX_BOOTS);
-
-            entries.add(ONYX_DAGGER);
-            entries.add(ONYX_SWORD);
-            entries.add(ONYX_KATANA);
-            entries.add(ONYX_GREATSWORD);
-            entries.add(ONYX_HALBERD);
-            entries.add(ONYX_SCYTHE);
-
-            //OPAL
-            entries.add(OPAL_DAGGER);
-            entries.add(OPAL_SWORD);
-            entries.add(OPAL_KATANA);
-            entries.add(OPAL_LONGSWORD);
-            entries.add(OPAL_HALBERD);
-            entries.add(OPAL_SCYTHE);
+            entries.addAfter(Items.STONE_SWORD, IRON_DAGGER);
+            entries.addAfter(Items.IRON_SWORD, IRON_KATANA);
+            entries.addAfter(IRON_KATANA, IRON_LONGSWORD);
+            entries.addAfter(IRON_LONGSWORD, IRON_HALBERD);
+            entries.addAfter(IRON_HALBERD, IRON_SCYTHE);
 
             //STEEL
-            entries.add(STEEL_HELMET);
-            entries.add(STEEL_CHESTPLATE);
-            entries.add(STEEL_LEGGINGS);
-            entries.add(STEEL_BOOTS);
+            entries.addAfter(Items.IRON_BOOTS, STEEL_HELMET);
+            entries.addAfter(STEEL_HELMET, STEEL_CHESTPLATE);
+            entries.addAfter(STEEL_CHESTPLATE, STEEL_LEGGINGS);
+            entries.addAfter(STEEL_LEGGINGS, STEEL_BOOTS);
 
-            entries.add(STEEL_DAGGER);
-            entries.add(STEEL_SWORD);
-            entries.add(STEEL_KATANA);
-            entries.add(STEEL_LONGSWORD);
-            entries.add(STEEL_HALBERD);
-            entries.add(STEEL_SCYTHE);
-            entries.add(STEEL_SHIELD);
+            entries.addAfter(IRON_SCYTHE, STEEL_DAGGER);
+            entries.addAfter(STEEL_DAGGER, STEEL_SWORD);
+            entries.addAfter(STEEL_SWORD, STEEL_KATANA);
+            entries.addAfter(STEEL_KATANA, STEEL_LONGSWORD);
+            entries.addAfter(STEEL_LONGSWORD, STEEL_HALBERD);
+            entries.addAfter(STEEL_HALBERD, STEEL_SCYTHE);
+            entries.addAfter(Items.SHIELD, STEEL_SHIELD);
+
+            //DIAMOND
+            entries.addAfter(Items.GOLDEN_SWORD, DIAMOND_DAGGER);
+            entries.addAfter(Items.DIAMOND_SWORD, DIAMOND_KATANA);
+            entries.addAfter(DIAMOND_KATANA, DIAMOND_LONGSWORD);
+            entries.addAfter(DIAMOND_LONGSWORD, DIAMOND_HALBERD);
+            entries.addAfter(DIAMOND_HALBERD, DIAMOND_SCYTHE);
+
+            //JADE
+            entries.addAfter(Items.NETHERITE_BOOTS, JADE_HELMET);
+            entries.addAfter(JADE_HELMET, JADE_CHESTPLATE);
+            entries.addAfter(JADE_CHESTPLATE, JADE_LEGGINGS);
+            entries.addAfter(JADE_LEGGINGS, JADE_BOOTS);
+
+            entries.addAfter(JADE_BOOTS, ENERGIZED_JADE_HELMET);
+            entries.addAfter(ENERGIZED_JADE_HELMET, ENERGIZED_JADE_CHESTPLATE);
+            entries.addAfter(ENERGIZED_JADE_CHESTPLATE, ENERGIZED_JADE_LEGGINGS);
+            entries.addAfter(ENERGIZED_JADE_LEGGINGS, ENERGIZED_JADE_BOOTS);
+
+            entries.addAfter(Items.NETHERITE_SWORD, JADE_DAGGER);
+            entries.addAfter(JADE_DAGGER, JADE_SWORD);
+            entries.addAfter(JADE_SWORD, JADE_KATANA);
+            entries.addAfter(JADE_KATANA, JADE_GREATSWORD);
+            entries.addAfter(JADE_GREATSWORD, JADE_HALBERD);
+            entries.addAfter(JADE_HALBERD, JADE_SCYTHE);
+            entries.addAfter(STEEL_SHIELD, JADE_SHIELD);
+
+            entries.addAfter(JADE_SCYTHE, ENERGIZED_JADE_SWORD);
+
+            //ONYX
+            entries.addAfter(ENERGIZED_JADE_BOOTS, ONYX_HOOD);
+            entries.addAfter(ONYX_HOOD, ONYX_ROBES);
+            entries.addAfter(ONYX_ROBES, ONYX_LEGGINGS);
+            entries.addAfter(ONYX_LEGGINGS, ONYX_BOOTS);
+
+            entries.addAfter(ENERGIZED_JADE_SWORD, ONYX_DAGGER);
+            entries.addAfter(ONYX_DAGGER, ONYX_SWORD);
+            entries.addAfter(ONYX_SWORD, ONYX_KATANA);
+            entries.addAfter(ONYX_KATANA, ONYX_GREATSWORD);
+            entries.addAfter(ONYX_GREATSWORD, ONYX_HALBERD);
+            entries.addAfter(ONYX_HALBERD, ONYX_SCYTHE);
+
+            //OPAL
+            entries.addAfter(ONYX_SCYTHE, OPAL_DAGGER);
+            entries.addAfter(OPAL_DAGGER, OPAL_SWORD);
+            entries.addAfter(OPAL_SWORD, OPAL_KATANA);
+            entries.addAfter(OPAL_KATANA, OPAL_LONGSWORD);
+            entries.addAfter(OPAL_LONGSWORD, OPAL_HALBERD);
+            entries.addAfter(OPAL_HALBERD, OPAL_SCYTHE);
+
+            //SAPPHIRE
+            entries.addAfter(OPAL_SCYTHE, SAPPHIRE_DAGGER);
+            entries.addAfter(SAPPHIRE_DAGGER, SAPPHIRE_SWORD);
+            entries.addAfter(SAPPHIRE_SWORD, SAPPHIRE_KATANA);
+            entries.addAfter(SAPPHIRE_KATANA, SAPPHIRE_LONGSWORD);
+            entries.addAfter(SAPPHIRE_LONGSWORD, SAPPHIRE_HALBERD);
+            entries.addAfter(SAPPHIRE_HALBERD, SAPPHIRE_SCYTHE);
+            entries.addAfter(JADE_SHIELD, SAPPHIRE_SHIELD);
+
+            //TOPAZ
+            entries.addAfter(SAPPHIRE_SCYTHE, TOPAZ_DAGGER);
+            entries.addAfter(TOPAZ_DAGGER, TOPAZ_SWORD);
+            entries.addAfter(TOPAZ_SWORD, TOPAZ_KATANA);
+            entries.addAfter(TOPAZ_KATANA, TOPAZ_GREATSWORD);
+            entries.addAfter(TOPAZ_GREATSWORD, TOPAZ_HALBERD);
+            entries.addAfter(TOPAZ_HALBERD, TOPAZ_SCYTHE);
+
+            //RUBY
+            entries.addAfter(TOPAZ_SCYTHE, RUBY_DAGGER);
+            entries.addAfter(RUBY_DAGGER, RUBY_SWORD);
+            entries.addAfter(RUBY_SWORD, RUBY_KATANA);
+            entries.addAfter(RUBY_KATANA, RUBY_LONGSWORD);
+            entries.addAfter(RUBY_LONGSWORD, RUBY_HALBERD);
+            entries.addAfter(RUBY_HALBERD, RUBY_SCYTHE);
+            entries.addAfter(SAPPHIRE_SHIELD, RUBY_SHIELD);
+
+            entries.addAfter(ONYX_BOOTS, RUBY_HELMET);
+            entries.addAfter(RUBY_HELMET, RUBY_CHESTPLATE);
+            entries.addAfter(RUBY_CHESTPLATE, RUBY_LEGGINGS);
+            entries.addAfter(RUBY_LEGGINGS, RUBY_BOOTS);
 
             entries.add(DUSTWORM_LONGBOW);
-            entries.add(WOODLAND_BOW);
-            entries.add(LONGBOW);
+            entries.addAfter(Items.BOW, LONGBOW);
+            entries.addAfter(LONGBOW, WOODLAND_BOW);
 
             entries.add(BLACKWIND_SPEAR);
-            entries.add(SILVER_ONI_MASK);
-
-            entries.add(STORM_DAGGER);
-
 
             entries.add(SCARLETT_HAZE);
             entries.add(AMETHYST_HALBERD);
@@ -535,6 +539,7 @@ private static Item registerItem(String name, Item item) {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
             entries.add(TREELING_SPAWN_EGG);
             entries.add(MUSHLING_SPAWN_EGG);
+            entries.add(MONSTROSITREE_SPAWN_EGG);
         });
     }
 }

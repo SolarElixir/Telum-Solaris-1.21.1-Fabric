@@ -132,7 +132,6 @@
 
   "item.solaris.reinforced_bottle": "Reinforced Bottle",
   "item.solaris.thunder_bottle": "Thunder in a Bottle",
-  "item.solaris.storm_dagger": "Storm Dagger",
 
   "item.solaris.spiritus_conduit": "Spiritus Conduit",
   "item.solaris.blackwind": "\uE203§8§lBlack§fwind",
@@ -140,9 +139,6 @@
   "tooltip.solaris.blackwind1": "§lWindborne:",
   "tooltip.solaris.blackwind2": "§7Grants jump boost",
   "tooltip.solaris.blackwind3": "",
-
-  "item.solaris.silver_oni_mask": "Silver Oni Mask",
-  "tooltip.solaris.silver_oni_mask": "",
 
   "item.solaris.steel_helmet": "Steel Helmet",
   "item.solaris.steel_chestplate": "Steel Chestplate",

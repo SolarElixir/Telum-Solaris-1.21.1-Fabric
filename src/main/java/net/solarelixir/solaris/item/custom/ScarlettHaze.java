@@ -9,17 +9,8 @@ import net.minecraft.world.World;
 
 
 public class ScarlettHaze extends SwordItem {
-
-
     public ScarlettHaze(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
-    }
-
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (!world.isClient && entity instanceof PlayerEntity player){
-        }
-        super.inventoryTick(stack, world, entity, slot, selected);
     }
 }
 

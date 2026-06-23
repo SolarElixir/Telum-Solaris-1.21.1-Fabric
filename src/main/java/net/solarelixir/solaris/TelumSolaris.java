@@ -2,7 +2,6 @@ package net.solarelixir.solaris;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
-import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -11,6 +10,7 @@ import net.solarelixir.solaris.block.ModBlocks;
 import net.solarelixir.solaris.component.ModDataComponentTypes;
 import net.solarelixir.solaris.effects.ModEffects;
 import net.solarelixir.solaris.entity.ModEntities;
+import net.solarelixir.solaris.entity.custom.MonstrositreeEntity;
 import net.solarelixir.solaris.entity.custom.MushlingEntity;
 import net.solarelixir.solaris.entity.custom.TreelingEntity;
 import net.solarelixir.solaris.item.ModItemGroups;
@@ -50,14 +50,10 @@ public class TelumSolaris implements ModInitializer {
                         } else {
                             livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE, 140, 9));
                         }
-                        StatusEffectInstance updated = livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE);
-                        /*TelumSolaris.LOGGER.info("Scarlett haze level: " + (updated.getAmplifier()+1) + " for "
-                                + (updated.getDuration()/20) + " seconds");*/
-                    }}} //<-- To annoy Joe
-            return ActionResult.PASS;
-        });
+                    }}} return ActionResult.PASS; });//<-- To annoy Joe
 
         FabricDefaultAttributeRegistry.register(ModEntities.TREELING, TreelingEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.MUSHLING, MushlingEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.MONSTROSITREE, MonstrositreeEntity.createAttributes());
     }
 }
