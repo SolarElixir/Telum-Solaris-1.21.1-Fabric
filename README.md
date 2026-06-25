@@ -61,7 +61,7 @@ These tokens are the repair material for your new-found tools!
 - __Blackwind spear doesn't have a recipe__  
   Thought it was a fun item, so I kept it in
 - __Dagger item models need a slight retexture.__  
-- __No Netherite/wooden/stone variants of items.__
+- __No Netherite/wooden/stone variants of items.__  
   Would you want wood/stone items?
 
 # In the future...
