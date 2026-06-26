@@ -414,7 +414,7 @@ public class ModItems {
             entries.add(THUNDER_BOTTLE);
 
             entries.add(SCARLETT);
-            entries.add(WOODLAND_BARK);
+            //entries.add(WOODLAND_BARK);
 
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
