@@ -412,7 +412,7 @@ private static Item registerItem(String name, Item item) {
             entries.add(STEEL);
 
             entries.add(SCARLETT);
-            entries.add(WOODLAND_BARK);
+            //entries.add(WOODLAND_BARK);
 
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
