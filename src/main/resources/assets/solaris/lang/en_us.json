@@ -181,6 +181,9 @@
   "item.solaris.treeling_spawn_egg": "Treeling Spawn Egg",
   "entity.solaris.treeling": "Treeling",
   "item.solaris.woodland_bark": "Woodland Bark",
+  "item.solaris.woodland_dagger": "Woodland Dagger",
+  "item.solaris.woodland_longsword": "Woodland Longsword",
+  "item.solaris.mush_helm": "Mush Helm",
 
   "item.solaris.mushling_spawn_egg": "Mushling Spawn Egg",
   "entity.solaris.mushling": "Mushling",
@@ -188,19 +191,20 @@
   "item.solaris.monstrositree_spawn_egg": "Monstrositree Spawn Egg",
   "entity.solaris.monstrositree": "Monstrositree",
 
-  "tag.item.solaris.is_steel_weapon": "Is steel weapon",
-  "tag.item.solaris.is_jade_weapon": "Is jade weapon",
-  "tag.item.solaris.is_onyx_weapon": "Is onyx weapon",
-  "tag.item.solaris.is_ruby_weapon": "Is ruby weapon",
-  "tag.item.solaris.is_sapphire_weapon": "Is sapphire weapon",
-  "tag.item.solaris.is_opal_weapon": "Is opal weapon",
-  "tag.item.solaris.is_topaz_weapon": "Is topaz weapon",
-  "tag.item.solaris.is_iron_weapon": "Is iron weapon",
-  "tag.item.solaris.is_diamond_weapon": "Is diamond weapon",
-  "tag.item.solaris.is_shield": "Is shield",
-  "tag.item.solaris.is_bow_item": "Is bow item",
-  "tag.item.solaris.two_handed": "two handed",
-  "tag.item.solaris.has_icon": "Has icon",
+  "item.solaris.forest_essence": "Forest Essence",
+
+  "tag.item.solaris.is_steel_weapon": "Steel weapons",
+  "tag.item.solaris.is_jade_weapon": "Jade weapons",
+  "tag.item.solaris.is_onyx_weapon": "Onyx weapons",
+  "tag.item.solaris.is_ruby_weapon": "Ruby weapons",
+  "tag.item.solaris.is_sapphire_weapon": "Sapphire weapons",
+  "tag.item.solaris.is_opal_weapon": "Opal weapons",
+  "tag.item.solaris.is_topaz_weapon": "Topaz weapons",
+  "tag.item.solaris.is_iron_weapon": "Iron weapons",
+  "tag.item.solaris.is_diamond_weapon": "Diamond weapons",
+  "tag.item.solaris.is_shield": "Shields",
+  "tag.item.solaris.is_bow_item": "Bow items",
+  "tag.item.solaris.two_handed": "Two handed",
 
   "itemgroup.solaris.telum_solaris": "Telum Solaris"
 }

@@ -7,14 +7,14 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.ActionResult;
 import net.solarelixir.solaris.block.ModBlocks;
-import net.solarelixir.solaris.component.ModDataComponentTypes;
-import net.solarelixir.solaris.effects.ModEffects;
-import net.solarelixir.solaris.entity.ModEntities;
+import net.solarelixir.solaris.component.SolarisDataComponentTypes;
+import net.solarelixir.solaris.effects.SolarisStatusEffects;
+import net.solarelixir.solaris.entity.SolarisEntities;
 import net.solarelixir.solaris.entity.custom.MonstrositreeEntity;
 import net.solarelixir.solaris.entity.custom.MushlingEntity;
 import net.solarelixir.solaris.entity.custom.TreelingEntity;
-import net.solarelixir.solaris.item.ModItemGroups;
-import net.solarelixir.solaris.item.ModItems;
+import net.solarelixir.solaris.item.SolarisItemGroups;
+import net.solarelixir.solaris.item.SolarisItems;
 import net.solarelixir.solaris.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,34 +26,34 @@ public class TelumSolaris implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ModItems.registerModItems();
+        SolarisItems.registerModItems();
         ModBlocks.registerModBlocks();
-        ModItemGroups.registerItemGroups();
-        ModDataComponentTypes.registerDataComponentTypes();
-        ModEffects.registerEffects();
-        ModEntities.registerModEntities();
+        SolarisItemGroups.registerItemGroups();
+        SolarisDataComponentTypes.registerDataComponentTypes();
+        SolarisStatusEffects.registerEffects();
+        SolarisEntities.registerModEntities();
 
         ModWorldGeneration.generateModWorldGen();
 
 
         AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
             if (entity instanceof LivingEntity livingEntity && !world.isClient) {
-                if (player.getMainHandStack().getItem() == ModItems.SCARLETT_HAZE) {
+                if (player.getMainHandStack().getItem() == SolarisItems.SCARLETT_HAZE) {
                     if (!(livingEntity.isBlocking()) && !livingEntity.isInCreativeMode()) {
-                        StatusEffectInstance effectInstance = livingEntity.getStatusEffect(ModEffects.SCARLETT_HAZE);
-                        if (!livingEntity.hasStatusEffect(ModEffects.SCARLETT_HAZE)){
-                            livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE, 140, 0));
+                        StatusEffectInstance effectInstance = livingEntity.getStatusEffect(SolarisStatusEffects.SCARLETT_HAZE);
+                        if (!livingEntity.hasStatusEffect(SolarisStatusEffects.SCARLETT_HAZE)){
+                            livingEntity.addStatusEffect(new StatusEffectInstance(SolarisStatusEffects.SCARLETT_HAZE, 140, 0));
                         } else if (effectInstance.getAmplifier() < 9) {
-                            livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE,
+                            livingEntity.addStatusEffect(new StatusEffectInstance(SolarisStatusEffects.SCARLETT_HAZE,
                                     effectInstance.getDuration() + 70,
                                     effectInstance.getAmplifier() + 1));
                         } else {
-                            livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.SCARLETT_HAZE, 140, 9));
+                            livingEntity.addStatusEffect(new StatusEffectInstance(SolarisStatusEffects.SCARLETT_HAZE, 140, 9));
                         }
                     }}} return ActionResult.PASS; });//<-- To annoy Joe
 
-        FabricDefaultAttributeRegistry.register(ModEntities.TREELING, TreelingEntity.createAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.MUSHLING, MushlingEntity.createAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.MONSTROSITREE, MonstrositreeEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(SolarisEntities.TREELING, TreelingEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(SolarisEntities.MUSHLING, MushlingEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(SolarisEntities.MONSTROSITREE, MonstrositreeEntity.createAttributes());
     }
 }

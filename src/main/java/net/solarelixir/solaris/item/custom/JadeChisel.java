@@ -12,7 +12,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
-import net.solarelixir.solaris.component.ModDataComponentTypes;
+import net.solarelixir.solaris.component.SolarisDataComponentTypes;
 
 import java.util.Map;
 
@@ -113,7 +113,7 @@ public class JadeChisel extends Item {
                         item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
 
                 world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_SMITHING_TABLE_USE, SoundCategory.BLOCKS);
-                context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
+                context.getStack().set(SolarisDataComponentTypes.COORDINATES, context.getBlockPos());
             }
         }
 

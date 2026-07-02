@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "solaris:item/mush_helm_icon"
+  },
+  "gui_light": "front"
+}

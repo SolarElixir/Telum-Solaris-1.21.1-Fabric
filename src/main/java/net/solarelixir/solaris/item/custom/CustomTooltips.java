@@ -4,14 +4,14 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.solarelixir.solaris.item.ModItems;
+import net.solarelixir.solaris.item.SolarisItems;
 
 import java.util.List;
 
 public class CustomTooltips {
 
     List<Item> hasTooltip = List.of(
-            ModItems.BLACKWIND_SPEAR
+            SolarisItems.BLACKWIND_SPEAR
     );
 
     private final String itemName;

@@ -6,7 +6,6 @@ import net.minecraft.client.render.entity.animation.Keyframe;
 import net.minecraft.client.render.entity.animation.Transformation;
 
 public class MushlingAnimations {
-
     public static final Animation walking = Animation.Builder.create(3.0F).looping()
             .addBoneAnimation("left_leg", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),

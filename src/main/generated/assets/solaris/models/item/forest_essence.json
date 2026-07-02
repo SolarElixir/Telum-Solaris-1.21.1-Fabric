@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "solaris:item/spiritus_conduit"
+    "layer0": "solaris:item/forest_essence"
   }
 }

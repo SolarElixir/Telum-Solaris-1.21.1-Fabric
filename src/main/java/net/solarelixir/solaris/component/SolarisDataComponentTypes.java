@@ -9,8 +9,7 @@ import net.solarelixir.solaris.TelumSolaris;
 
 import java.util.function.UnaryOperator;
 
-public class ModDataComponentTypes {
-    
+public class SolarisDataComponentTypes {
     public static final ComponentType<BlockPos> COORDINATES = register("coordinates",
             builder -> builder.codec(BlockPos.CODEC));
 

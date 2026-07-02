@@ -8,7 +8,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.solarelixir.solaris.TelumSolaris;
 
-public class ModEffects {
+public class SolarisStatusEffects {
 
    /* public static final RegistryEntry<StatusEffect> VULNERABLE = registerStatusEffect("vulnerable",
             new VulnerableEffect(StatusEffectCategory.HARMFUL, 0x53617a));*/

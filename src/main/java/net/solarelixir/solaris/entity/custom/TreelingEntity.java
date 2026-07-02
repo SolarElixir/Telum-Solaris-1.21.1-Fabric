@@ -19,11 +19,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Util;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
-import net.solarelixir.solaris.item.ModItems;
+import net.solarelixir.solaris.item.SolarisItems;
 import org.jetbrains.annotations.Nullable;
 
 public class TreelingEntity extends AnimalEntity {
@@ -121,11 +120,11 @@ public class TreelingEntity extends AnimalEntity {
                     itemStack.damage(1, player, getSlotForHand(hand));
                 }
                 this.playSound(SoundEvents.ITEM_AXE_STRIP, 1.0f, 1.0f);
-                this.dropItem(ModItems.WOODLAND_BARK);
+                this.dropItem(SolarisItems.WOODLAND_BARK);
             }
             return ActionResult.PASS;
         }
-        if (itemStack.isOf(Items.BONE_MEAL) || itemStack.isOf(ModItems.WOODLAND_BARK) & !this.getWorld().isClient) {
+        if (itemStack.isOf(Items.BONE_MEAL) || itemStack.isOf(SolarisItems.WOODLAND_BARK) & !this.getWorld().isClient) {
             if (getTypeVariant() == 1) {
                 setVariant(TreelingVariant.byId(0));
                 if (!player.isCreative()) {
@@ -135,6 +134,7 @@ public class TreelingEntity extends AnimalEntity {
             }
             return ActionResult.PASS;
         }
+        player.swingHand(hand);
         return super.interactMob(player, hand);
     }
 

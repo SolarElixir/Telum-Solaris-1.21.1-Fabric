@@ -6,6 +6,9 @@ Telum Solaris is a minecraft 1.21.1 mod aiming to add new weapons, armor and ene
 This is my first ever mod, and I'm likely to continue working on it.  
 My ultimate goal is to have a huge amount of weapons and enemy mechanics to make the game have a better progression and be more interesting!  
 
+# DISCLAIMER:
+## **This mod is in it's very early stages of development. Things are subject to change!**
+
 ---
 # Currently, we have:
 ## New weapon types:
@@ -54,6 +57,23 @@ After collecting your refined gemstone, try putting it in a stonecutter.
 Here you can make the perfect version - which can be used to craft armor and weapons - and the tokens.  
 These tokens are the repair material for your new-found tools!
 
+---
+## Entities:
+### Treeling:
+The Treeling is a curious little log what can be found in forests!  
+Just... don't use an axe on him...
+
+### Mushling:
+The Mushling has 2 variants: a brown and a red variant. These can be found in dark oak forests and normal forests!  
+Currently, the Mushling doesn't have any purpose. This will change in the future!
+
+## Bosses:
+Bosses scale with the amount of players attacking!  
+
+### Monstrositree:
+The Monstrositree is the protector of the forest and is not afraid to defend it with all his being.  
+This is an early game mini boss, so don't expect a massive challenge!  
+
 # Known issues/shortcomings:
 - __At the moment, not all gemstone items have an armor and/or shield variant.__
 - __Animations could be better.__  
@@ -63,6 +83,12 @@ These tokens are the repair material for your new-found tools!
 - __Dagger item models need a slight retexture.__  
 - __No Netherite/wooden/stone variants of items.__  
   Would you want wood/stone items?
+- __Monstrositree has hella funky animations__  
+  will fix eventually
+- __Monstrositree might be unbalanced in multiplayer__
+  Haven't tested this in multiplayer yet.
+- __Entity might only render after relog__
+  I'm unsure if this is still an issue, I will look into this.
 
 # In the future...
 I'm unlikely to update to newer versions, due to most mods, in the genre I'm aiming for, being locked to 1.21.1.  
@@ -76,6 +102,6 @@ If you have any ideas or coding tips, they would be greatly appreciated, as I wo
 
 ---
 
-Thank you for checking out the Telum Solaris GitHub!
+I would like to thank everyone who helped me, and thank you for checking out the Telum Solaris GitHub!
 
-***-Solar***
+## ***-Solar***

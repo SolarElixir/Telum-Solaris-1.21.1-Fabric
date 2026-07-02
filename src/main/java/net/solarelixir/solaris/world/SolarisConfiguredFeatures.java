@@ -16,7 +16,7 @@ import net.solarelixir.solaris.block.ModBlocks;
 
 import java.util.List;
 
-public class ModConfiguredFeatures {
+public class SolarisConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> JADE_ORE_KEY = registerKey("jade_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TOPAZ_ORE_KEY = registerKey("topaz_ore");

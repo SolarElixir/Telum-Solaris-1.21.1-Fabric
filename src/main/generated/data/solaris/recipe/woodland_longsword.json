@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:bow"
+      "item": "solaris:iron_longsword"
     },
     "W": {
       "item": "solaris:woodland_bark"
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "solaris:woodland_bow"
+    "id": "solaris:woodland_longsword"
   }
 }

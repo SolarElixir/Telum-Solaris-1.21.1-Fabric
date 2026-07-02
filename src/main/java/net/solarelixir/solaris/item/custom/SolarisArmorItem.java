@@ -14,20 +14,20 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Map;
 
-public class ModArmorItem extends ArmorItem {
+public class SolarisArmorItem extends ArmorItem {
     private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
-                    .put(ModArmorMaterials.JADE_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
+                    .put(SolarisArmorMaterials.JADE_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
                             StatusEffects.RESISTANCE, 10, 1, false, false)))
-                    .put(ModArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
+                    .put(SolarisArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
                             StatusEffects.RESISTANCE, 10, 2, false, false)))
-                    .put(ModArmorMaterials.RUBY_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
+                    .put(SolarisArmorMaterials.RUBY_ARMOR_MATERIAL, List.of(new StatusEffectInstance(
                             StatusEffects.STRENGTH, 10, 1, false, false)))
                     .build();
 
 
 
-    public ModArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
+    public SolarisArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
         super(material, type, settings);
     }
 
@@ -35,7 +35,7 @@ public class ModArmorItem extends ArmorItem {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if(!world.isClient()) {
             if(entity instanceof PlayerEntity player) {
-                if(hasFullSuitOfArmorOn(player) /*&& player.getMainHandStack().isIn(ModTags.Items.IS_JADE_WEAPON)*/) {
+                if(hasFullSuitOfArmorOn(player) /*&& player.getMainHandStack().isIn(SolarisTags.Items.IS_JADE_WEAPON)*/) {
                     evaluateArmorEffects(player);
                 }
             }

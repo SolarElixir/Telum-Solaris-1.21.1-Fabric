@@ -5,17 +5,15 @@ import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.solarelixir.solaris.TelumSolaris;
-import net.solarelixir.solaris.entity.ModEntities;
+import net.solarelixir.solaris.entity.SolarisEntities;
 import net.solarelixir.solaris.item.custom.*;
-import net.solarelixir.solaris.util.ModTags;
 
 import java.util.List;
 
-public class ModItems {
+public class SolarisItems {
 
     private static final float fastAttackSpeed = -2f;
     private static final float mediumAttackSpeed = -2.4f;
@@ -62,21 +60,21 @@ public class ModItems {
         public static final Item REFINED_RUBY = registerItem("refined_ruby", new Item(new Item.Settings()));
         public static final Item FLAWLESS_RUBY = registerItem("flawless_ruby", new Item(new Item.Settings()));
         public static final Item RUBY_TOKEN = registerItem("ruby_token", new Item(new Item.Settings()));
-        public static final Item RUBY_DAGGER = registerItem("ruby_dagger", new SwordItem(ModToolMaterials.RUBY, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RUBY, daggerDamage, fastAttackSpeed))));
-        public static final Item RUBY_SWORD = registerItem("ruby_sword", new SwordItem(ModToolMaterials.RUBY, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RUBY, swordDamage, mediumAttackSpeed))));
-        public static final Item RUBY_KATANA = registerItem("ruby_katana", new SwordItem(ModToolMaterials.RUBY, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RUBY, katanaDamage, mediumAttackSpeed))));
-        public static final Item RUBY_LONGSWORD = registerItem("ruby_longsword", new SwordItem(ModToolMaterials.RUBY, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RUBY, bigSwordDamage, slowAttackSpeed))));
-        public static final Item RUBY_HALBERD = registerItem("ruby_halberd", new SwordItem(ModToolMaterials.RUBY, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RUBY, halberdDamage, verySlowAttackSpeed))));
-        public static final Item RUBY_SCYTHE = registerItem("ruby_scythe", new SwordItem(ModToolMaterials.RUBY, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RUBY, scytheDamage, verySlowAttackSpeed))));
+        public static final Item RUBY_DAGGER = registerItem("ruby_dagger", new SwordItem(SolarisToolMaterials.RUBY, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.RUBY, daggerDamage, fastAttackSpeed))));
+        public static final Item RUBY_SWORD = registerItem("ruby_sword", new SwordItem(SolarisToolMaterials.RUBY, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.RUBY, swordDamage, mediumAttackSpeed))));
+        public static final Item RUBY_KATANA = registerItem("ruby_katana", new SwordItem(SolarisToolMaterials.RUBY, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.RUBY, katanaDamage, mediumAttackSpeed))));
+        public static final Item RUBY_LONGSWORD = registerItem("ruby_longsword", new SwordItem(SolarisToolMaterials.RUBY, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.RUBY, bigSwordDamage, slowAttackSpeed))));
+        public static final Item RUBY_HALBERD = registerItem("ruby_halberd", new SwordItem(SolarisToolMaterials.RUBY, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.RUBY, halberdDamage, verySlowAttackSpeed))));
+        public static final Item RUBY_SCYTHE = registerItem("ruby_scythe", new SwordItem(SolarisToolMaterials.RUBY, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.RUBY, scytheDamage, verySlowAttackSpeed))));
         public static final Item RUBY_SHIELD = registerItem("ruby_shield", new ShieldItem(new Item.Settings().maxDamage(2560)));
 
-        public static final Item RUBY_HELMET = registerItem("ruby_helmet", new ModArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
+        public static final Item RUBY_HELMET = registerItem("ruby_helmet", new SolarisArmorItem(SolarisArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
             .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(42)))
             {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -85,7 +83,7 @@ public class ModItems {
                 tooltip.add(Text.translatable("tooltip.solaris.ruby_armor1"));
                 super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item RUBY_CHESTPLATE = registerItem("ruby_chestplate", new ArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+        public static final Item RUBY_CHESTPLATE = registerItem("ruby_chestplate", new ArmorItem(SolarisArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
             .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(42)))
             {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {tooltip.add(Text.translatable("tooltip.solaris.spacer"));
@@ -94,7 +92,7 @@ public class ModItems {
                 tooltip.add(Text.translatable("tooltip.solaris.ruby_armor1"));
                 super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item RUBY_LEGGINGS = registerItem("ruby_leggings", new ArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
+        public static final Item RUBY_LEGGINGS = registerItem("ruby_leggings", new ArmorItem(SolarisArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
                 .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(42)))
         {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {tooltip.add(Text.translatable("tooltip.solaris.spacer"));
@@ -103,7 +101,7 @@ public class ModItems {
                 tooltip.add(Text.translatable("tooltip.solaris.ruby_armor1"));
                 super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item RUBY_BOOTS = registerItem("ruby_boots", new ArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
+        public static final Item RUBY_BOOTS = registerItem("ruby_boots", new ArmorItem(SolarisArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
             .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(42)))
         {@Override
         public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -117,18 +115,18 @@ public class ModItems {
         public static final Item REFINED_SAPPHIRE = registerItem("refined_sapphire", new Item(new Item.Settings()));
         public static final Item FLAWLESS_SAPPHIRE = registerItem("flawless_sapphire", new Item(new Item.Settings()));
         public static final Item SAPPHIRE_TOKEN = registerItem("sapphire_token", new Item(new Item.Settings()));
-        public static final Item SAPPHIRE_DAGGER = registerItem("sapphire_dagger", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, daggerDamage, fastAttackSpeed))));
-        public static final Item SAPPHIRE_SWORD = registerItem("sapphire_sword", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, swordDamage, mediumAttackSpeed))));
-        public static final Item SAPPHIRE_LONGSWORD = registerItem("sapphire_longsword", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, bigSwordDamage, slowAttackSpeed))));
-        public static final Item SAPPHIRE_KATANA = registerItem("sapphire_katana", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, katanaDamage, mediumAttackSpeed))));
-        public static final Item SAPPHIRE_HALBERD = registerItem("sapphire_halberd", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, halberdDamage, verySlowAttackSpeed))));
-        public static final Item SAPPHIRE_SCYTHE = registerItem("sapphire_scythe", new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, scytheDamage, verySlowAttackSpeed))));
+        public static final Item SAPPHIRE_DAGGER = registerItem("sapphire_dagger", new SwordItem(SolarisToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.SAPPHIRE, daggerDamage, fastAttackSpeed))));
+        public static final Item SAPPHIRE_SWORD = registerItem("sapphire_sword", new SwordItem(SolarisToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.SAPPHIRE, swordDamage, mediumAttackSpeed))));
+        public static final Item SAPPHIRE_LONGSWORD = registerItem("sapphire_longsword", new SwordItem(SolarisToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.SAPPHIRE, bigSwordDamage, slowAttackSpeed))));
+        public static final Item SAPPHIRE_KATANA = registerItem("sapphire_katana", new SwordItem(SolarisToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.SAPPHIRE, katanaDamage, mediumAttackSpeed))));
+        public static final Item SAPPHIRE_HALBERD = registerItem("sapphire_halberd", new SwordItem(SolarisToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.SAPPHIRE, halberdDamage, verySlowAttackSpeed))));
+        public static final Item SAPPHIRE_SCYTHE = registerItem("sapphire_scythe", new SwordItem(SolarisToolMaterials.SAPPHIRE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.SAPPHIRE, scytheDamage, verySlowAttackSpeed))));
         public static final Item SAPPHIRE_SHIELD = registerItem("sapphire_shield", new ShieldItem(new Item.Settings().maxDamage(2512)));
 
     //Topaz
@@ -136,18 +134,18 @@ public class ModItems {
         public static final Item REFINED_TOPAZ = registerItem("refined_topaz", new Item(new Item.Settings()));
         public static final Item FLAWLESS_TOPAZ = registerItem("flawless_topaz", new Item(new Item.Settings()));
         public static final Item TOPAZ_TOKEN = registerItem("topaz_token", new Item(new Item.Settings()));
-        public static final Item TOPAZ_DAGGER = registerItem("topaz_dagger", new SwordItem(ModToolMaterials.TOPAZ, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TOPAZ, daggerDamage, fastAttackSpeed))));
-        public static final Item TOPAZ_SWORD = registerItem("topaz_sword", new SwordItem(ModToolMaterials.TOPAZ, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TOPAZ, swordDamage, mediumAttackSpeed))));
-        public static final Item TOPAZ_KATANA = registerItem("topaz_katana", new SwordItem(ModToolMaterials.TOPAZ, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TOPAZ, katanaDamage, mediumAttackSpeed))));
-        public static final Item TOPAZ_GREATSWORD = registerItem("topaz_greatsword", new SwordItem(ModToolMaterials.TOPAZ, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TOPAZ, bigSwordDamage, verySlowAttackSpeed))));
-        public static final Item TOPAZ_HALBERD = registerItem("topaz_halberd", new SwordItem(ModToolMaterials.TOPAZ, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TOPAZ, halberdDamage, verySlowAttackSpeed))));
-        public static final Item TOPAZ_SCYTHE = registerItem("topaz_scythe", new SwordItem(ModToolMaterials.TOPAZ, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TOPAZ, scytheDamage, verySlowAttackSpeed))));
+        public static final Item TOPAZ_DAGGER = registerItem("topaz_dagger", new SwordItem(SolarisToolMaterials.TOPAZ, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.TOPAZ, daggerDamage, fastAttackSpeed))));
+        public static final Item TOPAZ_SWORD = registerItem("topaz_sword", new SwordItem(SolarisToolMaterials.TOPAZ, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.TOPAZ, swordDamage, mediumAttackSpeed))));
+        public static final Item TOPAZ_KATANA = registerItem("topaz_katana", new SwordItem(SolarisToolMaterials.TOPAZ, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.TOPAZ, katanaDamage, mediumAttackSpeed))));
+        public static final Item TOPAZ_GREATSWORD = registerItem("topaz_greatsword", new SwordItem(SolarisToolMaterials.TOPAZ, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.TOPAZ, bigSwordDamage, verySlowAttackSpeed))));
+        public static final Item TOPAZ_HALBERD = registerItem("topaz_halberd", new SwordItem(SolarisToolMaterials.TOPAZ, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.TOPAZ, halberdDamage, verySlowAttackSpeed))));
+        public static final Item TOPAZ_SCYTHE = registerItem("topaz_scythe", new SwordItem(SolarisToolMaterials.TOPAZ, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.TOPAZ, scytheDamage, verySlowAttackSpeed))));
 
 
     //Onyx
@@ -155,26 +153,26 @@ public class ModItems {
         public static final Item REFINED_ONYX = registerItem("refined_onyx", new Item(new Item.Settings()));
         public static final Item FLAWLESS_ONYX = registerItem("flawless_onyx", new Item(new Item.Settings()));
         public static final Item ONYX_TOKEN = registerItem("onyx_token", new Item(new Item.Settings()));
-        public static final Item ONYX_DAGGER = registerItem("onyx_dagger", new SwordItem(ModToolMaterials.ONYX, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, daggerDamage, fastAttackSpeed))));
-        public static final Item ONYX_SWORD =registerItem("onyx_sword", new SwordItem(ModToolMaterials.ONYX, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, swordDamage, mediumAttackSpeed))));
-        public static final Item ONYX_KATANA = registerItem("onyx_katana", new SwordItem(ModToolMaterials.ONYX, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, katanaDamage, mediumAttackSpeed))));
-        public static final Item ONYX_GREATSWORD = registerItem("onyx_greatsword", new SwordItem(ModToolMaterials.ONYX, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, bigSwordDamage, slowAttackSpeed))));
-        public static final Item ONYX_HALBERD = registerItem("onyx_halberd", new SwordItem(ModToolMaterials.ONYX, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, halberdDamage, verySlowAttackSpeed))));
-        public static final Item ONYX_SCYTHE = registerItem("onyx_scythe", new SwordItem(ModToolMaterials.ONYX, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, scytheDamage, verySlowAttackSpeed))));
+        public static final Item ONYX_DAGGER = registerItem("onyx_dagger", new SwordItem(SolarisToolMaterials.ONYX, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, daggerDamage, fastAttackSpeed))));
+        public static final Item ONYX_SWORD =registerItem("onyx_sword", new SwordItem(SolarisToolMaterials.ONYX, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, swordDamage, mediumAttackSpeed))));
+        public static final Item ONYX_KATANA = registerItem("onyx_katana", new SwordItem(SolarisToolMaterials.ONYX, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, katanaDamage, mediumAttackSpeed))));
+        public static final Item ONYX_GREATSWORD = registerItem("onyx_greatsword", new SwordItem(SolarisToolMaterials.ONYX, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, bigSwordDamage, slowAttackSpeed))));
+        public static final Item ONYX_HALBERD = registerItem("onyx_halberd", new SwordItem(SolarisToolMaterials.ONYX, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, halberdDamage, verySlowAttackSpeed))));
+        public static final Item ONYX_SCYTHE = registerItem("onyx_scythe", new SwordItem(SolarisToolMaterials.ONYX, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, scytheDamage, verySlowAttackSpeed))));
 
-        public static final Item ONYX_HOOD = registerItem("onyx_hood", new ArmorItem(ModArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
+        public static final Item ONYX_HOOD = registerItem("onyx_hood", new ArmorItem(SolarisArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
                 .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(42))));
-        public static final Item ONYX_ROBES = registerItem("onyx_robes", new ArmorItem(ModArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+        public static final Item ONYX_ROBES = registerItem("onyx_robes", new ArmorItem(SolarisArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
                 .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(42))));
-        public static final Item ONYX_LEGGINGS = registerItem("onyx_leggings", new ArmorItem(ModArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
+        public static final Item ONYX_LEGGINGS = registerItem("onyx_leggings", new ArmorItem(SolarisArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
                 .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(42))));
-        public static final Item ONYX_BOOTS = registerItem("onyx_boots", new ArmorItem(ModArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
+        public static final Item ONYX_BOOTS = registerItem("onyx_boots", new ArmorItem(SolarisArmorMaterials.ONYX_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
                 .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(42))));
 
     //Opal
@@ -183,18 +181,18 @@ public class ModItems {
         public static final Item FLAWLESS_OPAL = registerItem("flawless_opal", new Item(new Item.Settings()));
         public static final Item OPAL_TOKEN = registerItem("opal_token", new Item(new Item.Settings()));
 
-        public static final Item OPAL_DAGGER = registerItem("opal_dagger", new SwordItem(ModToolMaterials.OPAL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.OPAL, daggerDamage, fastAttackSpeed))));
-        public static final Item OPAL_LONGSWORD = registerItem("opal_longsword", new SwordItem(ModToolMaterials.OPAL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.OPAL, bigSwordDamage, verySlowAttackSpeed))));
-        public static final Item OPAL_SWORD = registerItem("opal_sword", new SwordItem(ModToolMaterials.OPAL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.OPAL, swordDamage, mediumAttackSpeed))));
-        public static final Item OPAL_KATANA = registerItem("opal_katana", new SwordItem(ModToolMaterials.OPAL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.OPAL, katanaDamage, mediumAttackSpeed))));
-        public static final Item OPAL_HALBERD = registerItem("opal_halberd", new SwordItem(ModToolMaterials.OPAL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.OPAL, halberdDamage, verySlowAttackSpeed))));
-        public static final Item OPAL_SCYTHE = registerItem("opal_scythe", new SwordItem(ModToolMaterials.OPAL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.OPAL, scytheDamage, verySlowAttackSpeed))));
+        public static final Item OPAL_DAGGER = registerItem("opal_dagger", new SwordItem(SolarisToolMaterials.OPAL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.OPAL, daggerDamage, fastAttackSpeed))));
+        public static final Item OPAL_LONGSWORD = registerItem("opal_longsword", new SwordItem(SolarisToolMaterials.OPAL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.OPAL, bigSwordDamage, verySlowAttackSpeed))));
+        public static final Item OPAL_SWORD = registerItem("opal_sword", new SwordItem(SolarisToolMaterials.OPAL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.OPAL, swordDamage, mediumAttackSpeed))));
+        public static final Item OPAL_KATANA = registerItem("opal_katana", new SwordItem(SolarisToolMaterials.OPAL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.OPAL, katanaDamage, mediumAttackSpeed))));
+        public static final Item OPAL_HALBERD = registerItem("opal_halberd", new SwordItem(SolarisToolMaterials.OPAL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.OPAL, halberdDamage, verySlowAttackSpeed))));
+        public static final Item OPAL_SCYTHE = registerItem("opal_scythe", new SwordItem(SolarisToolMaterials.OPAL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.OPAL, scytheDamage, verySlowAttackSpeed))));
 
     //Jade
         public static final Item IMPURE_JADE_CHUNK = registerItem("impure_jade_chunk", new Item(new Item.Settings()));
@@ -203,22 +201,22 @@ public class ModItems {
         public static final Item JADE_TOKEN = registerItem("jade_token", new Item(new Item.Settings()));
         public static final Item JADE_CHISEL = registerItem("jade_chisel", new JadeChisel(new Item.Settings().maxCount(1).maxDamage(1024)));
 
-        public static final Item JADE_DAGGER = registerItem("jade_dagger", new SwordItem(ModToolMaterials.JADE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.JADE, daggerDamage, fastAttackSpeed))));
-        public static final Item JADE_GREATSWORD = registerItem("jade_greatsword", new SwordItem(ModToolMaterials.JADE, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.JADE, bigSwordDamage, verySlowAttackSpeed))));
+        public static final Item JADE_DAGGER = registerItem("jade_dagger", new SwordItem(SolarisToolMaterials.JADE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.JADE, daggerDamage, fastAttackSpeed))));
+        public static final Item JADE_GREATSWORD = registerItem("jade_greatsword", new SwordItem(SolarisToolMaterials.JADE, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.JADE, bigSwordDamage, verySlowAttackSpeed))));
         public static final Item JADE_SHIELD = registerItem("jade_shield", new ShieldItem(new Item.Settings().maxCount(1).maxDamage(2512)));
         public static final Item ENERGIZED_JADE_SHIELD = registerItem("energized_jade_shield", new ShieldItem(new Item.Settings().maxCount(1).maxDamage(2512)));
-        public static final Item JADE_SWORD = registerItem("jade_sword", new SwordItem(ModToolMaterials.JADE, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.JADE, swordDamage, mediumAttackSpeed))));
-        public static final Item JADE_KATANA = registerItem("jade_katana", new SwordItem(ModToolMaterials.JADE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.JADE, katanaDamage, mediumAttackSpeed))));
-        public static final Item JADE_HALBERD = registerItem("jade_halberd", new SwordItem(ModToolMaterials.JADE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.JADE, halberdDamage, verySlowAttackSpeed))));
-        public static final Item JADE_SCYTHE = registerItem("jade_scythe", new SwordItem(ModToolMaterials.JADE, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.JADE, scytheDamage, verySlowAttackSpeed))));
+        public static final Item JADE_SWORD = registerItem("jade_sword", new SwordItem(SolarisToolMaterials.JADE, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.JADE, swordDamage, mediumAttackSpeed))));
+        public static final Item JADE_KATANA = registerItem("jade_katana", new SwordItem(SolarisToolMaterials.JADE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.JADE, katanaDamage, mediumAttackSpeed))));
+        public static final Item JADE_HALBERD = registerItem("jade_halberd", new SwordItem(SolarisToolMaterials.JADE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.JADE, halberdDamage, verySlowAttackSpeed))));
+        public static final Item JADE_SCYTHE = registerItem("jade_scythe", new SwordItem(SolarisToolMaterials.JADE, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.JADE, scytheDamage, verySlowAttackSpeed))));
 
-        public static final Item JADE_HELMET = registerItem("jade_helmet", new ModArmorItem(ModArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
+        public static final Item JADE_HELMET = registerItem("jade_helmet", new SolarisArmorItem(SolarisArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
             .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(42)))
         {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -228,7 +226,7 @@ public class ModItems {
             tooltip.add(Text.translatable("tooltip.solaris.spacer"));
             super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item JADE_CHESTPLATE = registerItem("jade_chestplate", new ArmorItem(ModArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+        public static final Item JADE_CHESTPLATE = registerItem("jade_chestplate", new ArmorItem(SolarisArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
                 .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(42)))
         {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -238,7 +236,7 @@ public class ModItems {
             tooltip.add(Text.translatable("tooltip.solaris.spacer"));
             super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item JADE_LEGGINGS = registerItem("jade_leggings", new ArmorItem(ModArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
+        public static final Item JADE_LEGGINGS = registerItem("jade_leggings", new ArmorItem(SolarisArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
             .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(42)))
         {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -248,7 +246,7 @@ public class ModItems {
             tooltip.add(Text.translatable("tooltip.solaris.spacer"));
             super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item JADE_BOOTS = registerItem("jade_boots", new ArmorItem(ModArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
+        public static final Item JADE_BOOTS = registerItem("jade_boots", new ArmorItem(SolarisArmorMaterials.JADE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
                 .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(42)))
         {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -258,10 +256,10 @@ public class ModItems {
             tooltip.add(Text.translatable("tooltip.solaris.spacer"));
             super.appendTooltip(stack, context, tooltip, type);}});
 
-    public static final Item ENERGIZED_JADE_SWORD = registerItem("energized_jade_sword", new SwordItem(ModToolMaterials.ENERGIZED_JADE, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGIZED_JADE, swordDamage, mediumAttackSpeed))));
+    public static final Item ENERGIZED_JADE_SWORD = registerItem("energized_jade_sword", new SwordItem(SolarisToolMaterials.ENERGIZED_JADE, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ENERGIZED_JADE, swordDamage, mediumAttackSpeed))));
 
-        public static final Item ENERGIZED_JADE_HELMET = registerItem("energized_jade_helmet", new ModArmorItem(ModArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
+        public static final Item ENERGIZED_JADE_HELMET = registerItem("energized_jade_helmet", new SolarisArmorItem(SolarisArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
                 .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(42)))
         {@Override
             public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -271,7 +269,7 @@ public class ModItems {
             tooltip.add(Text.translatable("tooltip.solaris.spacer"));
             super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item ENERGIZED_JADE_CHESTPLATE = registerItem("energized_jade_chestplate", new ArmorItem(ModArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+        public static final Item ENERGIZED_JADE_CHESTPLATE = registerItem("energized_jade_chestplate", new ArmorItem(SolarisArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
                 .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(42)))
         {@Override
         public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -281,7 +279,7 @@ public class ModItems {
             tooltip.add(Text.translatable("tooltip.solaris.spacer"));
             super.appendTooltip(stack, context, tooltip, type);}});
 
-        public static final Item ENERGIZED_JADE_LEGGINGS = registerItem("energized_jade_leggings", new ArmorItem(ModArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
+        public static final Item ENERGIZED_JADE_LEGGINGS = registerItem("energized_jade_leggings", new ArmorItem(SolarisArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
                 .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(42)))
         {@Override
         public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -290,7 +288,7 @@ public class ModItems {
             tooltip.add(Text.translatable("tooltip.solaris.jade_armor1"));
             tooltip.add(Text.translatable("tooltip.solaris.spacer"));
             super.appendTooltip(stack, context, tooltip, type);}});
-        public static final Item ENERGIZED_JADE_BOOTS = registerItem("energized_jade_boots", new ArmorItem(ModArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
+        public static final Item ENERGIZED_JADE_BOOTS = registerItem("energized_jade_boots", new ArmorItem(SolarisArmorMaterials.ENERGIZED_JADE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
                 .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(42)))
         {@Override
         public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -309,55 +307,63 @@ public class ModItems {
 
     //Steel
         public static final Item STEEL = registerItem("steel", new Item(new Item.Settings()));
-        public static final Item STEEL_DAGGER = registerItem("steel_dagger", new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STEEL, daggerDamage, fastAttackSpeed))));
-        public static final Item STEEL_SWORD = registerItem("steel_sword", new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STEEL, swordDamage, mediumAttackSpeed))));
-        public static final Item STEEL_KATANA = registerItem("steel_katana", new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STEEL, katanaDamage, mediumAttackSpeed))));
-        public static final Item STEEL_LONGSWORD = registerItem("steel_longsword", new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STEEL, bigSwordDamage, slowAttackSpeed))));
-        public static final Item STEEL_HALBERD = registerItem("steel_halberd", new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STEEL, halberdDamage, verySlowAttackSpeed))));
-        public static final Item STEEL_SCYTHE = registerItem("steel_scythe", new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STEEL, scytheDamage, verySlowAttackSpeed))));
+        public static final Item STEEL_DAGGER = registerItem("steel_dagger", new SwordItem(SolarisToolMaterials.STEEL, new Item.Settings()
+            .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.STEEL, daggerDamage, fastAttackSpeed))));
+        public static final Item STEEL_SWORD = registerItem("steel_sword", new SwordItem(SolarisToolMaterials.STEEL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.STEEL, swordDamage, mediumAttackSpeed))));
+        public static final Item STEEL_KATANA = registerItem("steel_katana", new SwordItem(SolarisToolMaterials.STEEL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.STEEL, katanaDamage, mediumAttackSpeed))));
+        public static final Item STEEL_LONGSWORD = registerItem("steel_longsword", new SwordItem(SolarisToolMaterials.STEEL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.STEEL, bigSwordDamage, slowAttackSpeed))));
+        public static final Item STEEL_HALBERD = registerItem("steel_halberd", new SwordItem(SolarisToolMaterials.STEEL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.STEEL, halberdDamage, verySlowAttackSpeed))));
+        public static final Item STEEL_SCYTHE = registerItem("steel_scythe", new SwordItem(SolarisToolMaterials.STEEL, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.STEEL, scytheDamage, verySlowAttackSpeed))));
         public static final Item STEEL_SHIELD = registerItem("steel_shield", new ShieldItem(new Item.Settings().maxCount(1).maxDamage(1024)));
 
-        public static final Item STEEL_HELMET = registerItem("steel_helmet", new ArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+        public static final Item STEEL_HELMET = registerItem("steel_helmet", new ArmorItem(SolarisArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                 new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(19))));
-        public static final Item STEEL_CHESTPLATE = registerItem("steel_chestplate", new ArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+        public static final Item STEEL_CHESTPLATE = registerItem("steel_chestplate", new ArmorItem(SolarisArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                 new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(19))));
-        public static final Item STEEL_LEGGINGS = registerItem("steel_leggings", new ArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+        public static final Item STEEL_LEGGINGS = registerItem("steel_leggings", new ArmorItem(SolarisArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
                 new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(19))));
-        public static final Item STEEL_BOOTS = registerItem("steel_boots", new ArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+        public static final Item STEEL_BOOTS = registerItem("steel_boots", new ArmorItem(SolarisArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                 new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(19))));
         // ~
 
-        public static final Item AMETHYST_HALBERD = registerItem("amethyst_halberd", new SwordItem(ModToolMaterials.ONYX, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, scytheDamage, verySlowAttackSpeed))));
+        public static final Item AMETHYST_HALBERD = registerItem("amethyst_halberd", new SwordItem(SolarisToolMaterials.ONYX, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, scytheDamage, verySlowAttackSpeed))));
 
 
         public static final Item SCARLETT = registerItem("scarlett", new Item(new Item.Settings()));
-        public static final Item SCARLETT_HAZE = registerItem("scarlett_haze", new ScarlettHaze(ModToolMaterials.ONYX, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ONYX, swordDamage, mediumAttackSpeed))));
+        public static final Item SCARLETT_HAZE = registerItem("scarlett_haze", new ScarlettHaze(SolarisToolMaterials.ONYX, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.ONYX, swordDamage, mediumAttackSpeed))));
 
-        public static final Item ASTRAL_FORCE = registerItem("astral_force", new SwordItem(ModToolMaterials.RELIC, new Item.Settings()
-                .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RELIC, swordDamage, mediumAttackSpeed))));
+        public static final Item ASTRAL_FORCE = registerItem("astral_force", new SwordItem(SolarisToolMaterials.RELIC, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.RELIC, swordDamage, mediumAttackSpeed))));
 
         public static final Item WOODLAND_BARK = registerItem("woodland_bark", new Item(new Item.Settings()));
+        public static final Item WOODLAND_DAGGER = registerItem("woodland_dagger", new SwordItem(SolarisToolMaterials.WOODLAND, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.WOODLAND, daggerDamage, fastAttackSpeed))));
+        public static final Item WOODLAND_LONGSWORD = registerItem("woodland_longsword", new SwordItem(SolarisToolMaterials.WOODLAND, new Item.Settings()
+                .attributeModifiers(SwordItem.createAttributeModifiers(SolarisToolMaterials.WOODLAND, bigSwordDamage, slowAttackSpeed))));
+
+
         public static final Item TREELING_SPAWN_EGG = registerItem("treeling_spawn_egg",
-                new SpawnEggItem(ModEntities.TREELING, 0x663C1E, 0xE0C172, new Item.Settings()));
+                new SpawnEggItem(SolarisEntities.TREELING, 0x663C1E, 0xE0C172, new Item.Settings()));
 
         public static final Item MUSHLING_SPAWN_EGG = registerItem("mushling_spawn_egg",
-                new SpawnEggItem(ModEntities.MUSHLING, 0xB82B12, 0xE8CBA9, new Item.Settings()));
+                new SpawnEggItem(SolarisEntities.MUSHLING, 0xB82B12, 0xE8CBA9, new Item.Settings()));
 
         public static final Item MONSTROSITREE_SPAWN_EGG = registerItem("monstrositree_spawn_egg",
-                new SpawnEggItem(ModEntities.MONSTROSITREE, 0x784318, 0x5CC736, new Item.Settings()));
+                new SpawnEggItem(SolarisEntities.MONSTROSITREE, 0x784318, 0x5CC736, new Item.Settings()));
 
-        /*public static final Item MUSH_HELM = registerItem("mush_helm", new ArmorItem(ModArmorMaterials.MUSH_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(3))));*/
+        public static final Item MUSH_HELM = registerItem("mush_helm", new ArmorItem(SolarisArmorMaterials.MUSH_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(3))));
 
-        public static final Item JOE_JOE_FRUIT = registerItem("joe_joe_fruit", new Item(new Item.Settings().food(ModFoodComponents.JOE_JOE_FRUIT)));
+        public static final Item FOREST_ESSENCE = registerItem("forest_essence", new Item(new Item.Settings()));
+
+        public static final Item JOE_JOE_FRUIT = registerItem("joe_joe_fruit", new Item(new Item.Settings().food(SolarisFoodComponents.JOE_JOE_FRUIT)));
 
 
     //register
@@ -413,8 +419,12 @@ public class ModItems {
             entries.add(REINFORCED_BOTTLE);
             entries.add(THUNDER_BOTTLE);
 
+            //Essences
+            entries.add(FOREST_ESSENCE);
+
+
             entries.add(SCARLETT);
-            //entries.add(WOODLAND_BARK);
+            entries.add(WOODLAND_BARK);
 
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
@@ -519,6 +529,9 @@ public class ModItems {
             entries.addAfter(RUBY_HELMET, RUBY_CHESTPLATE);
             entries.addAfter(RUBY_CHESTPLATE, RUBY_LEGGINGS);
             entries.addAfter(RUBY_LEGGINGS, RUBY_BOOTS);
+
+            entries.add(WOODLAND_DAGGER);
+            entries.add(WOODLAND_LONGSWORD);
 
             entries.add(DUSTWORM_LONGBOW);
             entries.addAfter(Items.BOW, LONGBOW);

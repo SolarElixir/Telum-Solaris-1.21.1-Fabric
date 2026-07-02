@@ -116,7 +116,6 @@ public class MonstrositreeModel<T extends MonstrositreeEntity> extends SinglePar
         this.head.pitch = headPitch * 0.017453292f;
     }
 
-
     @Override
     public void setAngles(MonstrositreeEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.getPart().traverse().forEach(ModelPart::resetTransform);
@@ -124,5 +123,8 @@ public class MonstrositreeModel<T extends MonstrositreeEntity> extends SinglePar
 
         this.animateMovement(MonstrositreeAnimations.walk, limbSwing, limbSwingAmount, 8f, 2.5f);
         this.updateAnimation(entity.idleAnimationState, MonstrositreeAnimations.idle, ageInTicks, 1f);
+        this.updateAnimation(entity.attack_1, MonstrositreeAnimations.attack_1, ageInTicks, 1f);
+        this.updateAnimation(entity.attack_2, MonstrositreeAnimations.attack_2, ageInTicks, 1f);
+        this.updateAnimation(entity.attack_3, MonstrositreeAnimations.attack_3, ageInTicks, 2f);
     }
 }

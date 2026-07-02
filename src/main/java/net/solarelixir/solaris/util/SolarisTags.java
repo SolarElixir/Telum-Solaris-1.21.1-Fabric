@@ -8,7 +8,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.solarelixir.solaris.TelumSolaris;
 
-public class ModTags {
+public class SolarisTags {
     public static class Blocks{
 
         public static final TagKey<Block> NEEDS_NETHERITE_TOOL = createTag("needs_netherite_tool");
@@ -20,7 +20,6 @@ public class ModTags {
         private static TagKey<Block> createTag(String name){
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(TelumSolaris.MOD_ID, name));
         }
-
     }
     public static class Items{
 
@@ -36,7 +35,6 @@ public class ModTags {
         public static final TagKey<Item> IS_SHIELD = createTag("is_shield");
         public static final TagKey<Item> IS_BOW_ITEM = createTag("is_bow_item");
         public static final TagKey<Item> TWO_HANDED = createTag("two_handed");
-        public static final TagKey<Item> HAS_ICON = createTag("has_icon");
 
         private static TagKey<Item> createTag(String name){
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(TelumSolaris.MOD_ID, name));

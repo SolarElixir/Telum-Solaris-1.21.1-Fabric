@@ -10,7 +10,6 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
@@ -63,7 +62,6 @@ public class MushlingEntity extends AnimalEntity {
     @Override
     public void tick() {
         super.tick();
-
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }

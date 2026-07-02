@@ -10,7 +10,7 @@ import net.solarelixir.solaris.entity.custom.MonstrositreeEntity;
 import net.solarelixir.solaris.entity.custom.MushlingEntity;
 import net.solarelixir.solaris.entity.custom.TreelingEntity;
 
-public class ModEntities {
+public class SolarisEntities {
     public static final EntityType<TreelingEntity> TREELING = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(TelumSolaris.MOD_ID, "treeling"),
             EntityType.Builder.create(TreelingEntity::new, SpawnGroup.CREATURE)

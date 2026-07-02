@@ -14,7 +14,7 @@ import net.solarelixir.solaris.TelumSolaris;
 
 import java.util.List;
 
-public class ModPlacedFeatures {
+public class SolarisPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ruby_ore_placed");
     public static final RegistryKey<PlacedFeature> JADE_ORE_PLACED_KEY = registerKey("jade_ore_placed");
     public static final RegistryKey<PlacedFeature> TOPAZ_ORE_PLACED_KEY = registerKey("topaz_ore_placed");
@@ -25,28 +25,28 @@ public class ModPlacedFeatures {
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(12,
+        register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.RUBY_ORE_KEY),
+                SolarisOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
 
-        register(context, JADE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.JADE_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(12,
+        register(context, JADE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.JADE_ORE_KEY),
+                SolarisOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
-        register(context, TOPAZ_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TOPAZ_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(12,
+        register(context, TOPAZ_ORE_PLACED_KEY, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.TOPAZ_ORE_KEY),
+                SolarisOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
-        register(context, ONYX_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ONYX_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(12,
+        register(context, ONYX_ORE_PLACED_KEY, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.ONYX_ORE_KEY),
+                SolarisOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
-        register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SAPPHIRE_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(12,
+        register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SAPPHIRE_ORE_KEY),
+                SolarisOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
-       register(context, OPAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OPAL_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(12,
+       register(context, OPAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.OPAL_ORE_KEY),
+                SolarisOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-4))));
 
     }

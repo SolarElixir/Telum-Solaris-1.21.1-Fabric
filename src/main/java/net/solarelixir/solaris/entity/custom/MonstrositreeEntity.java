@@ -7,24 +7,40 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.data.DataTracker;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.loot.LootTable;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
+import net.solarelixir.solaris.datagen.SolarisEntityLootTableProvider;
 import net.solarelixir.solaris.entity.ai.goal.MonstrositreeAttackGoal;
-import org.jetbrains.annotations.Nullable;
 
-public class MonstrositreeEntity extends AnimalEntity {
+import java.util.List;
+
+public class MonstrositreeEntity extends HostileEntity {
     public final AnimationState idleAnimationState = new AnimationState();
+    public int attackMove;
+    public final AnimationState attack_1 = new AnimationState();
+    public final AnimationState attack_2 = new AnimationState();
+    public final AnimationState attack_3 = new AnimationState();
+    private static final int ATTACK_1_LENGTH = 20;
+    private static final int ATTACK_2_LENGTH = 20;
+    private static final int ATTACK_3_LENGTH = 30;
     public int idleAnimationTimeout = 20;
+    public int attackCooldown = 20;
+    private int hitFrame;
+    private List<PlayerEntity> attackedBy;
+    private static int attackingPlayers;
 
-    public MonstrositreeEntity(EntityType<? extends AnimalEntity> entityType, World world) {
+    /**
+     * Increases attack damage based on how many players are attacking it.
+     */
+    public static float attackDamage = 5.0f+ (2.5f * attackingPlayers);
+
+    public MonstrositreeEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -35,24 +51,29 @@ public class MonstrositreeEntity extends AnimalEntity {
     private final ServerBossBar bossBar = new ServerBossBar(Text.translatable("entity.solaris.monstrositree"),
             BossBar.Color.GREEN, BossBar.Style.NOTCHED_10);
 
-    private static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
-            DataTracker.registerData(MonstrositreeEntity.class, TrackedDataHandlerRegistry.INTEGER);
-
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new MonstrositreeAttackGoal(this, 0.2D, false));
         this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0D));
-        this.goalSelector.add(4, new LookAtEntityGoal(this, LivingEntity.class, 4.0F));
         this.goalSelector.add(3, new LookAroundGoal(this));
+        this.initCustomGoals();
+    }
+
+    protected void initCustomGoals() {
+        this.goalSelector.add(1, new MonstrositreeAttackGoal(this, 1.75));
+        this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
     }
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 100)
+                ///Based on attacking players, adds max health
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 200*(1 + attackingPlayers))
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0f)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 0)
+                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.5)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32)
+                .add(EntityAttributes.GENERIC_STEP_HEIGHT, 1.5)
                 ;
     }
 
@@ -65,6 +86,64 @@ public class MonstrositreeEntity extends AnimalEntity {
         }
     }
 
+    /**
+     *Heals the entity when called
+     */
+    private void healWhenNewPlayer() {
+        this.setHealth(this.getHealth()*(1 + attackingPlayers));
+    }
+
+    private void setupAttackAnimations() { //Works
+        attackMove = this.random.nextInt(3) + 1;
+        switch (attackMove) {
+            case (1) -> {
+                this.attack_1.start(this.age);
+                hitFrame = 14;
+                attackCooldown = ATTACK_1_LENGTH + 20;
+            }
+            case (2) -> {
+                this.attack_2.start(this.age);
+                hitFrame = 15;
+                attackCooldown = ATTACK_2_LENGTH + 20;
+            }
+            case (3) -> {
+                this.attack_3.start(this.age/2);
+                hitFrame = 20;
+                attackCooldown = ATTACK_3_LENGTH + 20;
+            }
+        }
+    }
+
+    //Written with the help of Vairosh!
+    private void performAttackHitbox() {
+        List<Entity> nearbyEntities = this.getWorld().getEntitiesByClass(Entity.class, this.getBoundingBox().expand(3.0D),
+                entity -> entity != this && entity.isAlive());
+
+
+        for (Entity target : nearbyEntities) {
+            if (target instanceof PlayerEntity) {
+                target.damage(this.getDamageSources().mobAttack(this), attackDamage);
+            }
+        }
+    }
+
+
+    @Override
+    protected void tickHandSwing() {
+        if (this.handSwinging) {
+            if (this.handSwingTicks == 0) {
+                this.setupAttackAnimations();
+            }
+            ++this.handSwingTicks;
+            if (this.handSwingTicks == this.hitFrame) {
+                performAttackHitbox();
+            }
+        } else {
+            this.handSwingTicks = 0;
+            --this.attackCooldown;
+        }
+    }
+
     @Override
     public void tick() {
         super.tick();
@@ -74,14 +153,8 @@ public class MonstrositreeEntity extends AnimalEntity {
     }
 
     @Override
-    public @Nullable PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return null;
-    }
-
-    @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        builder.add(DATA_ID_TYPE_VARIANT, 0);
     }
 
     @Override
@@ -99,11 +172,35 @@ public class MonstrositreeEntity extends AnimalEntity {
     @Override
     protected void mobTick() {
         super.mobTick();
-        this.bossBar.setPercent(this.getHealth()/this.getMaxHealth());
+        this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
     }
 
     @Override
-    public boolean isBreedingItem(ItemStack stack) {
-        return false;
+    protected boolean shouldAlwaysDropXp() {
+        return true;
+    }
+
+    @Override
+    protected int getXpToDrop() {
+        return 500;
+    }
+
+    /**
+     * Gets the players attacking this entity.
+     */
+    private void attackerDetails() {
+        if (this.getAttacker() instanceof PlayerEntity && !attackedBy.contains(this.getAttacker())) {
+            attackedBy.add((PlayerEntity) this.getAttacker());
+            healWhenNewPlayer();
+        }
+        for (PlayerEntity i : attackedBy) {
+            ++attackingPlayers;
+        }
+    }
+
+    @Override
+    protected RegistryKey<LootTable> getLootTableId() {
+        return SolarisEntityLootTableProvider.MONSTROSITREE_LOOT_TABLE;
     }
 }
+

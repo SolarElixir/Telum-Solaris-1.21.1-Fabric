@@ -15,22 +15,18 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.solarelixir.solaris.block.ModBlocks;
-import net.solarelixir.solaris.item.ModItems;
+import net.solarelixir.solaris.item.SolarisItems;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModLootTableProvider extends FabricBlockLootTableProvider {
-    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+public class SolarisBlocksLootTableProvider extends FabricBlockLootTableProvider {
+    public SolarisBlocksLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
         System.out.println("Starting Mod Loot Table Provider");
-
     }
 
     @Override
     public void generate() {
-        System.out.println("Generating Mod Block tag provider");
-
-        //Blocks
         addDrop(ModBlocks.JADE_BLOCK);
         addDrop(ModBlocks.ONYX_BLOCK);
         addDrop(ModBlocks.STEEL_BLOCK);
@@ -39,23 +35,22 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SAPPHIRE_BLOCK);
         addDrop(ModBlocks.OPAL_BLOCK);
 
-        addDrop(ModBlocks.JADE_ORE, multipleOreDrops(ModBlocks.JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
-        addDrop(ModBlocks.DEEPSLATE_JADE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_JADE_ORE, ModItems.IMPURE_JADE_CHUNK, 1, 2));
+        addDrop(ModBlocks.JADE_ORE, multipleOreDrops(ModBlocks.JADE_ORE, SolarisItems.IMPURE_JADE_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_JADE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_JADE_ORE, SolarisItems.IMPURE_JADE_CHUNK, 1, 2));
 
-        addDrop(ModBlocks.ONYX_ORE, multipleOreDrops(ModBlocks.ONYX_ORE, ModItems.IMPURE_ONYX_CHUNK, 1, 2));
-        addDrop(ModBlocks.DEEPSLATE_ONYX_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_ONYX_ORE, ModItems.IMPURE_ONYX_CHUNK, 1, 2));
+        addDrop(ModBlocks.ONYX_ORE, multipleOreDrops(ModBlocks.ONYX_ORE, SolarisItems.IMPURE_ONYX_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_ONYX_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_ONYX_ORE, SolarisItems.IMPURE_ONYX_CHUNK, 1, 2));
 
-        addDrop(ModBlocks.TOPAZ_ORE, multipleOreDrops(ModBlocks.TOPAZ_ORE, ModItems.IMPURE_TOPAZ_CHUNK, 1, 2));
-        addDrop(ModBlocks.DEEPSLATE_TOPAZ_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_TOPAZ_ORE, ModItems.IMPURE_TOPAZ_CHUNK, 1, 2));
+        addDrop(ModBlocks.TOPAZ_ORE, multipleOreDrops(ModBlocks.TOPAZ_ORE, SolarisItems.IMPURE_TOPAZ_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_TOPAZ_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_TOPAZ_ORE, SolarisItems.IMPURE_TOPAZ_CHUNK, 1, 2));
 
-        addDrop(ModBlocks.SAPPHIRE_ORE, multipleOreDrops(ModBlocks.SAPPHIRE_ORE, ModItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
-        addDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, ModItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
+        addDrop(ModBlocks.SAPPHIRE_ORE, multipleOreDrops(ModBlocks.SAPPHIRE_ORE, SolarisItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_SAPPHIRE_ORE, SolarisItems.IMPURE_SAPPHIRE_CHUNK, 1, 2));
 
-        addDrop(ModBlocks.OPAL_ORE, multipleOreDrops(ModBlocks.OPAL_ORE, ModItems.IMPURE_OPAL_CHUNK, 1, 2));
-        addDrop(ModBlocks.DEEPSLATE_OPAL_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_OPAL_ORE, ModItems.IMPURE_OPAL_CHUNK, 1, 2));
+        addDrop(ModBlocks.OPAL_ORE, multipleOreDrops(ModBlocks.OPAL_ORE, SolarisItems.IMPURE_OPAL_CHUNK, 1, 2));
+        addDrop(ModBlocks.DEEPSLATE_OPAL_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_OPAL_ORE, SolarisItems.IMPURE_OPAL_CHUNK, 1, 2));
 
-        addDrop(ModBlocks.NETHER_RUBY_ORE, multipleOreDrops(ModBlocks.NETHER_RUBY_ORE, ModItems.IMPURE_RUBY_CHUNK, 1, 2));
-
+        addDrop(ModBlocks.NETHER_RUBY_ORE, multipleOreDrops(ModBlocks.NETHER_RUBY_ORE, SolarisItems.IMPURE_RUBY_CHUNK, 1, 2));
     }
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);

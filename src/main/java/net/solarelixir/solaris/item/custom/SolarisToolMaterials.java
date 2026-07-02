@@ -4,49 +4,54 @@ import com.google.common.base.Suppliers;
 import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
-import net.solarelixir.solaris.item.ModItems;
-import net.solarelixir.solaris.util.ModTags;
+import net.solarelixir.solaris.item.SolarisItems;
+import net.solarelixir.solaris.util.SolarisTags;
 
 import java.util.function.Supplier;
 
-public enum ModToolMaterials implements ToolMaterial {
+public enum SolarisToolMaterials implements ToolMaterial {
     
-    JADE(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    JADE(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             2560, 10.0F, 6.0F, 19, () ->
-            Ingredient.ofItems(ModItems.JADE_TOKEN)),
+            Ingredient.ofItems(SolarisItems.JADE_TOKEN)),
 
-    ONYX(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    ONYX(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             2560, 10.0F, 6.0F, 19, () ->
-            Ingredient.ofItems(ModItems.ONYX_TOKEN)),
+            Ingredient.ofItems(SolarisItems.ONYX_TOKEN)),
 
-    RUBY(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    RUBY(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             2560, 10.0f, 7.0f, 19, () ->
-            Ingredient.ofItems(ModItems.RUBY_TOKEN)),
+            Ingredient.ofItems(SolarisItems.RUBY_TOKEN)),
 
-    ENERGIZED_JADE(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    ENERGIZED_JADE(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             2880, 10.0f, 8.0f, 21, () ->
-            Ingredient.ofItems(ModItems.JADE_TOKEN)),
+            Ingredient.ofItems(SolarisItems.JADE_TOKEN)),
 
-    TOPAZ(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    TOPAZ(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             3200, 10.0f, 5.0f, 24, () ->
-            Ingredient.ofItems(ModItems.TOPAZ_TOKEN)),
+            Ingredient.ofItems(SolarisItems.TOPAZ_TOKEN)),
 
-    SAPPHIRE(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    SAPPHIRE(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             3200, 10.0f, 5.0f, 19, () ->
-            Ingredient.ofItems(ModItems.SAPPHIRE_TOKEN)),
+            Ingredient.ofItems(SolarisItems.SAPPHIRE_TOKEN)),
 
-    OPAL(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    OPAL(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             1280, 10.0f, 8.0f, 14, () ->
-            Ingredient.ofItems(ModItems.OPAL_TOKEN)),
+            Ingredient.ofItems(SolarisItems.OPAL_TOKEN)),
 
-    STEEL(ModTags.Blocks.INCORRECT_FOR_STEEL_TOOL,
+    STEEL(SolarisTags.Blocks.INCORRECT_FOR_STEEL_TOOL,
             1024, 7.0f, 2.5F, 14, () ->
-            Ingredient.ofItems(ModItems.STEEL)),
+            Ingredient.ofItems(SolarisItems.STEEL)),
     
-    RELIC(ModTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
+    RELIC(SolarisTags.Blocks.INCORRECT_FOR_NETHERITE_TOOLS,
             5120, 12.0f, 8.0f, 20, () ->
-            Ingredient.ofItems(ModItems.JADE_TOKEN)) //PLACEHOLDER
+            Ingredient.ofItems(SolarisItems.JADE_TOKEN)), //PLACEHOLDER
+
+    WOODLAND(BlockTags.INCORRECT_FOR_WOODEN_TOOL,
+            265, 3.0f, 3.5f, 25, () ->
+            Ingredient.ofItems(SolarisItems.WOODLAND_BARK))
 
     ;
 
@@ -58,7 +63,7 @@ public enum ModToolMaterials implements ToolMaterial {
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredient;
 
-    ModToolMaterials(
+    SolarisToolMaterials(
             final TagKey<Block> inverseTag,
             final int itemDurability,
             final float miningSpeed,

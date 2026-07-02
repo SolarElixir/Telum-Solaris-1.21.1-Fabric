@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.solarelixir.solaris.util.ModTags;
+import net.solarelixir.solaris.util.SolarisTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -29,7 +29,7 @@ public abstract class AbstractClientPlayerEntityMixin extends PlayerEntity {
     private void getFovMultiplierMixin(CallbackInfoReturnable<Float> info, float f) {
         Item item = this.getActiveItem().getItem();
         ItemStack itemStack = this.getActiveItem();
-        if (this.isUsingItem() && itemStack.isIn(ModTags.Items.IS_BOW_ITEM)) {
+        if (this.isUsingItem() && itemStack.isIn(SolarisTags.Items.IS_BOW_ITEM)) {
             int i = this.getItemUseTime();
             float g = (float)i / 20.0f;
             g = g > 1.0f ? 1.0f : g * g;
